@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bql4cqboh1i0i"]
+
+[ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="1_qkpjr"]
+[ext_resource type="PackedScene" uid="uid://cyin5wgk4kyy5" path="res://world/bush.tscn" id="2_y5atj"]
+
+[node name="Dev Level Two" type="Node2D"]
+position = Vector2(1, 0)
+metadata/_edit_lock_ = true
+
+[node name="PlayerCat" parent="." instance=ExtResource("1_qkpjr")]
+position = Vector2(0, 1)
+
+[node name="Bush" parent="." instance=ExtResource("2_y5atj")]
+position = Vector2(48, 0)
+
+[node name="Bush2" parent="." instance=ExtResource("2_y5atj")]
+position = Vector2(59, -23)
+
+[node name="Bush3" parent="." instance=ExtResource("2_y5atj")]
+position = Vector2(78, 8)
+
+[node name="Bush4" parent="." instance=ExtResource("2_y5atj")]
+position = Vector2(-77, -5)
+
+[node name="Bush5" parent="." instance=ExtResource("2_y5atj")]
+position = Vector2(-55, 26)
