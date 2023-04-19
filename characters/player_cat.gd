@@ -54,3 +54,7 @@ func pick_new_state():
 		state_machine.travel("idle")
 
 
+
+
+func _on_warp_to_dev_level_level_2_body_exited(body):
+	pass # Replace with function body.

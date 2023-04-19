@@ -86,6 +86,7 @@ transitions = ["Start", "idle_right", SubResource("AnimationNodeStateMachineTran
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_ou5eq"]
 
 [node name="Cow" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_sqmsj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
