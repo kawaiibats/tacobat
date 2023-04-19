@@ -19,17 +19,17 @@ func _physics_process(_delta):
 	
 	# Get input direction
 	
-	var input_direction = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
-	)
+	# var input_direction = Vector2(
+	# 	Input.get_action_strength("right") - Input.get_action_strength("left"),
+	#	Input.get_action_strength("down") - Input.get_action_strength("up")
+	# )
 
-	update_animation_parameters(input_direction)
+	update_animation_parameters(Input.get_vector("left","right","up","down").floor())
 	
 	
 	# Update velocity
-	velocity = input_direction * move_speed
-	
+	velocity = Input.get_vector("left","right","up","down") * move_speed
+
 	
 	# Move and slide function uses velocity of caracter body to move character on map
 	move_and_slide()

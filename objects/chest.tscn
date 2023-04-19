@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://csqdcdyiuh8qe"]
+
+[ext_resource type="Texture2D" uid="uid://b7trwcymjx1qy" path="res://art/sprout/Objects/Chest.png" id="1_yusl3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppgnd"]
+size = Vector2(16, 7)
+
+[node name="Chest" type="Sprite2D"]
+y_sort_enabled = true
+position = Vector2(52, 41)
+texture = ExtResource("1_yusl3")
+hframes = 5
+vframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_ppgnd")
