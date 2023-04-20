@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dmh38av4a6xsw"]
+[gd_scene load_steps=21 format=3 uid="uid://dmh38av4a6xsw"]
 
 [ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="1_e06is"]
 [ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="2_6eclw"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://csqdcdyiuh8qe" path="res://objects/chest.tscn" id="9_dod1e"]
 [ext_resource type="PackedScene" uid="uid://bcrrv2ers6dgf" path="res://objects/bed.tscn" id="10_yhn1j"]
 [ext_resource type="Script" path="res://levels/Warp to dev level level 2.gd" id="11_oxp06"]
+[ext_resource type="PackedScene" uid="uid://cyin5wgk4kyy5" path="res://world/bush.tscn" id="12_ultf5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mi6g"]
 texture = ExtResource("2_6eclw")
@@ -815,6 +816,9 @@ script = ExtResource("11_oxp06")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Warp to dev level level 2"]
 position = Vector2(81, -267)
 shape = SubResource("RectangleShape2D_8fi7n")
+
+[node name="Bush" parent="." instance=ExtResource("12_ultf5")]
+position = Vector2(-132, 24)
 
 [connection signal="body_entered" from="Warp to dev level level 2" to="Warp to dev level level 2" method="_on_body_entered"]
 [connection signal="body_exited" from="Warp to dev level level 2" to="PlayerCat" method="_on_warp_to_dev_level_level_2_body_exited"]

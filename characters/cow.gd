@@ -11,6 +11,8 @@ enum COW_STATE { IDLE, WALK }
 @onready var sprite = $Sprite2D
 @onready var timer = $Timer
 
+@onready var all_interactions = []
+
 var move_direction : Vector2 = Vector2.ZERO
 var current_state : COW_STATE =  COW_STATE.IDLE
 
@@ -63,9 +65,10 @@ func pick_new_state():
 		current_state = COW_STATE.IDLE
 		timer.start(idle_time)
 		
-		
-		
-
 
 func _on_timer_timeout():
 	pick_new_state()
+
+
+
+

@@ -6,10 +6,13 @@ extends CharacterBody2D
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 
+@onready var all_interactions = []
+@onready var interactLabel = $InteractionComponents/InteractLabel
 
 
 func _ready():
 	update_animation_parameters(starting_direction)
+	update_interactions()
 
 
 
@@ -36,6 +39,9 @@ func _physics_process(_delta):
 	
 	# Pick new state function determines which animation state is appropriate to use
 	pick_new_state()
+	
+	if Input.is_action_just_pressed("interact"):
+		execute_interaction()
 
 
 # Update direction of player
@@ -56,5 +62,39 @@ func pick_new_state():
 
 
 
-func _on_warp_to_dev_level_level_2_body_exited(body):
-	pass # Replace with function body.
+
+
+
+
+
+
+
+
+
+
+
+# Interaction Methods 
+# ///////////////////////////////////////////////////////////////////////////
+func _on_interaction_area_area_entered(area):
+	all_interactions.insert(0, area)
+	update_interactions()
+
+func _on_interaction_area_area_exited(area):
+	all_interactions.erase(area)
+	update_interactions()
+
+func update_interactions():
+	if all_interactions:
+		interactLabel.text = all_interactions[0].interact_label
+	else:
+		interactLabel.text = ""
+
+func execute_interaction():
+	if all_interactions:
+		var cur_interaction = all_interactions[0]
+		match cur_interaction.interact_type:
+			"print_text" : print(cur_interaction.interact_value)
+			
+			
+			
+
