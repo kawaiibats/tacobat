@@ -241,7 +241,7 @@ graph_offset = Vector2(47.5, 0)
 radius = 13.0384
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dbjdt"]
-radius = 2.0
+radius = 44.0
 
 [node name="PlayerCat" type="CharacterBody2D"]
 script = ExtResource("1_aa83b")
@@ -284,7 +284,7 @@ collision_layer = 0
 collision_mask = 512
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponents/AltInteractionArea"]
+[node name="AltInteractReach" type="CollisionShape2D" parent="InteractionComponents/AltInteractionArea"]
 shape = SubResource("CircleShape2D_dbjdt")
 
 [node name="InteractLabel" type="Label" parent="InteractionComponents"]
@@ -302,6 +302,20 @@ grow_vertical = 2
 text = "Test"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AltInteractLabel" type="Label" parent="InteractionComponents"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -26.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_exited"]

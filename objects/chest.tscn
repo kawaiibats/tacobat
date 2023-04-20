@@ -22,4 +22,4 @@ shape = SubResource("RectangleShape2D_8k4yq")
 [node name="InteractArea" parent="." instance=ExtResource("3_agp48")]
 interact_label = "Open Chest"
 interact_type = "print_text"
-interact_value = "Yay! It worked. Chest"
+interact_value = "You open the chest."

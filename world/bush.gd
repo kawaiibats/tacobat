@@ -1,20 +1,11 @@
 extends Node
 
-var inRange = false
-var distance2Player = 
+#var distance2Player = player
 
 
-func _input_event(viewport, event, shape_idx):
-	if event.is_pressed() and inRange == true:
-		print("Bush Clicked! Here is where the stuff that executes goes.")
-
-
-func _on_area_entered(area):
-	print("Entered Clickable Area for bush..")
-	inRange = true
-
-func _on_area_exited(area):
-	print("Exited Clickable Area for bush..")
-	inRange = false
-
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+			print("Bush Clicked! Here is where the stuff that executes goes.")
+			
 
