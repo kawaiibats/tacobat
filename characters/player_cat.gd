@@ -22,22 +22,12 @@ func _ready():
 
 
 func _physics_process(_delta):
-	
-	
-	# Get input direction
-	
-	# var input_direction = Vector2(
-	# 	Input.get_action_strength("right") - Input.get_action_strength("left"),
-	#	Input.get_action_strength("down") - Input.get_action_strength("up")
-	# )
 
 	update_animation_parameters(Input.get_vector("left","right","up","down").floor())
-	
 	
 	# Update velocity
 	velocity = Input.get_vector("left","right","up","down") * move_speed
 
-	
 	# Move and slide function uses velocity of character body to move character on map
 	move_and_slide()
 	
@@ -69,6 +59,26 @@ func pick_new_state():
 
 
 
+
+
+
+
+
+
+# Find closest node // Code by Magso https://godotengine.org/qa/89680/how-get-the-node-closest-to-my-position
+func find_closest_or_furthest(node: Object, group_name: String, get_closest:= true) -> Object:
+	var target_group = get_tree().get_nodes_in_group(group_name)
+	var distance_away = node.global_position.distance_to(target_group[0].global_position)
+	var return_node = target_group[0]
+	for index in target_group.size():
+		var distance = node.global_position.distance_to(target_group[index].global_position)
+		if get_closest == true && distance < distance_away:
+			distance_away = distance
+			return_node = target_group[index]
+		elif get_closest == false && distance > distance_away:
+			distance_away = distance
+			return_node = target_group[index]
+	return return_node
 
 
 
@@ -123,6 +133,17 @@ func update_alt_interactions():
 
 func execute_alt_interaction():
 	if alt_interactions:
-		var cur_alt_interaction = alt_interactions[0]
-		match cur_alt_interaction.alt_interact_type:
-			"print_text" : print(cur_alt_interaction.alt_interact_value)
+		
+		var selectedInteraction
+		for interaction in alt_interactions:
+			if interaction.clickedOn == true:
+				selectedInteraction = interaction
+		
+		print(selectedInteraction)
+		
+		match selectedInteraction.alt_interact_type:
+			"print_text" : print(selectedInteraction.alt_interact_value)
+
+
+
+
