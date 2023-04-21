@@ -139,11 +139,9 @@ func execute_alt_interaction():
 			if interaction.clickedOn == true:
 				selectedInteraction = interaction
 		
-		print(selectedInteraction)
-		
-		match selectedInteraction.alt_interact_type:
-			"print_text" : print(selectedInteraction.alt_interact_value)
-
-
+		if (selectedInteraction):
+			print(selectedInteraction)
+			match selectedInteraction.alt_interact_type:
+				"print_text" : print(selectedInteraction.alt_interact_value)
 
 
