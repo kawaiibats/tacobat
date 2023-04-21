@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dmh38av4a6xsw"]
+[gd_scene load_steps=24 format=3 uid="uid://dmh38av4a6xsw"]
 
 [ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="1_e06is"]
 [ext_resource type="Script" path="res://levels/game_level.gd" id="1_qnl0o"]
@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bgmdj24idfse0" path="res://art/taco/Forest Tilemap.png" id="8_stq02"]
 [ext_resource type="PackedScene" uid="uid://csqdcdyiuh8qe" path="res://objects/chest.tscn" id="9_dod1e"]
 [ext_resource type="PackedScene" uid="uid://bcrrv2ers6dgf" path="res://objects/bed.tscn" id="10_yhn1j"]
-[ext_resource type="Script" path="res://levels/Warp to dev level level 2.gd" id="11_oxp06"]
 [ext_resource type="PackedScene" uid="uid://bquf4add2un5n" path="res://world/berrybush.tscn" id="12_t3ofs"]
 [ext_resource type="PackedScene" uid="uid://cyin5wgk4kyy5" path="res://world/bush.tscn" id="12_ultf5"]
+[ext_resource type="PackedScene" uid="uid://bj3laokry4wae" path="res://components/warper/warpArea.tscn" id="16_awuu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mi6g"]
 texture = ExtResource("2_6eclw")
@@ -887,12 +887,11 @@ sources/4 = SubResource("TileSetAtlasSource_hk1ph")
 sources/5 = SubResource("TileSetAtlasSource_knje7")
 sources/8 = SubResource("TileSetAtlasSource_xvouh")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fi7n"]
-
 [node name="Dev World" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(307, 280)
 script = ExtResource("1_qnl0o")
+metadata/_edit_lock_ = true
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_e06is")]
 y_sort_enabled = true
@@ -960,13 +959,6 @@ position = Vector2(159, -52)
 [node name="Bed" parent="." instance=ExtResource("10_yhn1j")]
 position = Vector2(-70, 9)
 
-[node name="Warp to dev level level 2" type="Area2D" parent="."]
-script = ExtResource("11_oxp06")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Warp to dev level level 2"]
-position = Vector2(81, -267)
-shape = SubResource("RectangleShape2D_8fi7n")
-
 [node name="BerryBush" parent="." instance=ExtResource("12_t3ofs")]
 position = Vector2(-155, 30)
 
@@ -979,5 +971,20 @@ position = Vector2(-107, 105)
 [node name="Bush3" parent="." instance=ExtResource("12_ultf5")]
 position = Vector2(-81, 123)
 
-[connection signal="body_entered" from="Warp to dev level level 2" to="Warp to dev level level 2" method="_on_body_entered"]
-[connection signal="body_exited" from="Warp to dev level level 2" to="PlayerCat" method="_on_warp_to_dev_level_level_2_body_exited"]
+[node name="warpArea2" parent="." instance=ExtResource("16_awuu8")]
+position = Vector2(110, -42)
+
+[node name="warpArea" parent="." instance=ExtResource("16_awuu8")]
+position = Vector2(110, -12)
+destination = "game_level"
+
+[node name="warpdevlvl2" parent="." instance=ExtResource("16_awuu8")]
+position = Vector2(71, -269)
+
+[node name="warp2devlvl2" parent="." instance=ExtResource("16_awuu8")]
+position = Vector2(91, -269)
+
+[connection signal="warp_area_entered" from="warpArea2" to="." method="_on_warper_warp_area_entered"]
+[connection signal="warp_area_entered" from="warpArea" to="." method="_on_warp_area_warp_area_entered"]
+[connection signal="warp_area_entered" from="warpdevlvl2" to="." method="_on_warpdevlvl_2_warp_area_entered"]
+[connection signal="warp_area_entered" from="warp2devlvl2" to="." method="_on_warp_2_devlvl_2_warp_area_entered"]

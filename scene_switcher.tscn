@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh47ns4e6qtaq"]
+
+[ext_resource type="Script" path="res://SceneSwitcher.gd" id="1_5f4ih"]
+[ext_resource type="PackedScene" uid="uid://dmh38av4a6xsw" path="res://levels/game_level.tscn" id="2_ep1kk"]
+
+[node name="SceneSwitcher" type="Node"]
+script = ExtResource("1_5f4ih")
+
+[node name="lvl0" parent="." instance=ExtResource("2_ep1kk")]
+
+[connection signal="level_changed" from="lvl0" to="." method="_on_lvl_0_level_changed"]

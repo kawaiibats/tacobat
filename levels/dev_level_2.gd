@@ -1,9 +1,23 @@
 extends Node2D
 
-@export var node_path = NodePath(".")
 
-func _ready():
-	node_path = get_node(".")
+signal level_changed(destination)
+
+@export var level_name = "devlevel2"
+
+
+
+
+
+	
+	
+	
 	
 func genesis():
-	print ("Dev Island Genesis Activating..")
+	print ("Dev Level Two Genesis Activating..")
+
+
+
+func _on_warp_area_warp_area_entered(destination):
+	print("dev level 2 print")
+	emit_signal("level_changed", destination)

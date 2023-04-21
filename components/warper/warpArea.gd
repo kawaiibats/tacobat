@@ -1,12 +1,13 @@
-extends Area2D
+extends Node2D
 
 
+signal warp_area_entered(destination)
 
 var entered = false
+@export var destination: String
 
 func _on_body_entered(body: CharacterBody2D):
 	entered = true
-
 
 func _on_body_exited(body):
 	entered = false
@@ -14,4 +15,7 @@ func _on_body_exited(body):
 
 func _process(delta):
 	if entered == true:
-		get_tree().change_scene_to_file("res://levels/game_level.tscn")
+		emit_signal("warp_area_entered", destination)
+		print("emitted signal")
+
+

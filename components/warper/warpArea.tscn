@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj3laokry4wae"]
+
+[ext_resource type="Script" path="res://components/warper/warpArea.gd" id="1_asf7u"]
+[ext_resource type="Texture2D" uid="uid://cma2tg2ud6lr4" path="res://art/sprout/Objects/Basic Plants.png" id="2_krx21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pktne"]
+
+[node name="warpArea" type="Area2D"]
+script = ExtResource("1_asf7u")
+destination = "dev_level_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pktne")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_krx21")
+region_enabled = true
+region_rect = Rect2(48, 16, 16, 16)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
