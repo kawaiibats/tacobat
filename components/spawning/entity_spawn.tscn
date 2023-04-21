@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpyqhqfxrj71"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_crd4m"]
+radius = 9.0
+height = 24.0
+
+[node name="Entity Spawn" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_crd4m")

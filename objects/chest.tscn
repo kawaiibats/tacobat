@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://csqdcdyiuh8qe"]
+[gd_scene load_steps=4 format=3 uid="uid://csqdcdyiuh8qe"]
 
-[ext_resource type="Script" path="res://world/bush.gd" id="1_8hdst"]
 [ext_resource type="Texture2D" uid="uid://b7trwcymjx1qy" path="res://art/sprout/Objects/Chest.png" id="1_yusl3"]
 [ext_resource type="PackedScene" uid="uid://bnvbqf63w3284" path="res://components/interact area/interact_area.tscn" id="3_agp48"]
 
@@ -8,7 +7,6 @@
 size = Vector2(16, 7)
 
 [node name="Chest" type="StaticBody2D"]
-script = ExtResource("1_8hdst")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_yusl3")

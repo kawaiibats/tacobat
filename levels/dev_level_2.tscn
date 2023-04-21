@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bql4cqboh1i0i"]
+[gd_scene load_steps=20 format=3 uid="uid://bql4cqboh1i0i"]
 
 [ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="1_qkpjr"]
 [ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="1_vk672"]
+[ext_resource type="Script" path="res://levels/dev_level_2.gd" id="1_wg26i"]
 [ext_resource type="Texture2D" uid="uid://dol2l2q32s6gr" path="res://art/sprout/Tilesets/ground tiles/old tiles/Hills.png" id="2_gue12"]
 [ext_resource type="PackedScene" uid="uid://cyin5wgk4kyy5" path="res://world/bush.tscn" id="2_y5atj"]
 [ext_resource type="Texture2D" uid="uid://dh853ea6b7qcd" path="res://art/sprout/Tilesets/ground tiles/old tiles/Tilled Dirt.png" id="3_tclqt"]
@@ -741,6 +742,7 @@ size = Vector2(13, 13)
 
 [node name="Dev Level Two" type="Node2D"]
 position = Vector2(1, 0)
+script = ExtResource("1_wg26i")
 metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMap" parent="."]

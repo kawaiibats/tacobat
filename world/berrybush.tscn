@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bquf4add2un5n"]
+
+[ext_resource type="Texture2D" uid="uid://ct5ch5rxj2f2s" path="res://art/sprout/Objects/Basic Grass Biom things 1.png" id="2_mgto0"]
+[ext_resource type="PackedScene" uid="uid://bnvbqf63w3284" path="res://components/interact area/interact_area.tscn" id="3_j6330"]
+[ext_resource type="PackedScene" uid="uid://dns7a3dej440v" path="res://components/interact area/alt_interact_area.tscn" id="4_iwm5g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lapql"]
+radius = 6.0
+
+[node name="BerryBush" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mgto0")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 16)
+
+[node name="BushHitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_lapql")
+
+[node name="InteractArea" parent="." instance=ExtResource("3_j6330")]
+interact_label = "Search Bush"
+interact_type = "print_text"
+interact_value = "This is the bush printed text"
+
+[node name="AltInteractArea" parent="." instance=ExtResource("4_iwm5g")]
+collision_layer = 512
+alt_interact_label = "Berrypicking!"
+alt_interact_type = "print_text"
+alt_interact_value = "This is the berrypicking! text"
