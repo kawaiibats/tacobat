@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyin5wgk4kyy5"]
+[gd_scene load_steps=4 format=3 uid="uid://cyin5wgk4kyy5"]
 
-[ext_resource type="Script" path="res://world/bush.gd" id="1_6f4ol"]
 [ext_resource type="Texture2D" uid="uid://ct5ch5rxj2f2s" path="res://art/sprout/Objects/Basic Grass Biom things 1.png" id="1_jt3pk"]
 [ext_resource type="PackedScene" uid="uid://dns7a3dej440v" path="res://components/interact area/alt_interact_area.tscn" id="4_ov8on"]
 
@@ -8,7 +7,6 @@
 radius = 6.0
 
 [node name="Bush" type="StaticBody2D"]
-script = ExtResource("1_6f4ol")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jt3pk")

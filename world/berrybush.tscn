@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://bquf4add2un5n"]
+[gd_scene load_steps=5 format=3 uid="uid://bquf4add2un5n"]
 
-[ext_resource type="Script" path="res://world/bush.gd" id="1_tgagl"]
 [ext_resource type="Texture2D" uid="uid://ct5ch5rxj2f2s" path="res://art/sprout/Objects/Basic Grass Biom things 1.png" id="2_mgto0"]
 [ext_resource type="PackedScene" uid="uid://bnvbqf63w3284" path="res://components/interact area/interact_area.tscn" id="3_j6330"]
 [ext_resource type="PackedScene" uid="uid://dns7a3dej440v" path="res://components/interact area/alt_interact_area.tscn" id="4_iwm5g"]
@@ -9,7 +8,6 @@
 radius = 6.0
 
 [node name="BerryBush" type="StaticBody2D"]
-script = ExtResource("1_tgagl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_mgto0")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmh38av4a6xsw"]
+[gd_scene load_steps=23 format=3 uid="uid://dmh38av4a6xsw"]
 
 [ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="1_e06is"]
+[ext_resource type="Script" path="res://levels/game_level.gd" id="1_qnl0o"]
 [ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="2_6eclw"]
 [ext_resource type="Texture2D" uid="uid://dol2l2q32s6gr" path="res://art/sprout/Tilesets/ground tiles/old tiles/Hills.png" id="3_2xcem"]
 [ext_resource type="Texture2D" uid="uid://dh853ea6b7qcd" path="res://art/sprout/Tilesets/ground tiles/old tiles/Tilled Dirt.png" id="4_rdlhb"]
@@ -744,6 +745,7 @@ sources/5 = SubResource("TileSetAtlasSource_knje7")
 [node name="Dev World" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(307, 280)
+script = ExtResource("1_qnl0o")
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_e06is")]
 y_sort_enabled = true
