@@ -1149,10 +1149,10 @@ position = Vector2(-107, 105)
 position = Vector2(-81, 123)
 
 [node name="warpArea2" parent="." instance=ExtResource("16_awuu8")]
-position = Vector2(110, -42)
+position = Vector2(126, -49)
 
 [node name="warpArea" parent="." instance=ExtResource("16_awuu8")]
-position = Vector2(110, -12)
+position = Vector2(126, -25)
 destination = "game_level"
 
 [node name="warpdevlvl2" parent="." instance=ExtResource("16_awuu8")]
