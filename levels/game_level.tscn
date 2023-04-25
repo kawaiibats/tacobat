@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dmh38av4a6xsw"]
+[gd_scene load_steps=26 format=3 uid="uid://dmh38av4a6xsw"]
 
 [ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="1_e06is"]
 [ext_resource type="Script" path="res://levels/game_level.gd" id="1_qnl0o"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://bquf4add2un5n" path="res://world/berrybush.tscn" id="12_t3ofs"]
 [ext_resource type="PackedScene" uid="uid://cyin5wgk4kyy5" path="res://world/bush.tscn" id="12_ultf5"]
 [ext_resource type="PackedScene" uid="uid://bj3laokry4wae" path="res://components/warper/warpArea.tscn" id="16_awuu8"]
+[ext_resource type="AudioStream" uid="uid://ctwqrntpcclgo" path="res://sfx/magIn.mp3" id="16_klg8f"]
+[ext_resource type="AudioStream" uid="uid://bjx6c3sxn0ktu" path="res://sfx/clickEmpty.mp3" id="17_e0ttg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mi6g"]
 texture = ExtResource("2_6eclw")
@@ -1151,17 +1153,18 @@ position = Vector2(-81, 123)
 [node name="warpArea2" parent="." instance=ExtResource("16_awuu8")]
 position = Vector2(126, -49)
 
-[node name="warpArea" parent="." instance=ExtResource("16_awuu8")]
-position = Vector2(126, -25)
-destination = "game_level"
-
 [node name="warpdevlvl2" parent="." instance=ExtResource("16_awuu8")]
 position = Vector2(71, -269)
 
 [node name="warp2devlvl2" parent="." instance=ExtResource("16_awuu8")]
 position = Vector2(91, -269)
 
+[node name="WarpAreaEnterSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_klg8f")
+
+[node name="LevelLoadedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_e0ttg")
+
 [connection signal="warp_area_entered" from="warpArea2" to="." method="_on_warper_warp_area_entered"]
-[connection signal="warp_area_entered" from="warpArea" to="." method="_on_warp_area_warp_area_entered"]
 [connection signal="warp_area_entered" from="warpdevlvl2" to="." method="_on_warpdevlvl_2_warp_area_entered"]
 [connection signal="warp_area_entered" from="warp2devlvl2" to="." method="_on_warp_2_devlvl_2_warp_area_entered"]
