@@ -9,6 +9,7 @@ var emitted = false
 
 func _on_body_entered(body: CharacterBody2D):
 	if body.name == "PlayerCat":
+		body.warping = true
 		entered = true
 
 func _on_body_exited(body):

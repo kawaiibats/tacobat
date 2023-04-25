@@ -13,6 +13,9 @@ extends CharacterBody2D
 @onready var altInteractLabel = $InteractionComponents/AltInteractLabel
 
 
+@onready var warping : bool = false
+
+
 func _ready():
 	update_animation_parameters(starting_direction)
 	update_interactions()
@@ -22,23 +25,23 @@ func _ready():
 
 
 func _physics_process(_delta):
+	if !warping:
+		update_animation_parameters(Input.get_vector("left","right","up","down").floor())
+	
+		# Update velocity
+		velocity = Input.get_vector("left","right","up","down") * move_speed
 
-	update_animation_parameters(Input.get_vector("left","right","up","down").floor())
+		# Move and slide function uses velocity of character body to move character on map
+		move_and_slide()
 	
-	# Update velocity
-	velocity = Input.get_vector("left","right","up","down") * move_speed
-
-	# Move and slide function uses velocity of character body to move character on map
-	move_and_slide()
+		# Pick new state function determines which animation state is appropriate to use
+		pick_new_state()
 	
-	# Pick new state function determines which animation state is appropriate to use
-	pick_new_state()
-	
-	if Input.is_action_just_pressed("interact"):
-		execute_interaction()
+		if Input.is_action_just_pressed("interact"):
+			execute_interaction()
 		
-	if Input.is_action_just_pressed("altInteract"):
-		execute_alt_interaction()
+		if Input.is_action_just_pressed("altInteract"):
+			execute_alt_interaction()
 
 
 # Update direction of player

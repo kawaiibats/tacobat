@@ -42,4 +42,5 @@ func _on_animation_player_animation_finished(anim_name):
 		"fade_out":
 			print("reset transition cooldown")
 			current_level.play_loaded_sound()
+			var body = $PlayerCat
 			handling = false
