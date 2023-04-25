@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dmh38av4a6xsw"]
+[gd_scene load_steps=28 format=3 uid="uid://dmh38av4a6xsw"]
 
 [ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="1_e06is"]
 [ext_resource type="Script" path="res://levels/game_level.gd" id="1_qnl0o"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://bj3laokry4wae" path="res://components/warper/warpArea.tscn" id="16_awuu8"]
 [ext_resource type="AudioStream" uid="uid://ctwqrntpcclgo" path="res://sfx/magIn.mp3" id="16_klg8f"]
 [ext_resource type="AudioStream" uid="uid://bjx6c3sxn0ktu" path="res://sfx/clickEmpty.mp3" id="17_e0ttg"]
+[ext_resource type="PackedScene" uid="uid://cpyqhqfxrj71" path="res://components/spawning/entity_spawn.tscn" id="18_0bmwp"]
+[ext_resource type="PackedScene" uid="uid://cabat1prpspee" path="res://components/spawning/foragable.tscn" id="19_meaus"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mi6g"]
 texture = ExtResource("2_6eclw")
@@ -1173,6 +1175,13 @@ stream = ExtResource("16_klg8f")
 
 [node name="LevelLoadedSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_e0ttg")
+
+[node name="Entity Spawn Zone" parent="." instance=ExtResource("18_0bmwp")]
+position = Vector2(126, -18)
+
+[node name="Foragable" parent="Entity Spawn Zone" instance=ExtResource("19_meaus")]
+position = Vector2(1.14441e-05, -4.17233e-06)
+itemInside = "apple"
 
 [connection signal="warp_area_entered" from="warpArea2" to="." method="_on_warper_warp_area_entered"]
 [connection signal="warp_area_entered" from="warpdevlvl2" to="." method="_on_warpdevlvl_2_warp_area_entered"]

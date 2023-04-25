@@ -111,6 +111,14 @@ func execute_interaction():
 		var cur_interaction = all_interactions[0]
 		match cur_interaction.interact_type:
 			"print_text" : print(cur_interaction.interact_value)
+			"forage" : 
+				print("Executing forage")
+				
+				var forageParent = cur_interaction.get_owner()
+				
+				print("You found.. ", forageParent.itemInside)
+			
+				forageParent.queue_free()
 			
 
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cabat1prpspee"]
+
+[ext_resource type="Texture2D" uid="uid://cma2tg2ud6lr4" path="res://art/sprout/Objects/Basic Plants.png" id="1_3nful"]
+[ext_resource type="Script" path="res://components/spawning/foragable.gd" id="1_ugxrr"]
+[ext_resource type="PackedScene" uid="uid://bnvbqf63w3284" path="res://components/interact area/interact_area.tscn" id="2_rha31"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uxetw"]
+
+[node name="Foragable" type="StaticBody2D"]
+position = Vector2(-45.5656, -1.90778)
+script = ExtResource("1_ugxrr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uxetw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3nful")
+region_enabled = true
+region_rect = Rect2(80, 16, 16, 16)
+
+[node name="InteractArea" parent="." instance=ExtResource("2_rha31")]
+interact_label = "Forage?"
+interact_type = "forage"
