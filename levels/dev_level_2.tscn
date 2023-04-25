@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bql4cqboh1i0i"]
+[gd_scene load_steps=20 format=3 uid="uid://bql4cqboh1i0i"]
 
 [ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="1_qkpjr"]
 [ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="1_vk672"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bl0x2k0i0ic7w" path="res://art/sprout/Tilesets/Water.png" id="4_ppk3n"]
 [ext_resource type="Texture2D" uid="uid://dwaqc7gnk1ar6" path="res://art/sprout/Tilesets/Wooden House.png" id="5_ip47g"]
 [ext_resource type="Texture2D" uid="uid://prfcee3we6ob" path="res://art/sprout/Tilesets/Fences.png" id="6_pvib3"]
+[ext_resource type="AudioStream" uid="uid://ctwqrntpcclgo" path="res://sfx/magIn.mp3" id="11_7hohh"]
 [ext_resource type="PackedScene" uid="uid://bj3laokry4wae" path="res://components/warper/warpArea.tscn" id="12_jje0v"]
+[ext_resource type="AudioStream" uid="uid://bjx6c3sxn0ktu" path="res://sfx/clickEmpty.mp3" id="12_u6p3x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mi6g"]
 texture = ExtResource("1_vk672")
@@ -801,5 +803,11 @@ position = Vector2(107, 104)
 [node name="warp2devisland" parent="." instance=ExtResource("12_jje0v")]
 position = Vector2(66, 237)
 destination = "game_level"
+
+[node name="WarpAreaEnterSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_7hohh")
+
+[node name="LevelLoadedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_u6p3x")
 
 [connection signal="warp_area_entered" from="warp2devisland" to="." method="_on_warp_area_warp_area_entered"]
