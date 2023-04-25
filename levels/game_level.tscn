@@ -1183,6 +1183,9 @@ position = Vector2(126, -18)
 position = Vector2(1.14441e-05, -4.17233e-06)
 itemInside = "apple"
 
+[node name="Entity Spawn Zone2" parent="." instance=ExtResource("18_0bmwp")]
+position = Vector2(126, 13)
+
 [connection signal="warp_area_entered" from="warpArea2" to="." method="_on_warper_warp_area_entered"]
 [connection signal="warp_area_entered" from="warpdevlvl2" to="." method="_on_warpdevlvl_2_warp_area_entered"]
 [connection signal="warp_area_entered" from="warp2devlvl2" to="." method="_on_warp_2_devlvl_2_warp_area_entered"]

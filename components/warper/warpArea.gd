@@ -8,7 +8,8 @@ var emitted = false
 @export var destination: String
 
 func _on_body_entered(body: CharacterBody2D):
-	entered = true
+	if body.name == "PlayerCat":
+		entered = true
 
 func _on_body_exited(body):
 	entered = false
