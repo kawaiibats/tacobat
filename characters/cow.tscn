@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4ebuod16hs8k" path="res://art/sprout/Characters/Free Cow Sprites.png" id="1_yrx4l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0t0s"]
-size = Vector2(20, 4.5)
+size = Vector2(20, 6)
 
 [sub_resource type="Animation" id="Animation_dg43e"]
 length = 0.001
@@ -97,7 +97,7 @@ vframes = 2
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(18, 55.25)
+position = Vector2(18, 56)
 shape = SubResource("RectangleShape2D_x0t0s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

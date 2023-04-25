@@ -739,6 +739,7 @@ sources/4 = SubResource("TileSetAtlasSource_hk1ph")
 sources/5 = SubResource("TileSetAtlasSource_knje7")
 
 [node name="Dev Level Two" type="Node2D"]
+y_sort_enabled = true
 position = Vector2(1, 0)
 script = ExtResource("1_wg26i")
 metadata/_edit_lock_ = true
@@ -761,7 +762,7 @@ layer_1/tile_data = PackedInt32Array()
 layer_2/name = "HighGroundWalls"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
-layer_2/y_sort_enabled = false
+layer_2/y_sort_enabled = true
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(1441790, 65541, 2, 1441791, 131077, 3, 1376256, 131077, 3, 1376257, 131077, 3, 1376258, 131077, 3, 1376259, 131077, 3, 1376260, 131077, 3, 1376261, 131077, 3, 1376262, 131077, 3, 1376263, 131077, 3, 1376264, 131077, 3, 1376265, 131077, 3, 1376266, 131077, 3, 1376267, 196613, 2, 1310731, 5, 1, 1245195, 5, 1, 1179659, 5, 1, 1114123, 5, 1, 1048587, 5, 1, 983051, 5, 1, 917515, 5, 1, 851979, 5, 1, 786443, 5, 1, 720907, 5, 1, 655371, 5, 1, 589835, 5, 1, 524299, 5, 1, 458763, 196613, 0, 458762, 131077, 3, 458761, 131077, 3, 458760, 131077, 3, 458759, 131077, 3, 458758, 131077, 3, 458757, 131077, 3, 458756, 131077, 3, 458755, 131077, 3, 458754, 131077, 3, 458753, 131077, 3, 458752, 131077, 3, 524287, 131077, 3, 524286, 65541, 0, 589822, 5, 1, 655358, 5, 1, 720894, 5, 1, 786430, 5, 1, 851966, 5, 1, 917502, 5, 1, 983038, 5, 1, 1048574, 5, 1, 1114110, 5, 1, 1179646, 5, 1, 1245182, 5, 1, 1310718, 5, 1, 1376254, 5, 1)
@@ -775,6 +776,7 @@ layer_3/tile_data = PackedInt32Array()
 metadata/_edit_lock_ = true
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_qkpjr")]
+y_sort_enabled = true
 position = Vector2(162, 79)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCat"]
