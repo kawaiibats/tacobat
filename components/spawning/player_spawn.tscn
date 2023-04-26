@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddawh1jfpd8ir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cgfx"]
+size = Vector2(8.48528, 8.48528)
+
+[node name="Player Spawn Zone" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_3cgfx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_3cgfx")

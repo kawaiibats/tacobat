@@ -3,7 +3,7 @@ extends Node2D
 
 signal level_changed(destination)
 
-@export var level_name = "devlevel2"
+@export var level_name = "devisland"
 @export var unvisited = true
 
 
@@ -15,16 +15,25 @@ func _ready():
 	unvisited = false
 
 
-func play_loaded_sound() -> void:
+func play_loaded_sound():
+	print("Play Loaded Sound!")
 	$LevelLoadedSound.play()
 
 func play_warp_enter_sound():
 	print("Play Warp Enter Sound!")
 	$WarpAreaEnterSound.play()
 
-	
+
+
 func genesis():
-	print ("Dev Level Two Genesis Activating..")
+	print ("Dev Island Genesis Activating..")
+	
+	
+
+
+
+
+
 
 
 func cleanup():
@@ -47,16 +56,30 @@ func cleanup():
 		push_error("An error occurred while saving the scene to disk.")
 	
 	queue_free()
+	
 
 
+# WARP ZONES
 
 
-func _on_warp_area_warp_area_entered(destination, destPos):
-	print("dev level 2 print")
+func _on_warper_warp_area_entered(destination, destPos):
+	print("game level print by spawn")
 	warp(destination, destPos)
+
+func _on_warpdevlvl_2_warp_area_entered(destination, destPos):
+	print("game level print top exit 1")
+	warp(destination, destPos)
+	
+func _on_warp_2_devlvl_2_warp_area_entered(destination, destPos):
+	print("game level print top exit 2")
+	warp(destination, destPos)
+	
 
 
 func warp(destination, destPos):
 	play_warp_enter_sound()
 	print("emitted level signal")
 	emit_signal("level_changed", destination, destPos)
+
+
+

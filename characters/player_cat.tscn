@@ -317,6 +317,14 @@ grow_vertical = 0
 horizontal_alignment = 1
 vertical_alignment = 2
 
+[node name="HealthLabel" type="Label" parent="InteractionComponents"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 0.109804, 0.254902, 1)
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
 [connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_exited"]
 [connection signal="area_entered" from="InteractionComponents/AltInteractionArea" to="." method="_on_alt_interaction_area_area_entered"]

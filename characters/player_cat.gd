@@ -12,6 +12,9 @@ extends CharacterBody2D
 @onready var alt_interactions = []
 @onready var altInteractLabel = $InteractionComponents/AltInteractLabel
 
+@export var health : float = 100
+@onready var healthLabel = $InteractionComponents/HealthLabel
+
 
 @onready var warping : bool = false
 
@@ -20,8 +23,12 @@ func _ready():
 	update_animation_parameters(starting_direction)
 	update_interactions()
 	update_alt_interactions()
-
-
+	
+	var healthString = str(health)
+	
+	healthLabel.text = healthString
+	
+	
 
 
 func _physics_process(_delta):

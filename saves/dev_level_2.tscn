@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bql4cqboh1i0i"]
+[gd_scene load_steps=20 format=3 uid="uid://bql4cqboh1i0i"]
 
 [ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="1_qkpjr"]
 [ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="1_vk672"]
@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://ctwqrntpcclgo" path="res://sfx/magIn.mp3" id="11_7hohh"]
 [ext_resource type="PackedScene" uid="uid://bj3laokry4wae" path="res://components/warper/warpArea.tscn" id="12_jje0v"]
 [ext_resource type="AudioStream" uid="uid://bjx6c3sxn0ktu" path="res://sfx/clickEmpty.mp3" id="12_u6p3x"]
-[ext_resource type="PackedScene" uid="uid://ddawh1jfpd8ir" path="res://components/spawning/player_spawn.tscn" id="13_oj5b4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mi6g"]
 texture = ExtResource("1_vk672")
@@ -812,8 +811,5 @@ stream = ExtResource("11_7hohh")
 
 [node name="LevelLoadedSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_u6p3x")
-
-[node name="Player Spawn Zone" parent="." instance=ExtResource("13_oj5b4")]
-position = Vector2(162, 79)
 
 [connection signal="warp_area_entered" from="warp2devisland" to="." method="_on_warp_area_warp_area_entered"]
