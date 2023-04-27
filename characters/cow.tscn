@@ -102,8 +102,8 @@ position = Vector2(18, 56)
 shape = SubResource("RectangleShape2D_x0t0s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_process_mode = 2
 method_call_mode = 1
-movie_quit_on_finish = true
 libraries = {
 "": SubResource("AnimationLibrary_ydls5")
 }

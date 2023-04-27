@@ -68,7 +68,7 @@ func transfer_data(old_scene, new_scene):
 	
 	print(spawnLoc)
 	
-	var newPlayerLocation = spawnLoc.global_position
+	wvar newPlayerLocation = spawnLoc.global_position
 
 	print(oldPlayer)
 	print(oldPlayerCopy)
