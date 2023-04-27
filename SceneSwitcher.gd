@@ -87,6 +87,12 @@ func transfer_data(old_scene, new_scene):
 
 
 
+
+
+
+
+
+
 func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"fade_in":

@@ -7,6 +7,7 @@ enum COW_STATE { IDLE, WALK }
 @export var walk_time : float = 2
 
 @onready var animation_tree = $AnimationTree
+@onready var animation_player = $AnimationPlayer
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var sprite = $Sprite2D
 @onready var timer = $Timer
@@ -18,6 +19,8 @@ var current_state : COW_STATE =  COW_STATE.IDLE
 
 
 func _ready():
+	print("cow ready")
+	state_machine.travel("idle_right")
 	select_new_direction()
 	pick_new_state()
 
@@ -55,6 +58,7 @@ func select_new_direction():
 
 # Switches from walking to idling
 func pick_new_state():
+	print("cow pick new state")
 	if(current_state == COW_STATE.IDLE):
 		state_machine.travel("walk_right")
 		current_state = COW_STATE.WALK
@@ -64,11 +68,16 @@ func pick_new_state():
 		state_machine.travel("idle_right")
 		current_state = COW_STATE.IDLE
 		timer.start(idle_time)
-		
+
 
 func _on_timer_timeout():
 	pick_new_state()
 
 
-
-
+func end_animation():
+	print("ending animation for cow..")
+	# ~ 
+	
+	
+	
+	

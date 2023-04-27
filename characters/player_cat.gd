@@ -25,7 +25,6 @@ func _ready():
 	update_alt_interactions()
 	
 	var healthString = str(health)
-	
 	healthLabel.text = healthString
 	
 	
