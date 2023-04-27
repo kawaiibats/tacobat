@@ -1,7 +1,10 @@
 extends Node
 
 var next_level = null
+
 var handling : bool = false
+
+var next_destID : int = 0
 
 
 
@@ -16,10 +19,13 @@ func _ready() -> void:
 	
 	
 	
-func handle_level_changed(destination_name: String, destPos: int):
+func handle_level_changed(destination_name: String, destID: int):
 	if not handling:
 		handling = true
 		print("start handle_level_changed")
+		
+		next_destID = destID
+		print("next dest ID is", next_destID)
 
 		var check_next_level = load("res://saves/" + destination_name + ".tscn").instantiate()
 
@@ -49,7 +55,19 @@ func transfer_data(old_scene, new_scene):
 	var oldPlayer = old_scene.get_node("PlayerCat")
 	var oldPlayerCopy = oldPlayer.duplicate()
 	var newPlayer = new_scene.get_node("PlayerCat")
-	var spawnLoc = new_scene.get_node("Player Spawn Zone")
+	var spawnLocs = new_scene.get_tree().get_nodes_in_group("Spawn")
+	var spawnLoc
+	
+	print(spawnLocs)
+	
+	for loc in spawnLocs:
+		print(loc.destID)
+		if loc.destID == next_destID:
+			print("found the right spawn area!")
+			spawnLoc = loc
+	
+	print(spawnLoc)
+	
 	var newPlayerLocation = spawnLoc.global_position
 
 	print(oldPlayer)
@@ -81,6 +99,7 @@ func _on_animation_player_animation_finished(anim_name):
 		"fade_out":
 			print("reset transition cooldown")
 			current_level.play_loaded_sound()
+			
 			current_level.get_node("PlayerCat").warping = false
 			handling = false
 

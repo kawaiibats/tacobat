@@ -1171,6 +1171,7 @@ position = Vector2(-81, 123)
 
 [node name="warpArea2" parent="." instance=ExtResource("15_32w7i")]
 position = Vector2(126, -49)
+destID = 5
 
 [node name="warpdevlvl2" parent="." instance=ExtResource("15_32w7i")]
 position = Vector2(71, -269)
@@ -1194,8 +1195,13 @@ itemInside = "apple"
 [node name="Entity Spawn Zone2" parent="." instance=ExtResource("18_baknj")]
 position = Vector2(126, 13)
 
-[node name="Player Spawn Zone" parent="." instance=ExtResource("20_f7r1p")]
+[node name="Spawn1" parent="." groups=["Spawn"] instance=ExtResource("20_f7r1p")]
 position = Vector2(77, -19)
+destID = 1
+
+[node name="Spawn2" parent="." groups=["Spawn"] instance=ExtResource("20_f7r1p")]
+position = Vector2(-21, 48)
+destID = 2
 
 [connection signal="warp_area_entered" from="warpArea2" to="." method="_on_warper_warp_area_entered"]
 [connection signal="warp_area_entered" from="warpdevlvl2" to="." method="_on_warpdevlvl_2_warp_area_entered"]

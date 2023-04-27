@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddawh1jfpd8ir"]
+[gd_scene load_steps=3 format=3 uid="uid://ddawh1jfpd8ir"]
+
+[ext_resource type="Script" path="res://components/spawning/player_spawn.gd" id="1_4skq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cgfx"]
 size = Vector2(8.48528, 8.48528)
 
 [node name="Player Spawn Zone" type="Area2D"]
+script = ExtResource("1_4skq5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.785398

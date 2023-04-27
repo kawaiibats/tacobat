@@ -803,17 +803,41 @@ position = Vector2(85, 73)
 [node name="Bush5" parent="." instance=ExtResource("2_y5atj")]
 position = Vector2(107, 104)
 
-[node name="warp2devisland" parent="." instance=ExtResource("12_jje0v")]
-position = Vector2(66, 237)
-destination = "devisland"
-
 [node name="WarpAreaEnterSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_7hohh")
 
 [node name="LevelLoadedSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_u6p3x")
 
-[node name="Player Spawn Zone" parent="." instance=ExtResource("13_oj5b4")]
+[node name="Spawn1" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
 position = Vector2(162, 79)
+destID = 1
+
+[node name="Spawn2" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
+position = Vector2(148, 215)
+destID = 2
+
+[node name="Spawn3" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
+position = Vector2(162, 215)
+destID = 3
+
+[node name="Spawn4" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
+position = Vector2(176, 215)
+destID = 4
+
+[node name="Spawn5" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
+position = Vector2(191, 215)
+destID = 5
+
+[node name="warp2devisland" parent="." instance=ExtResource("12_jje0v")]
+position = Vector2(66, 237)
+destination = "devisland"
+destID = 1
+
+[node name="warp2devisland2" parent="." instance=ExtResource("12_jje0v")]
+position = Vector2(66, 199)
+destination = "devisland"
+destID = 2
 
 [connection signal="warp_area_entered" from="warp2devisland" to="." method="_on_warp_area_warp_area_entered"]
+[connection signal="warp_area_entered" from="warp2devisland2" to="." method="_on_warp_2_devisland_2_warp_area_entered"]

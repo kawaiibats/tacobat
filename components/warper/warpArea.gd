@@ -6,10 +6,10 @@ signal warp_area_entered(destination)
 var entered = false
 var emitted = false
 @export var destination: String
-@export var destPos: int
+@export var destID: int
 
 func _on_body_entered(body: CharacterBody2D):
-	if body.name == "PlayerCat":
+	if (body.name == "PlayerCat"):
 		body.warping = true
 		entered = true
 
@@ -19,9 +19,10 @@ func _on_body_exited(body):
 
 func _process(delta):
 	if entered == true:
-		if emitted == false:
-			emitted = true
-			emit_signal("warp_area_entered", destination, destPos)
-			print("emitted warp signal")
+		if get_parent().get_parent().handling == false:
+			if emitted == false:
+				emitted = true
+				emit_signal("warp_area_entered", destination, destID)
+				print("emitted warp signal")
 
 

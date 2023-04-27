@@ -51,12 +51,21 @@ func cleanup():
 
 
 
-func _on_warp_area_warp_area_entered(destination, destPos):
-	print("dev level 2 print")
-	warp(destination, destPos)
+func _on_warp_area_warp_area_entered(destination, destID):
+	print("dev level 2 print (#1)")
+	warp(destination, destID)
+
+func _on_warp_2_devisland_2_warp_area_entered(destination, destID):
+	print("dev level 2 print (#2)")
+	warp(destination, destID)
 
 
-func warp(destination, destPos):
+
+
+func warp(destination, destID):
 	play_warp_enter_sound()
 	print("emitted level signal")
-	emit_signal("level_changed", destination, destPos)
+	emit_signal("level_changed", destination, destID)
+
+
+

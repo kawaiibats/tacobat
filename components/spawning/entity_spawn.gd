@@ -1,4 +1,4 @@
 extends Area2D
 
-@export var spawnID = 0
+@export var entitySpawnID = 0
 

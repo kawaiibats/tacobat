@@ -62,24 +62,24 @@ func cleanup():
 # WARP ZONES
 
 
-func _on_warper_warp_area_entered(destination, destPos):
+func _on_warper_warp_area_entered(destination, destID):
 	print("game level print by spawn")
-	warp(destination, destPos)
+	warp(destination, destID)
 
-func _on_warpdevlvl_2_warp_area_entered(destination, destPos):
+func _on_warpdevlvl_2_warp_area_entered(destination, destID):
 	print("game level print top exit 1")
-	warp(destination, destPos)
+	warp(destination, destID)
 	
-func _on_warp_2_devlvl_2_warp_area_entered(destination, destPos):
+func _on_warp_2_devlvl_2_warp_area_entered(destination, destID):
 	print("game level print top exit 2")
-	warp(destination, destPos)
+	warp(destination, destID)
 	
 
 
-func warp(destination, destPos):
+func warp(destination, destID):
 	play_warp_enter_sound()
 	print("emitted level signal")
-	emit_signal("level_changed", destination, destPos)
+	emit_signal("level_changed", destination, destID)
 
 
 
