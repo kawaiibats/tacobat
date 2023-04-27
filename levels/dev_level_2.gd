@@ -3,7 +3,7 @@ extends Node2D
 
 signal level_changed(destination)
 
-@export var level_name = "devlevel2"
+@export var level_name = "dev_level_2"
 @export var unvisited = true
 
 

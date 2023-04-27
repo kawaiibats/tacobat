@@ -19,7 +19,6 @@ var current_state : COW_STATE =  COW_STATE.IDLE
 
 
 func _ready():
-	print("cow ready")
 	state_machine.travel("idle_right")
 	select_new_direction()
 	pick_new_state()
@@ -58,7 +57,6 @@ func select_new_direction():
 
 # Switches from walking to idling
 func pick_new_state():
-	print("cow pick new state")
 	if(current_state == COW_STATE.IDLE):
 		state_machine.travel("walk_right")
 		current_state = COW_STATE.WALK
@@ -76,8 +74,10 @@ func _on_timer_timeout():
 
 func end_animation():
 	print("ending animation for cow..")
-	# ~ 
-	
-	
+	# ~
+	var spr = get_node("Sprite2D")
+	print(spr)
+	spr.visible = false
+	print(spr.visible)
 	
 	

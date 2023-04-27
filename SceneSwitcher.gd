@@ -2,7 +2,7 @@ extends Node
 
 var next_level = null
 
-var handling : bool = false
+@onready var handling : bool = false
 
 var next_destID : int = 0
 
@@ -68,7 +68,7 @@ func transfer_data(old_scene, new_scene):
 	
 	print(spawnLoc)
 	
-	wvar newPlayerLocation = spawnLoc.global_position
+	var newPlayerLocation = spawnLoc.global_position
 
 	print(oldPlayer)
 	print(oldPlayerCopy)
@@ -84,7 +84,6 @@ func transfer_data(old_scene, new_scene):
 	oldPlayerCopy.global_position = newPlayerLocation
 
 	# end transfer player
-
 
 
 

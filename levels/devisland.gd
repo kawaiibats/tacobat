@@ -43,16 +43,16 @@ func cleanup():
 		await $WarpAreaEnterSound.finished
 	print("cleanup4")
 	
+	for child in get_children():
+		if child.has_method("end_animation"):
+			child.end_animation()	
+	
 	savePackage = ScenePacker.create_package(self)
 	print("package created")
 	
 	var error: = ResourceSaver.save(savePackage, saveFile)
 	if error != OK:
 		push_error("An error occurred while saving the scene to disk.")
-	
-	for child in get_children():
-		if child.has_method("end_animation"):
-			child.end_animation()
 	
 	queue_free()
 	
