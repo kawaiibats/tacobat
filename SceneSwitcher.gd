@@ -2,7 +2,7 @@ extends Node
 
 var next_level = null
 
-var handling : bool = false
+@onready var handling : bool = false
 
 var next_destID : int = 0
 
@@ -15,6 +15,7 @@ var next_destID : int = 0
 
 
 func _ready() -> void:
+	clear_save_cache()
 	current_level.level_changed.connect(self.handle_level_changed)
 	
 	
@@ -87,6 +88,11 @@ func transfer_data(old_scene, new_scene):
 
 
 
+
+
+
+# fade transition
+
 func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"fade_in":
@@ -107,4 +113,10 @@ func _on_animation_player_animation_finished(anim_name):
 
 
 
+# clear temporary save files (deletes the cached version of each level, 
+# temporarily setting this to on so the world resets every time I rerun the program
+func clear_save_cache():
+	print("clearing save cache..")
+	OS.execute("python", ["clearsave.py"])
+	
 

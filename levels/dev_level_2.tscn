@@ -1,6 +1,5 @@
-[gd_scene load_steps=21 format=3 uid="uid://bql4cqboh1i0i"]
+[gd_scene load_steps=20 format=3 uid="uid://bql4cqboh1i0i"]
 
-[ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="1_qkpjr"]
 [ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="1_vk672"]
 [ext_resource type="Script" path="res://levels/dev_level_2.gd" id="1_wg26i"]
 [ext_resource type="Texture2D" uid="uid://dol2l2q32s6gr" path="res://art/sprout/Tilesets/ground tiles/old tiles/Hills.png" id="2_gue12"]
@@ -776,18 +775,6 @@ layer_3/z_index = 5
 layer_3/tile_data = PackedInt32Array()
 metadata/_edit_lock_ = true
 
-[node name="PlayerCat" parent="." instance=ExtResource("1_qkpjr")]
-y_sort_enabled = true
-position = Vector2(162, 79)
-
-[node name="Camera2D" type="Camera2D" parent="PlayerCat"]
-limit_left = -200
-limit_top = -200
-limit_right = 500
-limit_bottom = 500
-editor_draw_screen = false
-editor_draw_limits = true
-
 [node name="Bush" parent="." instance=ExtResource("2_y5atj")]
 position = Vector2(195, 84)
 
@@ -810,7 +797,7 @@ stream = ExtResource("11_7hohh")
 stream = ExtResource("12_u6p3x")
 
 [node name="Spawn1" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
-position = Vector2(162, 79)
+position = Vector2(147, 61)
 destID = 1
 
 [node name="Spawn2" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]

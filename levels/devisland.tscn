@@ -1184,9 +1184,11 @@ destID = 5
 
 [node name="warpdevlvl2" parent="." instance=ExtResource("15_32w7i")]
 position = Vector2(71, -269)
+destID = 3
 
 [node name="warp2devlvl2" parent="." instance=ExtResource("15_32w7i")]
 position = Vector2(91, -269)
+destID = 4
 
 [node name="WarpAreaEnterSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_u6edi")
@@ -1199,7 +1201,7 @@ position = Vector2(126, -18)
 
 [node name="Foragable" parent="Entity Spawn Zone" instance=ExtResource("19_6hqs7")]
 position = Vector2(1.14441e-05, -4.17233e-06)
-itemInside = "apple"
+itemInside = "wheat"
 
 [node name="Entity Spawn Zone2" parent="." instance=ExtResource("18_baknj")]
 position = Vector2(126, 13)
