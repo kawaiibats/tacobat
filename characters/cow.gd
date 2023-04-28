@@ -73,11 +73,8 @@ func _on_timer_timeout():
 
 
 func end_animation():
-	print("ending animation for cow..")
 	# ~
 	var spr = get_node("Sprite2D")
-	print(spr)
 	spr.visible = false
-	print(spr.visible)
 	
 	

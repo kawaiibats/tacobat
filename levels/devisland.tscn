@@ -1192,7 +1192,7 @@ position = Vector2(126, -18)
 
 [node name="Foragable" parent="Entity Spawn Zone" instance=ExtResource("19_6hqs7")]
 position = Vector2(1.14441e-05, -4.17233e-06)
-itemInside = "apple"
+itemInside = "wheat"
 
 [node name="Entity Spawn Zone2" parent="." instance=ExtResource("18_baknj")]
 position = Vector2(126, 13)

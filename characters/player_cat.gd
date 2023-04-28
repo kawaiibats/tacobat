@@ -123,9 +123,12 @@ func execute_interaction():
 			"forage" : 
 				print("Executing forage")
 				
-				var forageParent = cur_interaction.get_owner()
+				var forageParent = cur_interaction.get_parent()
 				
-				print("You found.. ", forageParent.itemInside)
+				print(forageParent)
+				
+				if(forageParent.itemInside):
+					print("You found.. ", forageParent.itemInside)
 			
 				forageParent.queue_free()
 			
