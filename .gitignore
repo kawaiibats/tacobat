@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 saves/
+saves/dev_level_2.tscn
+saves/devisland.tscn

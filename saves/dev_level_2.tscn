@@ -8,19 +8,19 @@
 [ext_resource type="Texture2D" path="res://art/sprout/Tilesets/Water.png" id="4_ppk3n"]
 [ext_resource type="Texture2D" path="res://art/sprout/Tilesets/Wooden House.png" id="5_ip47g"]
 [ext_resource type="Texture2D" path="res://art/sprout/Tilesets/Fences.png" id="6_pvib3"]
-[ext_resource type="Texture2D" path="res://art/sprout/Objects/Basic Grass Biom things 1.png" id="9_c22eo"]
-[ext_resource type="PackedScene" path="res://components/interact area/alt_interact_area.tscn" id="10_y8h6y"]
+[ext_resource type="Texture2D" path="res://art/sprout/Objects/Basic Grass Biom things 1.png" id="9_jeop1"]
+[ext_resource type="PackedScene" path="res://components/interact area/alt_interact_area.tscn" id="10_i6h55"]
 [ext_resource type="AudioStream" path="res://sfx/magIn.mp3" id="11_7hohh"]
-[ext_resource type="Script" path="res://components/interact area/alt_interact_area.gd" id="11_iiexx"]
+[ext_resource type="Script" path="res://components/interact area/alt_interact_area.gd" id="11_uyfup"]
 [ext_resource type="PackedScene" path="res://components/warper/warpArea.tscn" id="12_jje0v"]
 [ext_resource type="AudioStream" path="res://sfx/clickEmpty.mp3" id="12_u6p3x"]
 [ext_resource type="PackedScene" path="res://components/spawning/player_spawn.tscn" id="13_oj5b4"]
-[ext_resource type="Script" path="res://components/spawning/player_spawn.gd" id="15_djhee"]
-[ext_resource type="Script" path="res://components/warper/warpArea.gd" id="17_7yvdl"]
-[ext_resource type="Texture2D" path="res://art/sprout/Objects/Basic Plants.png" id="18_hapqb"]
-[ext_resource type="PackedScene" path="res://characters/player_cat.tscn" id="19_cv7ht"]
-[ext_resource type="Script" path="res://characters/player_cat.gd" id="20_67b02"]
-[ext_resource type="Texture2D" path="res://art/sprout/Characters/Basic Charakter Spritesheet.png" id="21_ritjv"]
+[ext_resource type="Script" path="res://components/spawning/player_spawn.gd" id="15_lymuq"]
+[ext_resource type="Script" path="res://components/warper/warpArea.gd" id="17_7gadn"]
+[ext_resource type="Texture2D" path="res://art/sprout/Objects/Basic Plants.png" id="18_idnln"]
+[ext_resource type="PackedScene" path="res://characters/player_cat.tscn" id="19_x1x1j"]
+[ext_resource type="Script" path="res://characters/player_cat.gd" id="20_aq7bj"]
+[ext_resource type="Texture2D" path="res://art/sprout/Characters/Basic Charakter Spritesheet.png" id="21_dwuef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mi6g"]
 texture = ExtResource("1_vk672")
@@ -747,13 +747,13 @@ sources/3 = SubResource("TileSetAtlasSource_xmxc3")
 sources/4 = SubResource("TileSetAtlasSource_hk1ph")
 sources/5 = SubResource("TileSetAtlasSource_knje7")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6yn6d"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtavk"]
 radius = 6.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ujyhj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_u64hj"]
 radius = 34.0147
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g03qc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqapu"]
 size = Vector2(8.48528, 8.48528)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pktne"]
@@ -990,7 +990,7 @@ states/walk/position = Vector2(574, 90)
 transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_8bw2y"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_7mkau"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_g1sbl")]
 graph_offset = Vector2(47.5, 0)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_was58"]
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_hi6qw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkqy6"]
 radius = 13.0384
@@ -1041,121 +1041,121 @@ metadata/_edit_lock_ = true
 position = Vector2(195, 84)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bush"]
-texture = ExtResource("9_c22eo")
+texture = ExtResource("9_jeop1")
 region_enabled = true
 region_rect = Rect2(16, 48, 16, 16)
 
 [node name="BushHitbox" type="CollisionShape2D" parent="Bush"]
 position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_6yn6d")
+shape = SubResource("CircleShape2D_mtavk")
 
-[node name="AltInteractArea" type="Area2D" parent="Bush" instance=ExtResource("10_y8h6y")]
+[node name="AltInteractArea" type="Area2D" parent="Bush" instance=ExtResource("10_i6h55")]
 collision_layer = 512
 collision_mask = 0
 monitoring = false
-script = ExtResource("11_iiexx")
+script = ExtResource("11_uyfup")
 alt_interact_label = "Bush scavenging!"
 alt_interact_type = "print_text"
 alt_interact_value = "This is the bushscav! text"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bush/AltInteractArea"]
-shape = SubResource("CircleShape2D_ujyhj")
+shape = SubResource("CircleShape2D_u64hj")
 
 [node name="Bush2" type="StaticBody2D" parent="." instance=ExtResource("2_y5atj")]
 position = Vector2(200, 60)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bush2"]
-texture = ExtResource("9_c22eo")
+texture = ExtResource("9_jeop1")
 region_enabled = true
 region_rect = Rect2(16, 48, 16, 16)
 
 [node name="BushHitbox" type="CollisionShape2D" parent="Bush2"]
 position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_6yn6d")
+shape = SubResource("CircleShape2D_mtavk")
 
-[node name="AltInteractArea" type="Area2D" parent="Bush2" instance=ExtResource("10_y8h6y")]
+[node name="AltInteractArea" type="Area2D" parent="Bush2" instance=ExtResource("10_i6h55")]
 collision_layer = 512
 collision_mask = 0
 monitoring = false
-script = ExtResource("11_iiexx")
+script = ExtResource("11_uyfup")
 alt_interact_label = "Bush scavenging!"
 alt_interact_type = "print_text"
 alt_interact_value = "This is the bushscav! text"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bush2/AltInteractArea"]
-shape = SubResource("CircleShape2D_ujyhj")
+shape = SubResource("CircleShape2D_u64hj")
 
 [node name="Bush3" type="StaticBody2D" parent="." instance=ExtResource("2_y5atj")]
 position = Vector2(224, 90)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bush3"]
-texture = ExtResource("9_c22eo")
+texture = ExtResource("9_jeop1")
 region_enabled = true
 region_rect = Rect2(16, 48, 16, 16)
 
 [node name="BushHitbox" type="CollisionShape2D" parent="Bush3"]
 position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_6yn6d")
+shape = SubResource("CircleShape2D_mtavk")
 
-[node name="AltInteractArea" type="Area2D" parent="Bush3" instance=ExtResource("10_y8h6y")]
+[node name="AltInteractArea" type="Area2D" parent="Bush3" instance=ExtResource("10_i6h55")]
 collision_layer = 512
 collision_mask = 0
 monitoring = false
-script = ExtResource("11_iiexx")
+script = ExtResource("11_uyfup")
 alt_interact_label = "Bush scavenging!"
 alt_interact_type = "print_text"
 alt_interact_value = "This is the bushscav! text"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bush3/AltInteractArea"]
-shape = SubResource("CircleShape2D_ujyhj")
+shape = SubResource("CircleShape2D_u64hj")
 
 [node name="Bush4" type="StaticBody2D" parent="." instance=ExtResource("2_y5atj")]
 position = Vector2(85, 73)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bush4"]
-texture = ExtResource("9_c22eo")
+texture = ExtResource("9_jeop1")
 region_enabled = true
 region_rect = Rect2(16, 48, 16, 16)
 
 [node name="BushHitbox" type="CollisionShape2D" parent="Bush4"]
 position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_6yn6d")
+shape = SubResource("CircleShape2D_mtavk")
 
-[node name="AltInteractArea" type="Area2D" parent="Bush4" instance=ExtResource("10_y8h6y")]
+[node name="AltInteractArea" type="Area2D" parent="Bush4" instance=ExtResource("10_i6h55")]
 collision_layer = 512
 collision_mask = 0
 monitoring = false
-script = ExtResource("11_iiexx")
+script = ExtResource("11_uyfup")
 alt_interact_label = "Bush scavenging!"
 alt_interact_type = "print_text"
 alt_interact_value = "This is the bushscav! text"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bush4/AltInteractArea"]
-shape = SubResource("CircleShape2D_ujyhj")
+shape = SubResource("CircleShape2D_u64hj")
 
 [node name="Bush5" type="StaticBody2D" parent="." instance=ExtResource("2_y5atj")]
 position = Vector2(107, 104)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bush5"]
-texture = ExtResource("9_c22eo")
+texture = ExtResource("9_jeop1")
 region_enabled = true
 region_rect = Rect2(16, 48, 16, 16)
 
 [node name="BushHitbox" type="CollisionShape2D" parent="Bush5"]
 position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_6yn6d")
+shape = SubResource("CircleShape2D_mtavk")
 
-[node name="AltInteractArea" type="Area2D" parent="Bush5" instance=ExtResource("10_y8h6y")]
+[node name="AltInteractArea" type="Area2D" parent="Bush5" instance=ExtResource("10_i6h55")]
 collision_layer = 512
 collision_mask = 0
 monitoring = false
-script = ExtResource("11_iiexx")
+script = ExtResource("11_uyfup")
 alt_interact_label = "Bush scavenging!"
 alt_interact_type = "print_text"
 alt_interact_value = "This is the bushscav! text"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bush5/AltInteractArea"]
-shape = SubResource("CircleShape2D_ujyhj")
+shape = SubResource("CircleShape2D_u64hj")
 
 [node name="WarpAreaEnterSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_7hohh")
@@ -1165,72 +1165,72 @@ stream = ExtResource("12_u6p3x")
 
 [node name="Spawn1" type="Area2D" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
 position = Vector2(147, 61)
-script = ExtResource("15_djhee")
+script = ExtResource("15_lymuq")
 destID = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn1"]
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_g03qc")
+shape = SubResource("RectangleShape2D_mqapu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Spawn1"]
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_g03qc")
+shape = SubResource("RectangleShape2D_mqapu")
 
 [node name="Spawn2" type="Area2D" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
 position = Vector2(148, 215)
-script = ExtResource("15_djhee")
+script = ExtResource("15_lymuq")
 destID = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn2"]
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_g03qc")
+shape = SubResource("RectangleShape2D_mqapu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Spawn2"]
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_g03qc")
+shape = SubResource("RectangleShape2D_mqapu")
 
 [node name="Spawn3" type="Area2D" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
 position = Vector2(162, 215)
-script = ExtResource("15_djhee")
+script = ExtResource("15_lymuq")
 destID = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn3"]
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_g03qc")
+shape = SubResource("RectangleShape2D_mqapu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Spawn3"]
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_g03qc")
+shape = SubResource("RectangleShape2D_mqapu")
 
 [node name="Spawn4" type="Area2D" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
 position = Vector2(176, 215)
-script = ExtResource("15_djhee")
+script = ExtResource("15_lymuq")
 destID = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn4"]
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_g03qc")
+shape = SubResource("RectangleShape2D_mqapu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Spawn4"]
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_g03qc")
+shape = SubResource("RectangleShape2D_mqapu")
 
 [node name="Spawn5" type="Area2D" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
 position = Vector2(191, 215)
-script = ExtResource("15_djhee")
+script = ExtResource("15_lymuq")
 destID = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn5"]
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_g03qc")
+shape = SubResource("RectangleShape2D_mqapu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Spawn5"]
 rotation = 0.785398
-shape = SubResource("RectangleShape2D_g03qc")
+shape = SubResource("RectangleShape2D_mqapu")
 
 [node name="warp2devisland" type="Area2D" parent="." instance=ExtResource("12_jje0v")]
 position = Vector2(66, 237)
-script = ExtResource("17_7yvdl")
+script = ExtResource("17_7gadn")
 destination = "devisland"
 destID = 1
 
@@ -1238,13 +1238,13 @@ destID = 1
 shape = SubResource("RectangleShape2D_pktne")
 
 [node name="Sprite2D" type="Sprite2D" parent="warp2devisland"]
-texture = ExtResource("18_hapqb")
+texture = ExtResource("18_idnln")
 region_enabled = true
 region_rect = Rect2(48, 16, 16, 16)
 
 [node name="warp2devisland2" type="Area2D" parent="." instance=ExtResource("12_jje0v")]
 position = Vector2(66, 199)
-script = ExtResource("17_7yvdl")
+script = ExtResource("17_7gadn")
 destination = "devisland"
 destID = 2
 
@@ -1252,24 +1252,24 @@ destID = 2
 shape = SubResource("RectangleShape2D_pktne")
 
 [node name="Sprite2D" type="Sprite2D" parent="warp2devisland2"]
-texture = ExtResource("18_hapqb")
+texture = ExtResource("18_idnln")
 region_enabled = true
 region_rect = Rect2(48, 16, 16, 16)
 
-[node name="PlayerCat" type="CharacterBody2D" parent="." instance=ExtResource("19_cv7ht")]
+[node name="PlayerCat" type="CharacterBody2D" parent="." instance=ExtResource("19_x1x1j")]
 y_sort_enabled = true
-position = Vector2(80.477, 196.144)
-velocity = Vector2(-70.7107, -70.7107)
-script = ExtResource("20_67b02")
+position = Vector2(80.2748, 237.392)
+velocity = Vector2(-100, 0)
+script = ExtResource("20_aq7bj")
 move_speed = 100.0
 starting_direction = Vector2(0, 1)
 health = 69.0
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerCat"]
-texture = ExtResource("21_ritjv")
+texture = ExtResource("21_dwuef")
 hframes = 4
 vframes = 4
-frame = 10
+frame = 11
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="PlayerCat"]
 position = Vector2(0, 4)
@@ -1284,9 +1284,9 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_fkqkl")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_was58")
-parameters/idle/blend_position = Vector2(-1, -1)
-parameters/walk/blend_position = Vector2(-1, -1)
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_hi6qw")
+parameters/idle/blend_position = Vector2(-1, 0)
+parameters/walk/blend_position = Vector2(-1, 0)
 
 [node name="InteractionComponents" type="Node2D" parent="PlayerCat"]
 z_index = 1
