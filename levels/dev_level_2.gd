@@ -34,11 +34,11 @@ func genesis():
 
 
 func cleanup():
-	print("cleanup2")
+	#print("cleanup2")
 	if $WarpAreaEnterSound.playing:
-		print("cleanup3")
+		#print("cleanup3")
 		await $WarpAreaEnterSound.finished
-	print("cleanup4")
+	#print("cleanup4")
 	
 	# get_tree().paused = true
 	
@@ -58,11 +58,11 @@ func cleanup():
 
 
 func _on_warp_area_warp_area_entered(destination, destID):
-	print("dev level 2 print (#1)")
+	print("dev level 2 warper (#1)")
 	warp(destination, destID)
 
 func _on_warp_2_devisland_2_warp_area_entered(destination, destID):
-	print("dev level 2 print (#2)")
+	print("dev level 2 warper (#2)")
 	warp(destination, destID)
 
 

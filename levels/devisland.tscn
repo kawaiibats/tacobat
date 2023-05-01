@@ -1189,6 +1189,7 @@ stream = ExtResource("17_jasi3")
 
 [node name="Entity Spawn Zone" parent="." instance=ExtResource("18_baknj")]
 position = Vector2(126, -18)
+entitySpawnID = 1
 
 [node name="Foragable" parent="Entity Spawn Zone" instance=ExtResource("19_6hqs7")]
 position = Vector2(1.14441e-05, -4.17233e-06)
@@ -1196,6 +1197,7 @@ itemInside = "wheat"
 
 [node name="Entity Spawn Zone2" parent="." instance=ExtResource("18_baknj")]
 position = Vector2(126, 13)
+entitySpawnID = 2
 
 [node name="Spawn1" parent="." groups=["Spawn"] instance=ExtResource("20_f7r1p")]
 position = Vector2(77, -19)

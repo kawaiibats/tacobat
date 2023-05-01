@@ -39,11 +39,11 @@ func genesis():
 
 
 func cleanup():
-	print("cleanup2")
+	#print("cleanup2")
 	if $WarpAreaEnterSound.playing:
-		print("cleanup3")
+		#print("cleanup3")
 		await $WarpAreaEnterSound.finished
-	print("cleanup4")
+	#print("cleanup4")
 	
 	for child in get_children():
 		if child.has_method("end_animation"):
