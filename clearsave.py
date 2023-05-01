@@ -7,6 +7,13 @@ dir = pathlib.Path(__file__).parent.resolve()
 
 print(dir)
 
+
+checkPath = os.path.join(dir, "saves")
+if not os.path.exists(checkPath):
+    os.makedirs(checkPath)
+
+
+
 givenSrc = "levels"
 givenDst = "saves"
 
