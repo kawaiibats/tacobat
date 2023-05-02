@@ -237,8 +237,6 @@ func cleanup():
 	for child in get_children():
 		if child.has_method("end_animation"):
 			child.end_animation()
-		if child.has_method("reset_childs_position"):
-			child.reset_childs_position()
 	
 	savePackage = ScenePacker.create_package(self)
 	print("package created")
