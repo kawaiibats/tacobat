@@ -1135,6 +1135,16 @@ layer_3/z_index = 5
 layer_3/tile_data = PackedInt32Array(1114100, 262148, 0, 1179636, 262148, 1, 1245172, 262148, 2, 1310708, 262148, 3, 1376244, 262148, 3, 1441780, 262148, 4, 1114101, 327684, 0, 1179637, 327684, 1, 1245173, 327684, 2, 1310709, 327684, 3, 1376245, 327684, 3, 1441781, 327684, 4, 1114102, 327684, 0, 1179638, 327684, 1, 1245174, 327684, 2, 1310710, 327684, 3, 1376246, 327684, 3, 1441782, 327684, 4, 1114103, 327684, 0, 1179639, 327684, 1, 1245175, 327684, 2, 1310711, 327684, 3, 1376247, 327684, 3, 1441783, 327684, 4, 1114104, 327684, 0, 1179640, 327684, 1, 1245176, 327684, 2, 1310712, 327684, 3, 1376248, 327684, 3, 1441784, 327684, 4, 1114105, 327684, 0, 1179641, 327684, 1, 1245177, 327684, 2, 1310713, 327684, 3, 1376249, 327684, 3, 1441785, 327684, 4, 1114106, 393220, 0, 1179642, 393220, 1, 1245178, 393220, 2, 1310714, 393220, 3, 1376250, 393220, 3, 1441786, 393220, 4, 131082, 262148, 0, 196618, 262148, 1, 262154, 262148, 2, 327690, 262148, 3, 393226, 262148, 3, 458762, 262148, 4, 131083, 327684, 0, 196619, 327684, 1, 262155, 327684, 2, 327691, 327684, 3, 393227, 327684, 3, 458763, 327684, 4, 131084, 327684, 0, 196620, 327684, 1, 262156, 327684, 2, 327692, 327684, 3, 393228, 327684, 3, 458764, 327684, 4, 131085, 327684, 0, 196621, 327684, 1, 262157, 327684, 2, 327693, 327684, 3, 393229, 327684, 3, 458765, 327684, 4, 131086, 327684, 0, 196622, 327684, 1, 262158, 327684, 2, 327694, 327684, 3, 393230, 327684, 3, 458766, 327684, 4, 131087, 327684, 0, 196623, 327684, 1, 262159, 327684, 2, 327695, 327684, 3, 393231, 327684, 3, 458767, 327684, 4, 131088, 393220, 0, 196624, 393220, 1, 262160, 393220, 2, 327696, 393220, 3, 393232, 393220, 3, 458768, 393220, 4, 1507357, 524296, 6, 720912, 458760, 3, 786448, 458760, 4, 851984, 458760, 5, 917520, 458760, 6, 983056, 458760, 7, 720913, 524296, 3, 786449, 524296, 4, 851985, 524296, 5, 917521, 524296, 6, 983057, 524296, 7, 720914, 589832, 3, 786450, 589832, 4, 851986, 589832, 5, 917522, 589832, 6, 983058, 589832, 7, 786445, 458760, 3, 851981, 458760, 4, 917517, 458760, 5, 983053, 458760, 6, 1048589, 458760, 7, 786446, 524296, 3, 851982, 524296, 4, 917518, 524296, 5, 983054, 524296, 6, 1048590, 524296, 7, 786447, 589832, 3, 851983, 589832, 4, 917519, 589832, 5, 983055, 589832, 6, 1048591, 589832, 7, 983064, 458760, 3, 1048600, 458760, 4, 1114136, 458760, 5, 1179672, 458760, 6, 1245208, 458760, 7, 983065, 524296, 3, 1048601, 524296, 4, 1114137, 524296, 5, 1179673, 524296, 6, 1245209, 524296, 7, 983066, 589832, 3, 1048602, 589832, 4, 1114138, 589832, 5, 1179674, 589832, 6, 1245210, 589832, 7, 786460, 458760, 3, 851996, 458760, 4, 917532, 458760, 5, 983068, 458760, 6, 1048604, 458760, 7, 786461, 524296, 3, 851997, 524296, 4, 917533, 524296, 5, 983069, 524296, 6, 1048605, 524296, 7, 786462, 589832, 3, 851998, 589832, 4, 917534, 589832, 5, 983070, 589832, 6, 1048606, 589832, 7, 1310748, 458760, 3, 1376284, 458760, 4, 1441820, 458760, 5, 1507356, 458760, 6, 1572892, 458760, 7, 1310749, 524296, 3, 1376285, 524296, 4, 1441821, 524296, 5, 1572893, 524296, 7, 1310750, 589832, 3, 1376286, 589832, 4, 1441822, 589832, 5, 1507358, 589832, 6, 1572894, 589832, 7, 1114127, 589832, 8, 1114126, 524296, 8, 1114125, 458760, 8, 1048592, 458760, 8, 1048593, 524296, 8, 1048594, 589832, 8, 1310744, 458760, 8, 1310745, 524296, 8, 1310746, 589832, 8, 1638428, 458760, 8, 1638429, 524296, 8, 1638430, 589832, 8, 1114140, 458760, 8, 1114141, 524296, 8, 1114142, 589832, 8)
 metadata/_edit_lock_ = true
 
+[node name="ForagePool" type="Node" parent="."]
+
+[node name="ForagableWheat" parent="ForagePool" instance=ExtResource("19_6hqs7")]
+itemInside = "wheat"
+rarity = 1
+
+[node name="ForageableApple" parent="ForagePool" instance=ExtResource("19_6hqs7")]
+itemInside = "apple"
+rarity = 1
+
 [node name="Cow1" parent="." instance=ExtResource("10_0q86j")]
 
 [node name="Cow2" parent="." instance=ExtResource("10_0q86j")]
@@ -1187,18 +1197,6 @@ stream = ExtResource("16_u6edi")
 [node name="LevelLoadedSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_jasi3")
 
-[node name="Entity Spawn Zone" parent="." instance=ExtResource("18_baknj")]
-position = Vector2(126, -18)
-entitySpawnID = 1
-
-[node name="Foragable" parent="Entity Spawn Zone" instance=ExtResource("19_6hqs7")]
-position = Vector2(1.14441e-05, -4.17233e-06)
-itemInside = "wheat"
-
-[node name="Entity Spawn Zone2" parent="." instance=ExtResource("18_baknj")]
-position = Vector2(126, 13)
-entitySpawnID = 2
-
 [node name="Spawn1" parent="." groups=["Spawn"] instance=ExtResource("20_f7r1p")]
 position = Vector2(77, -19)
 destID = 1
@@ -1206,6 +1204,42 @@ destID = 1
 [node name="Spawn2" parent="." groups=["Spawn"] instance=ExtResource("20_f7r1p")]
 position = Vector2(-21, 48)
 destID = 2
+
+[node name="Entity Spawn Zone" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
+position = Vector2(126, -18)
+entitySpawnID = 1
+
+[node name="Entity Spawn Zone2" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
+position = Vector2(126, 13)
+entitySpawnID = 2
+
+[node name="Entity Spawn Zone3" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
+position = Vector2(195, 69)
+entitySpawnID = 2
+
+[node name="Entity Spawn Zone4" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
+position = Vector2(229, 69)
+entitySpawnID = 2
+
+[node name="Entity Spawn Zone7" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
+position = Vector2(405, 69)
+entitySpawnID = 2
+
+[node name="Entity Spawn Zone9" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
+position = Vector2(371, 69)
+entitySpawnID = 2
+
+[node name="Entity Spawn Zone8" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
+position = Vector2(333, 69)
+entitySpawnID = 2
+
+[node name="Entity Spawn Zone6" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
+position = Vector2(297, 69)
+entitySpawnID = 2
+
+[node name="Entity Spawn Zone5" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
+position = Vector2(263, 69)
+entitySpawnID = 2
 
 [connection signal="warp_area_entered" from="warpArea2" to="." method="_on_warper_warp_area_entered"]
 [connection signal="warp_area_entered" from="warpdevlvl2" to="." method="_on_warpdevlvl_2_warp_area_entered"]
