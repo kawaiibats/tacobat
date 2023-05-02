@@ -1138,14 +1138,31 @@ metadata/_edit_lock_ = true
 [node name="ForagePool" type="Node" parent="."]
 
 [node name="ForagableWheat" parent="ForagePool" instance=ExtResource("19_6hqs7")]
+position = Vector2(0, 0)
 itemInside = "wheat"
 rarity = 1
+stoneCount = 10
 
 [node name="ForageableApple" parent="ForagePool" instance=ExtResource("19_6hqs7")]
+position = Vector2(0, 0)
 itemInside = "apple"
+rarity = 2
+stoneCount = 1
+
+[node name="ForageableBrownMush" parent="ForagePool" instance=ExtResource("19_6hqs7")]
+position = Vector2(0, 0)
+itemInside = "brown_mush"
 rarity = 1
+stoneCount = 5
+
+[node name="ForageableRedMush" parent="ForagePool" instance=ExtResource("19_6hqs7")]
+position = Vector2(0, 0)
+itemInside = "red_mush"
+rarity = 1
+stoneCount = 2
 
 [node name="Cow1" parent="." instance=ExtResource("10_0q86j")]
+visible = false
 
 [node name="Cow2" parent="." instance=ExtResource("10_0q86j")]
 position = Vector2(73, 41)

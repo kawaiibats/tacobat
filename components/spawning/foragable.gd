@@ -15,3 +15,10 @@ func _ready():
 	var newTexture = load("res://art/forage/" + texture_name + ".png")
 
 	spr.texture = newTexture
+
+
+func getRarity():
+	return rarity
+
+func getStones():
+	return stoneCount

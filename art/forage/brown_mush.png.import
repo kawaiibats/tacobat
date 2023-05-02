@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsnr7gqhj0aly"
-path="res://.godot/imported/Brown Mushroom.png-7961a0c27a01c7911c0f75ecf278fad8.ctex"
+path="res://.godot/imported/brown_mush.png-6b650b2e261db656bec99a4990e0d1fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/forage/Brown Mushroom.png"
-dest_files=["res://.godot/imported/Brown Mushroom.png-7961a0c27a01c7911c0f75ecf278fad8.ctex"]
+source_file="res://art/forage/brown_mush.png"
+dest_files=["res://.godot/imported/brown_mush.png-6b650b2e261db656bec99a4990e0d1fb.ctex"]
 
 [params]
 
