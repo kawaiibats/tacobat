@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bql4cqboh1i0i"]
+[gd_scene load_steps=22 format=3 uid="uid://bql4cqboh1i0i"]
 
 [ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="1_vk672"]
 [ext_resource type="Script" path="res://levels/dev_level_2.gd" id="1_wg26i"]
@@ -8,10 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://bl0x2k0i0ic7w" path="res://art/sprout/Tilesets/Water.png" id="4_ppk3n"]
 [ext_resource type="Texture2D" uid="uid://dwaqc7gnk1ar6" path="res://art/sprout/Tilesets/Wooden House.png" id="5_ip47g"]
 [ext_resource type="Texture2D" uid="uid://prfcee3we6ob" path="res://art/sprout/Tilesets/Fences.png" id="6_pvib3"]
+[ext_resource type="PackedScene" uid="uid://cabat1prpspee" path="res://components/spawning/foragable.tscn" id="8_ca5c2"]
 [ext_resource type="AudioStream" uid="uid://ctwqrntpcclgo" path="res://sfx/magIn.mp3" id="11_7hohh"]
 [ext_resource type="PackedScene" uid="uid://bj3laokry4wae" path="res://components/warper/warpArea.tscn" id="12_jje0v"]
 [ext_resource type="AudioStream" uid="uid://bjx6c3sxn0ktu" path="res://sfx/clickEmpty.mp3" id="12_u6p3x"]
 [ext_resource type="PackedScene" uid="uid://ddawh1jfpd8ir" path="res://components/spawning/player_spawn.tscn" id="13_oj5b4"]
+[ext_resource type="PackedScene" uid="uid://cpyqhqfxrj71" path="res://components/spawning/entity_spawn.tscn" id="14_hvchv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mi6g"]
 texture = ExtResource("1_vk672")
@@ -775,6 +777,26 @@ layer_3/z_index = 5
 layer_3/tile_data = PackedInt32Array()
 metadata/_edit_lock_ = true
 
+[node name="ForagePool" type="Node" parent="."]
+
+[node name="ForageableApple" parent="ForagePool" instance=ExtResource("8_ca5c2")]
+position = Vector2(0, 0)
+itemInside = "apple"
+rarity = 2
+stoneCount = 1
+
+[node name="ForageableBrownMush" parent="ForagePool" instance=ExtResource("8_ca5c2")]
+position = Vector2(0, 0)
+itemInside = "brown_mush"
+rarity = 1
+stoneCount = 15
+
+[node name="ForageableRedMush" parent="ForagePool" instance=ExtResource("8_ca5c2")]
+position = Vector2(0, 0)
+itemInside = "red_mush"
+rarity = 1
+stoneCount = 15
+
 [node name="Bush" parent="." instance=ExtResource("2_y5atj")]
 position = Vector2(195, 84)
 
@@ -825,6 +847,39 @@ destID = 1
 position = Vector2(66, 199)
 destination = "devisland"
 destID = 2
+
+[node name="Entity Spawn Zone" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(223, 144)
+
+[node name="Entity Spawn Zone2" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(223, 176)
+
+[node name="Entity Spawn Zone3" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(223, 210)
+
+[node name="Entity Spawn Zone5" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(67, 162)
+
+[node name="Entity Spawn Zone6" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(67, 128)
+
+[node name="Entity Spawn Zone4" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(223, 241)
+
+[node name="Entity Spawn Zone8" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(111, 61)
+
+[node name="Entity Spawn Zone7" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(223, 111)
+
+[node name="Entity Spawn Zone9" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(175, 116)
+
+[node name="Entity Spawn Zone10" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(91, 145)
+
+[node name="Entity Spawn Zone11" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
+position = Vector2(87, 113)
 
 [connection signal="warp_area_entered" from="warp2devisland" to="." method="_on_warp_area_warp_area_entered"]
 [connection signal="warp_area_entered" from="warp2devisland2" to="." method="_on_warp_2_devisland_2_warp_area_entered"]

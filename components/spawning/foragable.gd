@@ -16,6 +16,10 @@ func _ready():
 
 	spr.texture = newTexture
 
+func resetPosition():
+	var zed = Vector2(0,0)
+	self.position = zed
+	print("RESET POSITION OF THIS FORAGY:", self.position)
 
 func getRarity():
 	return rarity

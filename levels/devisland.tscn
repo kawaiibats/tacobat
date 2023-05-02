@@ -1162,7 +1162,6 @@ rarity = 1
 stoneCount = 2
 
 [node name="Cow1" parent="." instance=ExtResource("10_0q86j")]
-visible = false
 
 [node name="Cow2" parent="." instance=ExtResource("10_0q86j")]
 position = Vector2(73, 41)

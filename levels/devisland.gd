@@ -16,6 +16,32 @@ func _ready():
 		genesis()
 	unvisited = false
 
+	# fix foragys position
+	for child in get_children():
+		if child.has_method("reset_childs_position"):
+			child.reset_childs_position()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SFX
 
 func play_loaded_sound():
 	print("Play Loaded Sound!")
@@ -27,11 +53,11 @@ func play_warp_enter_sound():
 
 
 
-
+# GENESIS required functions # #################################
 
 func choose_random(rand_list):
-	return rand_list[randi() % rand_list.size()]
-
+	if rand_list.size() != 0:
+		return rand_list[randi() % rand_list.size()]
 
 func place_foragy(foragyPool, zonePool):
 	var selectedForagy = choose_random(foragyPool)
@@ -44,7 +70,10 @@ func place_foragy(foragyPool, zonePool):
 	print("Zone picked:", selectedZone)
 	
 	selectedZone.add_child(selectedForagyInstance)
-
+	print("POSITION OF THIS FORAGY:", selectedForagyInstance.position)
+	var zed = Vector2(0,0)
+	selectedForagyInstance.position = zed
+	
 
 # GENESIS - plays when a level is visited for the very first time.
 func genesis():
@@ -52,20 +81,22 @@ func genesis():
 	
 	# Spawn 1-8 foragable entities within roughly 30-60 possible locations 
 	
+	# gets the level's foragables from the pool node
 	var foragePool = $ForagePool.get_children()
-	
 	print("Available forage pool:", foragePool)
 	
-	var entitySpawnZonePool = []
 	
+	# gets the empty entity spawn zones that can be picked to spawn on
+	var entitySpawnZonePool = []
+
 	for _i in self.get_children():
-		if _i.is_in_group("EntitySpawn") and _i.get_child_count() == 1:
+		if _i.is_in_group("EntitySpawn") and _i.get_child_count() == 2:
 			entitySpawnZonePool.append(_i)
 			
 	print ("Available entity spawn pool:", entitySpawnZonePool)
 	
 	
-	# roll 1-8 (but with special odds) will add later, for now it always 1
+	# roll 1-8 (but with special odds) to determine how many foragys will spawn
 	
 	var numSpawnsRoll = randi_range(1,100)
 	var spawnForageNum = 0
@@ -204,11 +235,15 @@ func genesis():
 	# ~ 
 
 
+# TIMEMARCH - activates in visited levels at the beginning morning (excluding first morning)
+# Essentially is a weaker genesis that replenishes forages over time
+func timemarch():
+	pass
 
 
 
 
-
+# CLEANUP - activates when the level is exited
 func cleanup():
 	#print("cleanup2")
 	if $WarpAreaEnterSound.playing:
@@ -218,7 +253,9 @@ func cleanup():
 	
 	for child in get_children():
 		if child.has_method("end_animation"):
-			child.end_animation()	
+			child.end_animation()
+		if child.has_method("reset_childs_position"):
+			child.reset_childs_position()
 	
 	savePackage = ScenePacker.create_package(self)
 	print("package created")
@@ -233,7 +270,6 @@ func cleanup():
 
 # WARP ZONES
 
-
 func _on_warper_warp_area_entered(destination, destID):
 	print("game level print by spawn")
 	warp(destination, destID)
@@ -246,8 +282,7 @@ func _on_warp_2_devlvl_2_warp_area_entered(destination, destID):
 	print("game level print top exit 2")
 	warp(destination, destID)
 	
-
-
+# warp function
 func warp(destination, destID):
 	play_warp_enter_sound()
 	print("emitted level signal")
