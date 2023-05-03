@@ -318,6 +318,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="HealthLabel" type="Label" parent="InteractionComponents"]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0.109804, 0.254902, 1)

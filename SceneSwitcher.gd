@@ -23,10 +23,10 @@ func _ready() -> void:
 func handle_level_changed(destination_name: String, destID: int):
 	if not handling:
 		handling = true
-		print("start handle_level_changed")
+		#print("start handle_level_changed")
 		
 		next_destID = destID
-		print("next dest ID is", next_destID)
+		#print("next dest ID is", next_destID)
 
 		var check_next_level = load("res://saves/" + destination_name + ".tscn").instantiate()
 
@@ -59,28 +59,28 @@ func transfer_data(old_scene, new_scene):
 	var spawnLocs = new_scene.get_tree().get_nodes_in_group("Spawn")
 	var spawnLoc
 	
-	print(spawnLocs)
+	#print(spawnLocs)
 	
 	for loc in spawnLocs:
-		print(loc.destID)
+		#print(loc.destID)
 		if loc.destID == next_destID:
 			print("found the right spawn area!")
 			spawnLoc = loc
 	
-	print(spawnLoc)
+	#print(spawnLoc)
 	
 	var newPlayerLocation = spawnLoc.global_position
 
-	print(oldPlayer)
-	print(oldPlayerCopy)
-	print(newPlayer)
-	print(newPlayerLocation)
+	#print(oldPlayer)
+	#print(oldPlayerCopy)
+	#print(newPlayer)
+	#print(newPlayerLocation)
 	
 	new_scene.remove_child(newPlayer)
 	new_scene.add_child(oldPlayerCopy)
 	
 	var showChildren = new_scene.get_children()
-	print(showChildren)
+	#print(showChildren)
 	
 	oldPlayerCopy.global_position = newPlayerLocation
 
@@ -96,7 +96,7 @@ func transfer_data(old_scene, new_scene):
 func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"fade_in":
-			print("cleanup1")
+			#print("cleanup1")
 			current_level.cleanup()
 			current_level = next_level
 			current_level.visible = true

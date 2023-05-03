@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpyqhqfxrj71"]
+[gd_scene load_steps=4 format=3 uid="uid://cpyqhqfxrj71"]
 
 [ext_resource type="Script" path="res://components/spawning/entity_spawn.gd" id="1_isqpk"]
+[ext_resource type="Texture2D" uid="uid://d1y81hjc5nchc" path="res://art/sprout/Objects/Simple Milk and grass item.png" id="2_kloeg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cgfx"]
 
@@ -10,3 +11,9 @@ script = ExtResource("1_isqpk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_3cgfx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_kloeg")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
