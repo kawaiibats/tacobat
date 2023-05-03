@@ -33,10 +33,10 @@ visible = false
 [node name="ui" type="CanvasLayer" parent="."]
 
 [node name="inventory_container" type="NinePatchRect" parent="ui"]
-offset_left = 35.0
-offset_top = -86.0
-offset_right = 231.0
-offset_bottom = 39.0
+offset_left = 63.0
+offset_top = 58.0
+offset_right = 259.0
+offset_bottom = 183.0
 size_flags_vertical = 4
 texture = ExtResource("2_qu06x")
 region_rect = Rect2(768, 64, 48, 48)
@@ -100,14 +100,17 @@ offset_bottom = 125.0
 
 [node name="inventory" type="NinePatchRect" parent="ui/inventory_container/inventory_container"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -88.0
-offset_top = 14.0
-offset_right = 88.0
-offset_bottom = 72.0
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -49.0
+offset_right = 87.5
+offset_bottom = 49.0
 grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_qu06x")
 region_rect = Rect2(354, 274, 28, 12)
 patch_margin_left = 27
@@ -143,21 +146,133 @@ grow_vertical = 2
 text = "- Backpack -"
 label_settings = SubResource("LabelSettings_33m2r")
 
-[node name="slot_container" type="Control" parent="ui/inventory_container/inventory_container/inventory"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="slot_container" type="GridContainer" parent="ui/inventory_container/inventory_container/inventory"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.5
+offset_top = 18.0
+offset_right = 82.5
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 7
 
 [node name="inventory_slot" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 17.0
-offset_right = 25.0
-offset_bottom = 37.0
+layout_mode = 2
 texture = ExtResource("9_k33j7")
 
-[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot"]
+[node name="CenterContainer" type="CenterContainer" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot"]
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("10_dor8g")
+
+[node name="inventory_slot2" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container"]
+layout_mode = 2
+texture = ExtResource("9_k33j7")
+
+[node name="CenterContainer" type="CenterContainer" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot2"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot2/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("10_dor8g")
+
+[node name="inventory_slot3" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container"]
+layout_mode = 2
+texture = ExtResource("9_k33j7")
+
+[node name="CenterContainer" type="CenterContainer" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot3"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot3/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("10_dor8g")
+
+[node name="inventory_slot4" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container"]
+layout_mode = 2
+texture = ExtResource("9_k33j7")
+
+[node name="CenterContainer" type="CenterContainer" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot4"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot4/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("10_dor8g")
+
+[node name="inventory_slot5" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container"]
+layout_mode = 2
+texture = ExtResource("9_k33j7")
+
+[node name="CenterContainer" type="CenterContainer" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot5"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot5/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("10_dor8g")
+
+[node name="inventory_slot6" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container"]
+layout_mode = 2
+texture = ExtResource("9_k33j7")
+
+[node name="CenterContainer" type="CenterContainer" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot6"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot6/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("10_dor8g")
+
+[node name="inventory_slot7" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container"]
+layout_mode = 2
+texture = ExtResource("9_k33j7")
+
+[node name="CenterContainer" type="CenterContainer" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot7"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot7/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("10_dor8g")
+
+[node name="inventory_slot8" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container"]
+layout_mode = 2
+texture = ExtResource("9_k33j7")
+
+[node name="CenterContainer" type="CenterContainer" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot8"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot8/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("10_dor8g")
+
+[node name="inventory_slot9" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container"]
+layout_mode = 2
+texture = ExtResource("9_k33j7")
+
+[node name="CenterContainer" type="CenterContainer" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot9"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot9/CenterContainer"]
+layout_mode = 2
 texture = ExtResource("10_dor8g")
