@@ -13,6 +13,7 @@ rotation = 0.785398
 shape = SubResource("RectangleShape2D_3cgfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("2_kloeg")
 region_enabled = true

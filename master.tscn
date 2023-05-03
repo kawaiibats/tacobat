@@ -1,0 +1,163 @@
+[gd_scene load_steps=13 format=3 uid="uid://cctoc2qp38usk"]
+
+[ext_resource type="PackedScene" uid="uid://kl5pdu75i3mp" path="res://scene_switcher.tscn" id="1_qfv65"]
+[ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="2_qu06x"]
+[ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="3_hmcxd"]
+[ext_resource type="Texture2D" uid="uid://y61m20p4xdwr" path="res://art/calame/x_normal.png" id="4_6f5tl"]
+[ext_resource type="Texture2D" uid="uid://b2rsr3rfkr086" path="res://art/calame/x_pressed.png" id="5_hkrnk"]
+[ext_resource type="Texture2D" uid="uid://b8ocnoig8tjtm" path="res://art/calame/x_hover.png" id="6_mrnge"]
+[ext_resource type="Texture2D" uid="uid://dk07cw0l7qoou" path="res://art/calame/x_disabled.png" id="7_8vros"]
+[ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="8_kj8fp"]
+[ext_resource type="Texture2D" uid="uid://cx8xc6qc0alwv" path="res://art/calame/item_slot.png" id="9_itku2"]
+[ext_resource type="Texture2D" uid="uid://dn35pedtr1cug" path="res://art/forage/red_mush.png" id="10_dor8g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aah60"]
+font = ExtResource("3_hmcxd")
+font_size = 15
+font_color = Color(0.180392, 0.278431, 0.431373, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_33m2r"]
+font = ExtResource("3_hmcxd")
+font_size = 13
+font_color = Color(0.729412, 0.45098, 0.137255, 1)
+
+[node name="master" type="Node"]
+
+[node name="game" type="Node2D" parent="."]
+visible = false
+
+[node name="SceneSwitcher" parent="game" instance=ExtResource("1_qfv65")]
+
+[node name="managers" type="Node2D" parent="."]
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="inventory_container" type="NinePatchRect" parent="ui"]
+offset_left = 35.0
+offset_top = -86.0
+offset_right = 231.0
+offset_bottom = 39.0
+size_flags_vertical = 4
+texture = ExtResource("2_qu06x")
+region_rect = Rect2(768, 64, 48, 48)
+patch_margin_left = 5
+patch_margin_top = 43
+patch_margin_right = 5
+patch_margin_bottom = 43
+
+[node name="title" type="NinePatchRect" parent="ui/inventory_container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = -6.0
+offset_right = 49.5
+offset_bottom = 10.0
+grow_horizontal = 2
+texture = ExtResource("2_qu06x")
+region_rect = Rect2(80, 304, 32, 16)
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 3
+
+[node name="label_inventory" type="Label" parent="ui/inventory_container/title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -7.0
+offset_right = 30.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Inventory"
+label_settings = SubResource("LabelSettings_aah60")
+
+[node name="close_button" type="TextureButton" parent="ui/inventory_container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 2.0
+offset_bottom = 6.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_6f5tl")
+texture_pressed = ExtResource("5_hkrnk")
+texture_hover = ExtResource("6_mrnge")
+texture_disabled = ExtResource("7_8vros")
+
+[node name="inventory_container" type="Control" parent="ui/inventory_container"]
+anchors_preset = 0
+offset_right = 196.0
+offset_bottom = 125.0
+
+[node name="inventory" type="NinePatchRect" parent="ui/inventory_container/inventory_container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_top = 14.0
+offset_right = 88.0
+offset_bottom = 72.0
+grow_horizontal = 2
+texture = ExtResource("2_qu06x")
+region_rect = Rect2(354, 274, 28, 12)
+patch_margin_left = 27
+patch_margin_top = 11
+patch_margin_right = 27
+patch_margin_bottom = 11
+
+[node name="divider_texture" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.0
+offset_top = 12.0
+offset_right = 26.0
+offset_bottom = 14.0
+grow_horizontal = 2
+texture = ExtResource("8_kj8fp")
+
+[node name="label_inventory_name" type="Label" parent="ui/inventory_container/inventory_container/inventory/divider_texture"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -13.0
+offset_right = 39.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "- Backpack -"
+label_settings = SubResource("LabelSettings_33m2r")
+
+[node name="slot_container" type="Control" parent="ui/inventory_container/inventory_container/inventory"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="inventory_slot" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 17.0
+offset_right = 25.0
+offset_bottom = 37.0
+texture = ExtResource("9_itku2")
+
+[node name="TextureRect" type="TextureRect" parent="ui/inventory_container/inventory_container/inventory/slot_container/inventory_slot"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("10_dor8g")
