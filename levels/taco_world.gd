@@ -1,33 +1,61 @@
-extends Node2D
+# devisland.gd
 
+extends Node2D
 
 signal level_changed(destination)
 
-@export var level_name = "dev_level_2"
+@export var level_name = "devisland"
 @export var unvisited = true
+
+
+
 
 
 var savePackage:PackedScene
 var instancePackage:Node
 var saveFile : String = "res://saves/" + level_name + ".tscn"
 
+
 func _ready():
 	if (unvisited):
 		genesis()
 	unvisited = false
-	
+
 	# fix foragys position
 	for child in get_children():
 		if child.has_method("reset_childs_position"):
 			child.reset_childs_position()
 
 
-func play_loaded_sound() -> void:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SFX
+
+func play_loaded_sound():
+	print("Play Loaded Sound!")
 	$LevelLoadedSound.play()
 
 func play_warp_enter_sound():
 	print("Play Warp Enter Sound!")
 	$WarpAreaEnterSound.play()
+
 
 
 # GENESIS required functions # #################################
@@ -46,16 +74,18 @@ func place_foragy(foragyPool, zonePool):
 	print("Foragy picked:", selectedForagy)
 	print("Zone picked:", selectedZone)
 	
+	#set foragy as visible
 	selectedForagyInstance.visible = true
 	selectedZone.add_child(selectedForagyInstance)
 	print("POSITION OF THIS FORAGY:", selectedForagyInstance.position)
+	#fix foragy position to be at 0 0 
 	var zed = Vector2(0,0)
 	selectedForagyInstance.position = zed
+	
 
 # GENESIS - plays when a level is visited for the very first time.
-
 func genesis():
-	print ("Dev Level Two Genesis Activating..")
+	print ("Dev Island Genesis Activating..")
 	
 	# Spawn 1-8 foragable entities within roughly 30-60 possible locations 
 	
@@ -213,16 +243,10 @@ func genesis():
 	# ~ 
 
 
-
-
-
-
 # TIMEMARCH - activates in visited levels at the beginning morning (excluding first morning)
 # Essentially is a weaker genesis that replenishes forages over time
 func timemarch():
 	pass
-
-
 
 
 
@@ -242,37 +266,31 @@ func cleanup():
 	savePackage = ScenePacker.create_package(self)
 	print("package created")
 	
-	#instancePackage = savePackage.instantiate()
-	#print("package instanced")
-	
 	var error: = ResourceSaver.save(savePackage, saveFile)
 	if error != OK:
 		push_error("An error occurred while saving the scene to disk.")
 	
 	queue_free()
-
-
-
-
-
+	
 
 
 # WARP ZONES
 
 func _on_warp_area_warp_area_entered(destination, destID):
-	print("dev level 2 warper (#1)")
+	print("taco world print by spawn")
 	warp(destination, destID)
-
-func _on_warp_2_devisland_2_warp_area_entered(destination, destID):
-	print("dev level 2 warper (#2)")
-	warp(destination, destID)
-
-
+	
 # warp function
 func warp(destination, destID):
 	play_warp_enter_sound()
 	print("emitted level signal")
 	emit_signal("level_changed", destination, destID)
+
+
+
+
+
+
 
 
 

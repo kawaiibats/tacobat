@@ -1,9 +1,14 @@
+# devisland.gd
+
 extends Node2D
 
 signal level_changed(destination)
 
 @export var level_name = "devisland"
 @export var unvisited = true
+
+
+
 
 
 var savePackage:PackedScene
@@ -69,8 +74,11 @@ func place_foragy(foragyPool, zonePool):
 	print("Foragy picked:", selectedForagy)
 	print("Zone picked:", selectedZone)
 	
+	#set foragy as visible
+	selectedForagyInstance.visible = true
 	selectedZone.add_child(selectedForagyInstance)
 	print("POSITION OF THIS FORAGY:", selectedForagyInstance.position)
+	#fix foragy position to be at 0 0 
 	var zed = Vector2(0,0)
 	selectedForagyInstance.position = zed
 	
@@ -280,11 +288,18 @@ func _on_warp_2_devlvl_2_warp_area_entered(destination, destID):
 	print("game level print top exit 2")
 	warp(destination, destID)
 	
+func _on_warp_2_taco_warp_area_entered(destination, destID):
+	print("game level print taco world exit")
+	warp(destination, destID)
+	
 # warp function
 func warp(destination, destID):
 	play_warp_enter_sound()
 	print("emitted level signal")
 	emit_signal("level_changed", destination, destID)
+
+
+
 
 
 

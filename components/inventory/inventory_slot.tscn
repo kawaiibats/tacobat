@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy1680n2fk5dj"]
+
+[ext_resource type="Texture2D" uid="uid://cx8xc6qc0alwv" path="res://art/calame/item_slot.png" id="1_82850"]
+
+[node name="inventory_slot" type="TextureRect"]
+texture = ExtResource("1_82850")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0

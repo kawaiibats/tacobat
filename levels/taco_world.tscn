@@ -1,39 +1,23 @@
-[gd_scene load_steps=74 format=3]
+[gd_scene load_steps=24 format=3 uid="uid://c7iitbywx1ru3"]
 
-[ext_resource type="Script" path="res://levels/taco_world.gd" id="1_jjyil"]
-[ext_resource type="PackedScene" path="res://characters/player_cat.tscn" id="2_gfokv"]
-[ext_resource type="Script" path="res://characters/player_cat.gd" id="3_oo65o"]
-[ext_resource type="Texture2D" path="res://art/sprout/Characters/Basic Charakter Spritesheet.png" id="4_b7ilw"]
-[ext_resource type="Texture2D" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="5_3285p"]
-[ext_resource type="Texture2D" path="res://art/sprout/Tilesets/ground tiles/old tiles/Hills.png" id="6_qrrba"]
-[ext_resource type="Texture2D" path="res://art/sprout/Tilesets/ground tiles/old tiles/Tilled Dirt.png" id="7_que60"]
-[ext_resource type="Texture2D" path="res://art/sprout/Tilesets/Water.png" id="8_ceyxu"]
-[ext_resource type="Texture2D" path="res://art/sprout/Tilesets/Wooden House.png" id="9_3k004"]
-[ext_resource type="Texture2D" path="res://art/sprout/Tilesets/Fences.png" id="10_dq2ll"]
-[ext_resource type="Texture2D" path="res://art/taco/Forest Tilemap.png" id="11_pk66w"]
-[ext_resource type="PackedScene" path="res://components/spawning/foragable.tscn" id="12_1c61q"]
-[ext_resource type="Script" path="res://components/spawning/foragable.gd" id="13_pe6mb"]
-[ext_resource type="Texture2D" path="res://art/forage/wheat.png" id="14_dddid"]
-[ext_resource type="PackedScene" path="res://components/interact area/interact_area.tscn" id="15_ktcsk"]
-[ext_resource type="Script" path="res://components/interact area/interact_area.gd" id="16_eworl"]
-[ext_resource type="Texture2D" path="res://art/forage/apple.png" id="17_8l6lj"]
-[ext_resource type="Texture2D" path="res://art/forage/brown_mush.png" id="18_huav3"]
-[ext_resource type="Texture2D" path="res://art/forage/red_mush.png" id="19_5kjmu"]
-[ext_resource type="PackedScene" path="res://objects/chest.tscn" id="23_byrd3"]
-[ext_resource type="Texture2D" path="res://art/sprout/Objects/Chest.png" id="24_boi62"]
-[ext_resource type="PackedScene" path="res://components/warper/warpArea.tscn" id="32_6r6fp"]
-[ext_resource type="Script" path="res://components/warper/warpArea.gd" id="33_5vyjt"]
-[ext_resource type="Texture2D" path="res://art/sprout/Objects/Basic Plants.png" id="34_d40vj"]
-[ext_resource type="AudioStream" path="res://sfx/magIn.mp3" id="35_p7s61"]
-[ext_resource type="AudioStream" path="res://sfx/clickEmpty.mp3" id="36_f4s30"]
-[ext_resource type="PackedScene" path="res://components/spawning/player_spawn.tscn" id="37_a22sx"]
-[ext_resource type="Script" path="res://components/spawning/player_spawn.gd" id="38_gimds"]
-[ext_resource type="PackedScene" path="res://components/spawning/entity_spawn.tscn" id="39_ry78o"]
-[ext_resource type="Script" path="res://components/spawning/entity_spawn.gd" id="40_kfect"]
-[ext_resource type="Texture2D" path="res://art/sprout/Objects/Simple Milk and grass item.png" id="41_0x2lb"]
+[ext_resource type="Script" path="res://levels/taco_world.gd" id="1_ejeul"]
+[ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="2_v4bfj"]
+[ext_resource type="Texture2D" uid="uid://dol2l2q32s6gr" path="res://art/sprout/Tilesets/ground tiles/old tiles/Hills.png" id="3_cui0a"]
+[ext_resource type="Texture2D" uid="uid://dh853ea6b7qcd" path="res://art/sprout/Tilesets/ground tiles/old tiles/Tilled Dirt.png" id="4_yvno8"]
+[ext_resource type="Texture2D" uid="uid://bl0x2k0i0ic7w" path="res://art/sprout/Tilesets/Water.png" id="5_runyn"]
+[ext_resource type="Texture2D" uid="uid://dwaqc7gnk1ar6" path="res://art/sprout/Tilesets/Wooden House.png" id="6_5i542"]
+[ext_resource type="Texture2D" uid="uid://prfcee3we6ob" path="res://art/sprout/Tilesets/Fences.png" id="7_gu1s8"]
+[ext_resource type="Texture2D" uid="uid://bgmdj24idfse0" path="res://art/taco/Forest Tilemap.png" id="8_lln7y"]
+[ext_resource type="PackedScene" uid="uid://cabat1prpspee" path="res://components/spawning/foragable.tscn" id="9_meyku"]
+[ext_resource type="PackedScene" uid="uid://csqdcdyiuh8qe" path="res://objects/chest.tscn" id="10_khxja"]
+[ext_resource type="AudioStream" uid="uid://ctwqrntpcclgo" path="res://sfx/magIn.mp3" id="11_vcsfo"]
+[ext_resource type="AudioStream" uid="uid://bjx6c3sxn0ktu" path="res://sfx/clickEmpty.mp3" id="12_hxaaj"]
+[ext_resource type="PackedScene" uid="uid://ddawh1jfpd8ir" path="res://components/spawning/player_spawn.tscn" id="13_ohnr0"]
+[ext_resource type="PackedScene" uid="uid://bj3laokry4wae" path="res://components/warper/warpArea.tscn" id="13_s8gqm"]
+[ext_resource type="PackedScene" uid="uid://cpyqhqfxrj71" path="res://components/spawning/entity_spawn.tscn" id="14_napsf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mi6g"]
-texture = ExtResource("5_3285p")
+texture = ExtResource("2_v4bfj")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -252,7 +236,7 @@ texture = ExtResource("5_3285p")
 8:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fueep"]
-texture = ExtResource("6_qrrba")
+texture = ExtResource("3_cui0a")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -371,7 +355,7 @@ texture = ExtResource("6_qrrba")
 5:5/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rglpn"]
-texture = ExtResource("7_que60")
+texture = ExtResource("4_yvno8")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -560,7 +544,7 @@ texture = ExtResource("7_que60")
 7:7/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xmxc3"]
-texture = ExtResource("8_ceyxu")
+texture = ExtResource("5_runyn")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -575,7 +559,7 @@ texture = ExtResource("8_ceyxu")
 3:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hk1ph"]
-texture = ExtResource("9_3k004")
+texture = ExtResource("6_5i542")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -678,7 +662,7 @@ texture = ExtResource("9_3k004")
 6:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_knje7"]
-texture = ExtResource("10_dq2ll")
+texture = ExtResource("7_gu1s8")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -752,7 +736,7 @@ texture = ExtResource("10_dq2ll")
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.5, 8, -2.5, 8, 4, -8, 4)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xvouh"]
-texture = ExtResource("11_pk66w")
+texture = ExtResource("8_lln7y")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1239,266 +1223,9 @@ sources/4 = SubResource("TileSetAtlasSource_hk1ph")
 sources/5 = SubResource("TileSetAtlasSource_knje7")
 sources/8 = SubResource("TileSetAtlasSource_xvouh")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uxetw"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_acuub"]
-radius = 18.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8k4yq"]
-size = Vector2(16, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pktne"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cgfx"]
-size = Vector2(8.48528, 8.48528)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3enw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_segf6"]
-size = Vector2(12, 6)
-
-[sub_resource type="Animation" id="Animation_2u5qr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_3bybf"]
-resource_name = "idle_down"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
-[sub_resource type="Animation" id="Animation_eanpk"]
-resource_name = "idle_left"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [8, 9]
-}
-
-[sub_resource type="Animation" id="Animation_2r1mi"]
-resource_name = "idle_right"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [12, 13]
-}
-
-[sub_resource type="Animation" id="Animation_tncsp"]
-resource_name = "idle_up"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_c13n7"]
-resource_name = "walk_down"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_vryy5"]
-resource_name = "walk_left"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [10, 11]
-}
-
-[sub_resource type="Animation" id="Animation_vma03"]
-resource_name = "walk_right"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [14, 15]
-}
-
-[sub_resource type="Animation" id="Animation_x1ilu"]
-resource_name = "walk_up"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [6, 7]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_njywj"]
-_data = {
-"RESET": SubResource("Animation_2u5qr"),
-"idle_down": SubResource("Animation_3bybf"),
-"idle_left": SubResource("Animation_eanpk"),
-"idle_right": SubResource("Animation_2r1mi"),
-"idle_up": SubResource("Animation_tncsp"),
-"walk_down": SubResource("Animation_c13n7"),
-"walk_left": SubResource("Animation_vryy5"),
-"walk_right": SubResource("Animation_vma03"),
-"walk_up": SubResource("Animation_x1ilu")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yeoig"]
-animation = &"idle_down"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c8mhu"]
-animation = &"idle_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6sa8j"]
-animation = &"idle_left"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bva0i"]
-animation = &"idle_right"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_7j2fd"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_yeoig")
-blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_c8mhu")
-blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_6sa8j")
-blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_bva0i")
-blend_point_3/pos = Vector2(1, 0)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ykuf4"]
-animation = &"walk_down"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cnhna"]
-animation = &"walk_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0pm0d"]
-animation = &"walk_right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tuxcs"]
-animation = &"walk_left"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hgl06"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_ykuf4")
-blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_cnhna")
-blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_0pm0d")
-blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_tuxcs")
-blend_point_3/pos = Vector2(-1, 0)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8bw2y"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7mkau"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g1sbl"]
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fkqkl"]
-states/Start/position = Vector2(289, 90)
-states/idle/node = SubResource("AnimationNodeBlendSpace2D_7j2fd")
-states/idle/position = Vector2(431, 90)
-states/walk/node = SubResource("AnimationNodeBlendSpace2D_hgl06")
-states/walk/position = Vector2(574, 90)
-transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_8bw2y"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_7mkau"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_g1sbl")]
-graph_offset = Vector2(47.5, 0)
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_3qiyx"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_xkqy6"]
-radius = 13.0384
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dbjdt"]
-radius = 44.0
-
 [node name="Taco World" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_jjyil")
-level_name = "devisland"
-unvisited = false
+script = ExtResource("1_ejeul")
 metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1535,502 +1262,85 @@ metadata/_edit_lock_ = true
 
 [node name="ForagePool" type="Node" parent="."]
 
-[node name="ForagableWheat" type="StaticBody2D" parent="ForagePool" instance=ExtResource("12_1c61q")]
-script = ExtResource("13_pe6mb")
+[node name="ForagableWheat" parent="ForagePool" instance=ExtResource("9_meyku")]
+position = Vector2(0, 0)
 itemInside = "wheat"
-forageLocID = 0
 rarity = 1
 stoneCount = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ForagePool/ForagableWheat"]
-shape = SubResource("CircleShape2D_uxetw")
-
-[node name="ForageSprite" type="Sprite2D" parent="ForagePool/ForagableWheat"]
-texture = ExtResource("14_dddid")
-region_rect = Rect2(80, 16, 16, 16)
-
-[node name="InteractArea" type="Area2D" parent="ForagePool/ForagableWheat" instance=ExtResource("15_ktcsk")]
-collision_layer = 256
-collision_mask = 0
-monitoring = false
-script = ExtResource("16_eworl")
-interact_label = "Forage?"
-interact_type = "forage"
-interact_value = "none"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ForagePool/ForagableWheat/InteractArea"]
-shape = SubResource("CircleShape2D_acuub")
-
-[node name="ForageableApple" type="StaticBody2D" parent="ForagePool" instance=ExtResource("12_1c61q")]
-script = ExtResource("13_pe6mb")
+[node name="ForageableApple" parent="ForagePool" instance=ExtResource("9_meyku")]
+position = Vector2(0, 0)
 itemInside = "apple"
-forageLocID = 0
 rarity = 2
 stoneCount = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ForagePool/ForageableApple"]
-shape = SubResource("CircleShape2D_uxetw")
-
-[node name="ForageSprite" type="Sprite2D" parent="ForagePool/ForageableApple"]
-texture = ExtResource("17_8l6lj")
-region_rect = Rect2(80, 16, 16, 16)
-
-[node name="InteractArea" type="Area2D" parent="ForagePool/ForageableApple" instance=ExtResource("15_ktcsk")]
-collision_layer = 256
-collision_mask = 0
-monitoring = false
-script = ExtResource("16_eworl")
-interact_label = "Forage?"
-interact_type = "forage"
-interact_value = "none"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ForagePool/ForageableApple/InteractArea"]
-shape = SubResource("CircleShape2D_acuub")
-
-[node name="ForageableBrownMush" type="StaticBody2D" parent="ForagePool" instance=ExtResource("12_1c61q")]
-script = ExtResource("13_pe6mb")
+[node name="ForageableBrownMush" parent="ForagePool" instance=ExtResource("9_meyku")]
+position = Vector2(0, 0)
 itemInside = "brown_mush"
-forageLocID = 0
 rarity = 1
 stoneCount = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ForagePool/ForageableBrownMush"]
-shape = SubResource("CircleShape2D_uxetw")
-
-[node name="ForageSprite" type="Sprite2D" parent="ForagePool/ForageableBrownMush"]
-texture = ExtResource("18_huav3")
-region_rect = Rect2(80, 16, 16, 16)
-
-[node name="InteractArea" type="Area2D" parent="ForagePool/ForageableBrownMush" instance=ExtResource("15_ktcsk")]
-collision_layer = 256
-collision_mask = 0
-monitoring = false
-script = ExtResource("16_eworl")
-interact_label = "Forage?"
-interact_type = "forage"
-interact_value = "none"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ForagePool/ForageableBrownMush/InteractArea"]
-shape = SubResource("CircleShape2D_acuub")
-
-[node name="ForageableRedMush" type="StaticBody2D" parent="ForagePool" instance=ExtResource("12_1c61q")]
-script = ExtResource("13_pe6mb")
+[node name="ForageableRedMush" parent="ForagePool" instance=ExtResource("9_meyku")]
+position = Vector2(0, 0)
 itemInside = "red_mush"
-forageLocID = 0
 rarity = 1
 stoneCount = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ForagePool/ForageableRedMush"]
-shape = SubResource("CircleShape2D_uxetw")
-
-[node name="ForageSprite" type="Sprite2D" parent="ForagePool/ForageableRedMush"]
-texture = ExtResource("19_5kjmu")
-region_rect = Rect2(80, 16, 16, 16)
-
-[node name="InteractArea" type="Area2D" parent="ForagePool/ForageableRedMush" instance=ExtResource("15_ktcsk")]
-collision_layer = 256
-collision_mask = 0
-monitoring = false
-script = ExtResource("16_eworl")
-interact_label = "Forage?"
-interact_type = "forage"
-interact_value = "none"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ForagePool/ForageableRedMush/InteractArea"]
-shape = SubResource("CircleShape2D_acuub")
-
-[node name="Chest" type="StaticBody2D" parent="." instance=ExtResource("23_byrd3")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Chest"]
-texture = ExtResource("24_boi62")
-region_enabled = true
-region_rect = Rect2(16, 16, 16, 16)
-
-[node name="Hitbox" type="CollisionShape2D" parent="Chest"]
-position = Vector2(0, 4.5)
-shape = SubResource("RectangleShape2D_8k4yq")
-
-[node name="InteractArea" type="Area2D" parent="Chest" instance=ExtResource("15_ktcsk")]
-collision_layer = 256
-collision_mask = 0
-monitoring = false
-script = ExtResource("16_eworl")
-interact_label = "Open Chest"
-interact_type = "print_text"
-interact_value = "You open the chest."
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/InteractArea"]
-shape = SubResource("CircleShape2D_acuub")
+[node name="Chest" parent="." instance=ExtResource("10_khxja")]
 
 [node name="WarpAreaEnterSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("35_p7s61")
+stream = ExtResource("11_vcsfo")
 
 [node name="LevelLoadedSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("36_f4s30")
+stream = ExtResource("12_hxaaj")
 
-[node name="warpArea" type="Area2D" parent="." instance=ExtResource("32_6r6fp")]
+[node name="warpArea" parent="." instance=ExtResource("13_s8gqm")]
 position = Vector2(32, 243)
-script = ExtResource("33_5vyjt")
 destination = "devisland"
 destID = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="warpArea"]
-shape = SubResource("RectangleShape2D_pktne")
-
-[node name="Sprite2D" type="Sprite2D" parent="warpArea"]
-texture = ExtResource("34_d40vj")
-region_enabled = true
-region_rect = Rect2(48, 16, 16, 16)
-
-[node name="Spawn1" type="Area2D" parent="." groups=["Spawn"] instance=ExtResource("37_a22sx")]
+[node name="Spawn1" parent="." groups=["Spawn"] instance=ExtResource("13_ohnr0")]
 position = Vector2(200, 212)
-script = ExtResource("38_gimds")
 destID = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn1"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_3cgfx")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Spawn1"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_3cgfx")
-
-[node name="Spawn2" type="Area2D" parent="." groups=["Spawn"] instance=ExtResource("37_a22sx")]
+[node name="Spawn2" parent="." groups=["Spawn"] instance=ExtResource("13_ohnr0")]
 position = Vector2(127, 195)
-script = ExtResource("38_gimds")
 destID = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn2"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_3cgfx")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Spawn2"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_3cgfx")
-
-[node name="Entity Spawn Zone" type="Area2D" parent="." groups=["EntitySpawn"] instance=ExtResource("39_ry78o")]
+[node name="Entity Spawn Zone" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
 position = Vector2(126, -18)
-script = ExtResource("40_kfect")
 entitySpawnID = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_w3enw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entity Spawn Zone"]
-visible = false
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("41_0x2lb")
-region_enabled = true
-region_rect = Rect2(48, 0, 16, 16)
-
-[node name="ForageableApple" type="StaticBody2D" parent="Entity Spawn Zone" instance=ExtResource("12_1c61q")]
-script = ExtResource("13_pe6mb")
-itemInside = "apple"
-forageLocID = 0
-rarity = 2
-stoneCount = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone/ForageableApple"]
-shape = SubResource("CircleShape2D_uxetw")
-
-[node name="ForageSprite" type="Sprite2D" parent="Entity Spawn Zone/ForageableApple"]
-texture = ExtResource("17_8l6lj")
-region_rect = Rect2(80, 16, 16, 16)
-
-[node name="InteractArea" type="Area2D" parent="Entity Spawn Zone/ForageableApple" instance=ExtResource("15_ktcsk")]
-collision_layer = 256
-collision_mask = 0
-monitoring = false
-script = ExtResource("16_eworl")
-interact_label = "Forage?"
-interact_type = "forage"
-interact_value = "none"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone/ForageableApple/InteractArea"]
-shape = SubResource("CircleShape2D_acuub")
-
-[node name="Entity Spawn Zone2" type="Area2D" parent="." groups=["EntitySpawn"] instance=ExtResource("39_ry78o")]
+[node name="Entity Spawn Zone2" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
 position = Vector2(126, 13)
-script = ExtResource("40_kfect")
 entitySpawnID = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone2"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_w3enw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entity Spawn Zone2"]
-visible = false
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("41_0x2lb")
-region_enabled = true
-region_rect = Rect2(48, 0, 16, 16)
-
-[node name="Entity Spawn Zone3" type="Area2D" parent="." groups=["EntitySpawn"] instance=ExtResource("39_ry78o")]
+[node name="Entity Spawn Zone3" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
 position = Vector2(195, 69)
-script = ExtResource("40_kfect")
 entitySpawnID = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone3"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_w3enw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entity Spawn Zone3"]
-visible = false
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("41_0x2lb")
-region_enabled = true
-region_rect = Rect2(48, 0, 16, 16)
-
-[node name="Entity Spawn Zone4" type="Area2D" parent="." groups=["EntitySpawn"] instance=ExtResource("39_ry78o")]
+[node name="Entity Spawn Zone4" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
 position = Vector2(229, 69)
-script = ExtResource("40_kfect")
 entitySpawnID = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone4"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_w3enw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entity Spawn Zone4"]
-visible = false
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("41_0x2lb")
-region_enabled = true
-region_rect = Rect2(48, 0, 16, 16)
-
-[node name="ForagableWheat" type="StaticBody2D" parent="Entity Spawn Zone4" instance=ExtResource("12_1c61q")]
-script = ExtResource("13_pe6mb")
-itemInside = "wheat"
-forageLocID = 0
-rarity = 1
-stoneCount = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone4/ForagableWheat"]
-shape = SubResource("CircleShape2D_uxetw")
-
-[node name="ForageSprite" type="Sprite2D" parent="Entity Spawn Zone4/ForagableWheat"]
-texture = ExtResource("14_dddid")
-region_rect = Rect2(80, 16, 16, 16)
-
-[node name="InteractArea" type="Area2D" parent="Entity Spawn Zone4/ForagableWheat" instance=ExtResource("15_ktcsk")]
-collision_layer = 256
-collision_mask = 0
-monitoring = false
-script = ExtResource("16_eworl")
-interact_label = "Forage?"
-interact_type = "forage"
-interact_value = "none"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone4/ForagableWheat/InteractArea"]
-shape = SubResource("CircleShape2D_acuub")
-
-[node name="Entity Spawn Zone7" type="Area2D" parent="." groups=["EntitySpawn"] instance=ExtResource("39_ry78o")]
+[node name="Entity Spawn Zone7" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
 position = Vector2(405, 69)
-script = ExtResource("40_kfect")
 entitySpawnID = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone7"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_w3enw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entity Spawn Zone7"]
-visible = false
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("41_0x2lb")
-region_enabled = true
-region_rect = Rect2(48, 0, 16, 16)
-
-[node name="Entity Spawn Zone9" type="Area2D" parent="." groups=["EntitySpawn"] instance=ExtResource("39_ry78o")]
+[node name="Entity Spawn Zone9" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
 position = Vector2(371, 69)
-script = ExtResource("40_kfect")
 entitySpawnID = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone9"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_w3enw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entity Spawn Zone9"]
-visible = false
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("41_0x2lb")
-region_enabled = true
-region_rect = Rect2(48, 0, 16, 16)
-
-[node name="Entity Spawn Zone8" type="Area2D" parent="." groups=["EntitySpawn"] instance=ExtResource("39_ry78o")]
+[node name="Entity Spawn Zone8" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
 position = Vector2(333, 69)
-script = ExtResource("40_kfect")
 entitySpawnID = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone8"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_w3enw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entity Spawn Zone8"]
-visible = false
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("41_0x2lb")
-region_enabled = true
-region_rect = Rect2(48, 0, 16, 16)
-
-[node name="Entity Spawn Zone6" type="Area2D" parent="." groups=["EntitySpawn"] instance=ExtResource("39_ry78o")]
+[node name="Entity Spawn Zone6" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
 position = Vector2(297, 69)
-script = ExtResource("40_kfect")
 entitySpawnID = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone6"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_w3enw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entity Spawn Zone6"]
-visible = false
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("41_0x2lb")
-region_enabled = true
-region_rect = Rect2(48, 0, 16, 16)
-
-[node name="Entity Spawn Zone5" type="Area2D" parent="." groups=["EntitySpawn"] instance=ExtResource("39_ry78o")]
+[node name="Entity Spawn Zone5" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
 position = Vector2(263, 69)
-script = ExtResource("40_kfect")
 entitySpawnID = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone5"]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_w3enw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entity Spawn Zone5"]
-visible = false
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("41_0x2lb")
-region_enabled = true
-region_rect = Rect2(48, 0, 16, 16)
-
-[node name="ForageableApple" type="StaticBody2D" parent="Entity Spawn Zone5" instance=ExtResource("12_1c61q")]
-script = ExtResource("13_pe6mb")
-itemInside = "apple"
-forageLocID = 0
-rarity = 2
-stoneCount = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone5/ForageableApple"]
-shape = SubResource("CircleShape2D_uxetw")
-
-[node name="ForageSprite" type="Sprite2D" parent="Entity Spawn Zone5/ForageableApple"]
-texture = ExtResource("17_8l6lj")
-region_rect = Rect2(80, 16, 16, 16)
-
-[node name="InteractArea" type="Area2D" parent="Entity Spawn Zone5/ForageableApple" instance=ExtResource("15_ktcsk")]
-collision_layer = 256
-collision_mask = 0
-monitoring = false
-script = ExtResource("16_eworl")
-interact_label = "Forage?"
-interact_type = "forage"
-interact_value = "none"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity Spawn Zone5/ForageableApple/InteractArea"]
-shape = SubResource("CircleShape2D_acuub")
-
-[node name="PlayerCat" type="CharacterBody2D" parent="." instance=ExtResource("2_gfokv")]
-y_sort_enabled = true
-position = Vector2(45.5718, 238.095)
-velocity = Vector2(-100, 0)
-script = ExtResource("3_oo65o")
-move_speed = 100.0
-starting_direction = Vector2(0, 1)
-health = 69.0
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayerCat"]
-texture = ExtResource("4_b7ilw")
-hframes = 4
-vframes = 4
-frame = 10
-
-[node name="PlayerHitbox" type="CollisionShape2D" parent="PlayerCat"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_segf6")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerCat"]
-libraries = {
-"": SubResource("AnimationLibrary_njywj")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="PlayerCat"]
-tree_root = SubResource("AnimationNodeStateMachine_fkqkl")
-anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_3qiyx")
-parameters/idle/blend_position = Vector2(-1, 0)
-parameters/walk/blend_position = Vector2(-1, 0)
-
-[node name="InteractionComponents" type="Node2D" parent="PlayerCat"]
-z_index = 1
-
-[node name="InteractionArea" type="Area2D" parent="PlayerCat/InteractionComponents"]
-collision_layer = 0
-collision_mask = 256
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCat/InteractionComponents/InteractionArea"]
-shape = SubResource("CircleShape2D_xkqy6")
-
-[node name="AltInteractionArea" type="Area2D" parent="PlayerCat/InteractionComponents"]
-collision_layer = 0
-collision_mask = 512
-monitorable = false
-
-[node name="AltInteractReach" type="CollisionShape2D" parent="PlayerCat/InteractionComponents/AltInteractionArea"]
-shape = SubResource("CircleShape2D_dbjdt")
-
-[node name="InteractLabel" type="Label" parent="PlayerCat/InteractionComponents"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -58.0
-offset_right = 20.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AltInteractLabel" type="Label" parent="PlayerCat/InteractionComponents"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -26.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="HealthLabel" type="Label" parent="PlayerCat/InteractionComponents"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(1, 0.109804, 0.254902, 1)
-text = "69"
-horizontal_alignment = 1
-vertical_alignment = 2
-uppercase = true
-
-[node name="Camera2D" type="Camera2D" parent="PlayerCat"]
-limit_left = 0
-limit_top = 0
-limit_right = 835
-limit_bottom = 610
-editor_draw_screen = false
-editor_draw_limits = true
-
-[connection signal="body_entered" from="warpArea" to="warpArea" method="_on_body_entered" flags=18]
-[connection signal="warp_area_entered" from="warpArea" to="." method="_on_warp_area_warp_area_entered" flags=18]
-[connection signal="area_entered" from="PlayerCat/InteractionComponents/InteractionArea" to="PlayerCat" method="_on_interaction_area_area_entered" flags=18]
-[connection signal="area_exited" from="PlayerCat/InteractionComponents/InteractionArea" to="PlayerCat" method="_on_interaction_area_area_exited" flags=18]
-[connection signal="area_entered" from="PlayerCat/InteractionComponents/AltInteractionArea" to="PlayerCat" method="_on_alt_interaction_area_area_entered" flags=18]
-[connection signal="area_exited" from="PlayerCat/InteractionComponents/AltInteractionArea" to="PlayerCat" method="_on_alt_interaction_area_area_exited" flags=18]
+[connection signal="warp_area_entered" from="warpArea" to="." method="_on_warp_area_warp_area_entered"]

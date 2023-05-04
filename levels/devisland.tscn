@@ -1282,24 +1282,28 @@ metadata/_edit_lock_ = true
 [node name="ForagePool" type="Node" parent="."]
 
 [node name="ForagableWheat" parent="ForagePool" instance=ExtResource("19_6hqs7")]
+visible = false
 position = Vector2(0, 0)
 itemInside = "wheat"
 rarity = 1
 stoneCount = 10
 
 [node name="ForageableApple" parent="ForagePool" instance=ExtResource("19_6hqs7")]
+visible = false
 position = Vector2(0, 0)
 itemInside = "apple"
 rarity = 2
 stoneCount = 1
 
 [node name="ForageableBrownMush" parent="ForagePool" instance=ExtResource("19_6hqs7")]
+visible = false
 position = Vector2(0, 0)
 itemInside = "brown_mush"
 rarity = 1
 stoneCount = 5
 
 [node name="ForageableRedMush" parent="ForagePool" instance=ExtResource("19_6hqs7")]
+visible = false
 position = Vector2(0, 0)
 itemInside = "red_mush"
 rarity = 1
@@ -1350,6 +1354,11 @@ destID = 3
 [node name="warp2devlvl2" parent="." instance=ExtResource("15_32w7i")]
 position = Vector2(91, -269)
 destID = 4
+
+[node name="warp2Taco" parent="." instance=ExtResource("15_32w7i")]
+position = Vector2(95, -49)
+destination = "taco_world"
+destID = 1
 
 [node name="WarpAreaEnterSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_u6edi")
@@ -1404,3 +1413,4 @@ entitySpawnID = 2
 [connection signal="warp_area_entered" from="warpArea2" to="." method="_on_warper_warp_area_entered"]
 [connection signal="warp_area_entered" from="warpdevlvl2" to="." method="_on_warpdevlvl_2_warp_area_entered"]
 [connection signal="warp_area_entered" from="warp2devlvl2" to="." method="_on_warp_2_devlvl_2_warp_area_entered"]
+[connection signal="warp_area_entered" from="warp2Taco" to="." method="_on_warp_2_taco_warp_area_entered"]
