@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://cp7u6hwhqcqni"]
 
 [ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_5vgfe"]
+[ext_resource type="Script" path="res://components/inventory/inventory_container.gd" id="2_rva0f"]
 [ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="2_spv2n"]
 [ext_resource type="Texture2D" uid="uid://y61m20p4xdwr" path="res://art/calame/x_normal.png" id="3_c6yq1"]
 [ext_resource type="Texture2D" uid="uid://b2rsr3rfkr086" path="res://art/calame/x_pressed.png" id="4_fv27x"]
 [ext_resource type="Texture2D" uid="uid://b8ocnoig8tjtm" path="res://art/calame/x_hover.png" id="5_i6k5p"]
 [ext_resource type="Texture2D" uid="uid://dk07cw0l7qoou" path="res://art/calame/x_disabled.png" id="6_brt4a"]
-[ext_resource type="PackedScene" uid="uid://b1ntgr14g40s7" path="res://components/inventory/inventory.tscn" id="7_hpk6d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aah60"]
 font = ExtResource("2_spv2n")
@@ -17,7 +17,7 @@ font_color = Color(0.180392, 0.278431, 0.431373, 1)
 offset_left = 63.0
 offset_top = 58.0
 offset_right = 259.0
-offset_bottom = 186.0
+offset_bottom = 149.0
 size_flags_vertical = 4
 texture = ExtResource("1_5vgfe")
 region_rect = Rect2(768, 64, 48, 48)
@@ -25,6 +25,8 @@ patch_margin_left = 5
 patch_margin_top = 43
 patch_margin_right = 5
 patch_margin_bottom = 43
+script = ExtResource("2_rva0f")
+container_path = NodePath("inventory_container")
 
 [node name="title" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -77,8 +79,7 @@ layout_mode = 0
 offset_left = 9.0
 offset_top = 15.0
 offset_right = 187.0
-offset_bottom = 77.0
+offset_bottom = 58.0
 theme_override_constants/separation = 3
 
-[node name="inventory" parent="inventory_container" instance=ExtResource("7_hpk6d")]
-layout_mode = 2
+[connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed"]

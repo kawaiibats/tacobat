@@ -106,6 +106,17 @@ func _on_interaction_area_area_entered(area):
 	update_interactions()
 
 func _on_interaction_area_area_exited(area):
+	
+	var areaParent = area.get_parent()
+	
+	if "inventory" in areaParent:
+		print ("get parent: ", areaParent)
+		print ("get parent inv: ", areaParent.inventory)
+
+		SignalManager.emit_signal("inventory_closed", areaParent.inventory) 
+		
+
+	
 	all_interactions.erase(area)
 	update_interactions()
 
@@ -131,7 +142,12 @@ func execute_interaction():
 					print("You found.. ", forageParent.itemInside)
 			
 				forageParent.queue_free()
-			
+			"open_inventory":
+				var inventoryParent = cur_interaction.get_parent()
+				
+				print("opening: ", inventoryParent.inventory)
+				
+				SignalManager.emit_signal("inventory_opened", inventoryParent.inventory)
 
 
 

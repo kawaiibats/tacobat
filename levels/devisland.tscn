@@ -1336,6 +1336,9 @@ position = Vector2(73, 41)
 position = Vector2(33, -74)
 
 [node name="Chest" parent="." instance=ExtResource("11_u610i")]
+size = 5
+inventory_name = "Cool Chest"
+starting_items = ["red_mush"]
 
 [node name="Chest2" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(5, 149)
@@ -1385,7 +1388,7 @@ stream = ExtResource("16_u6edi")
 stream = ExtResource("17_jasi3")
 
 [node name="Spawn1" parent="." groups=["Spawn"] instance=ExtResource("20_f7r1p")]
-position = Vector2(77, -19)
+position = Vector2(27, -21)
 destID = 1
 
 [node name="Spawn2" parent="." groups=["Spawn"] instance=ExtResource("20_f7r1p")]
