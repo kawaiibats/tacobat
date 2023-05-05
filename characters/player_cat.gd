@@ -131,7 +131,12 @@ func execute_interaction():
 					print("You found.. ", forageParent.itemInside)
 			
 				forageParent.queue_free()
-			
+			"open_inventory":
+				var inventoryParent = cur_interaction.get_parent()
+				
+				print("opening: ", inventoryParent.inventory)
+				
+				SignalManager.emit_signal("inventory_opened", inventoryParent.inventory)
 
 
 

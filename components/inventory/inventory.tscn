@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1ntgr14g40s7"]
+[gd_scene load_steps=6 format=3 uid="uid://b1ntgr14g40s7"]
 
 [ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_cu7l0"]
 [ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="2_3sd5b"]
 [ext_resource type="Script" path="res://components/inventory/inventory.gd" id="2_kpppc"]
 [ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="3_r2642"]
-[ext_resource type="PackedScene" uid="uid://dy1680n2fk5dj" path="res://components/inventory/inventory_slot.tscn" id="5_28vok"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_33m2r"]
 font = ExtResource("3_r2642")
@@ -32,6 +31,7 @@ patch_margin_right = 27
 patch_margin_bottom = 11
 script = ExtResource("2_kpppc")
 inventory_name = "Backpack"
+inventory_size = 14
 title_path = NodePath("divider_texture/label_inventory_name")
 slot_path = NodePath("slot_container")
 
@@ -70,24 +70,3 @@ grow_horizontal = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 7
-
-[node name="inventory_slot" parent="slot_container" instance=ExtResource("5_28vok")]
-layout_mode = 2
-
-[node name="inventory_slot2" parent="slot_container" instance=ExtResource("5_28vok")]
-layout_mode = 2
-
-[node name="inventory_slot3" parent="slot_container" instance=ExtResource("5_28vok")]
-layout_mode = 2
-
-[node name="inventory_slot4" parent="slot_container" instance=ExtResource("5_28vok")]
-layout_mode = 2
-
-[node name="inventory_slot5" parent="slot_container" instance=ExtResource("5_28vok")]
-layout_mode = 2
-
-[node name="inventory_slot6" parent="slot_container" instance=ExtResource("5_28vok")]
-layout_mode = 2
-
-[node name="inventory_slot7" parent="slot_container" instance=ExtResource("5_28vok")]
-layout_mode = 2

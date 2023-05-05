@@ -25,6 +25,7 @@ func _ready():
 	for child in get_children():
 		if child.has_method("reset_childs_position"):
 			child.reset_childs_position()
+	
 
 
 
@@ -297,7 +298,6 @@ func warp(destination, destID):
 	play_warp_enter_sound()
 	print("emitted level signal")
 	emit_signal("level_changed", destination, destID)
-
 
 
 

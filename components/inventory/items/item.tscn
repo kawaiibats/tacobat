@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqsu3boxv03kf"]
-
-[ext_resource type="Texture2D" uid="uid://dn35pedtr1cug" path="res://art/forage/red_mush.png" id="1_m3ex6"]
-[ext_resource type="Script" path="res://components/inventory/items/item.gd" id="2_rqyd2"]
-
-[node name="item" type="TextureRect"]
-texture = ExtResource("1_m3ex6")
-script = ExtResource("2_rqyd2")
