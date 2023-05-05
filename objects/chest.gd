@@ -20,7 +20,7 @@ func _ready():
 		print("item: ", item)
 		inventory.add_item(load("res://components/inventory/items/data/" + item + ".tscn").instantiate())
 	
-	
+
 	
 
 

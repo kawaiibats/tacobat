@@ -106,6 +106,17 @@ func _on_interaction_area_area_entered(area):
 	update_interactions()
 
 func _on_interaction_area_area_exited(area):
+	
+	var areaParent = area.get_parent()
+	
+	if "inventory" in areaParent:
+		print ("get parent: ", areaParent)
+		print ("get parent inv: ", areaParent.inventory)
+
+		SignalManager.emit_signal("inventory_closed", areaParent.inventory) 
+		
+
+	
 	all_interactions.erase(area)
 	update_interactions()
 

@@ -8,6 +8,7 @@ extends NinePatchRect
 
 func _ready():
 	SignalManager.inventory_opened.connect(self._on_inventory_opened)
+	SignalManager.inventory_closed.connect(self._on_inventory_closed)
 	setSize()
 
 func close():
@@ -68,6 +69,21 @@ func _on_inventory_opened( inventory: Inventory ):
 	
 	show()
 	
+	
+	
+func _on_inventory_closed( inventory: Inventory ):
+	print ("ON INVENTORY CLOSE")
+	
+	if current_inventories.size() == 0:
+		size.y = 91
+	
+	if current_inventories.has( inventory ):
+		container.remove_child( inventory )
+		current_inventories.erase( inventory )
+	
+		setSize()
+	if current_inventories == []:
+		hide()
 
 
 func _on_close_button_pressed():
