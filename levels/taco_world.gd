@@ -4,7 +4,7 @@ extends Node2D
 
 signal level_changed(destination)
 
-@export var level_name = "devisland"
+@export var level_name = "taco_world"
 @export var unvisited = true
 
 

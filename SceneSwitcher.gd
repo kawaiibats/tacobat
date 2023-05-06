@@ -29,6 +29,7 @@ func handle_level_changed(destination_name: String, destID: int):
 		#print("next dest ID is", next_destID)
 
 		var check_next_level = load("res://saves/" + destination_name + ".tscn").instantiate()
+		print("checked: ", check_next_level)
 
 		if check_next_level.unvisited == true:
 			print("level was unvisited, loading brand new copy")
