@@ -1263,24 +1263,28 @@ metadata/_edit_lock_ = true
 [node name="ForagePool" type="Node" parent="."]
 
 [node name="ForagableWheat" parent="ForagePool" instance=ExtResource("9_meyku")]
+visible = false
 position = Vector2(0, 0)
 itemInside = "wheat"
 rarity = 1
 stoneCount = 10
 
 [node name="ForageableApple" parent="ForagePool" instance=ExtResource("9_meyku")]
+visible = false
 position = Vector2(0, 0)
 itemInside = "apple"
 rarity = 2
 stoneCount = 1
 
 [node name="ForageableBrownMush" parent="ForagePool" instance=ExtResource("9_meyku")]
+visible = false
 position = Vector2(0, 0)
 itemInside = "brown_mush"
 rarity = 1
 stoneCount = 5
 
 [node name="ForageableRedMush" parent="ForagePool" instance=ExtResource("9_meyku")]
+visible = false
 position = Vector2(0, 0)
 itemInside = "red_mush"
 rarity = 1
@@ -1308,11 +1312,11 @@ position = Vector2(127, 195)
 destID = 2
 
 [node name="Entity Spawn Zone" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
-position = Vector2(126, -18)
+position = Vector2(181, 133)
 entitySpawnID = 1
 
 [node name="Entity Spawn Zone2" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
-position = Vector2(126, 13)
+position = Vector2(181, 164)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone3" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
