@@ -127,8 +127,50 @@ func update_interactions():
 		interactLabel.text = ""
 
 func execute_interaction():
+	
+	var cur_interaction
+	
 	if all_interactions:
-		var cur_interaction = all_interactions[0]
+		
+		var savedInteractPosDiff = Vector2.ZERO
+		for interaction in all_interactions:
+			
+			print("interaction is: ", interaction)
+			print("interaction coords at: ", interaction.global_position)
+			
+			print("player coords at: ", self.global_position)
+			
+			var interactPosDiff = abs(interaction.global_position - self.global_position)
+			
+			print("difference is: ", interactPosDiff)
+			
+			if savedInteractPosDiff == Vector2.ZERO:
+				print("selecting interaction as a default")
+				savedInteractPosDiff = interactPosDiff
+				
+				cur_interaction = interaction				
+				continue
+				
+			elif savedInteractPosDiff > interactPosDiff:
+				print("selecting this interaction")
+				savedInteractPosDiff = interactPosDiff
+					
+				cur_interaction = interaction
+				continue
+					
+			else:
+				print("not selecting this interaction")
+				continue
+		
+		
+		# FIX THIS!!
+		if not cur_interaction:
+			print("defaulting to first interaction")
+			#var cur_interaction = all_interactions[0]
+		
+		
+		
+		
 		match cur_interaction.interact_type:
 			"print_text" : print(cur_interaction.interact_value)
 			"forage" : 

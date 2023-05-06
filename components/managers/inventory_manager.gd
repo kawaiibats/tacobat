@@ -27,8 +27,8 @@ func _on_inventory_ready ( inventory ):
 
 func _input( event : InputEvent ):
 	if event is InputEventMouseMotion and item_in_hand:
-		print("Item in hand pos:", item_in_hand.position)
-		print("Event pos:", event.position)
+		#print("Item in hand pos:", item_in_hand.position)
+		#print("Event pos:", event.position)
 		item_in_hand.position = event.position + Vector2(-8, -8) # no idea why this breaks if i use a variable3
 
 
