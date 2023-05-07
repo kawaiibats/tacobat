@@ -36,8 +36,11 @@ func setSize():
 		print("inv size y:", inv.size.y)
 		inventorySizes = inventorySizes + inv.size.y
 		inventorySizes = inventorySizes + 3
-		
-	inventorySizes = inventorySizes - 3
+		print("current total inventorySizes: ", inventorySizes)
+	
+	inventorySizes = inventorySizes + 20
+	
+	print("inventorySizes:", inventorySizes)
 	
 	var difference = inventorySizes - 91
 	print("difference:", difference)
@@ -81,7 +84,8 @@ func _on_inventory_closed( inventory: Inventory ):
 		container.remove_child( inventory )
 		current_inventories.erase( inventory )
 	
-		setSize()
+	setSize()
+	
 	if current_inventories == []:
 		hide()
 
