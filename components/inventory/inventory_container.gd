@@ -11,6 +11,7 @@ func _ready():
 	SignalManager.inventory_closed.connect(self._on_inventory_closed)
 	setSize()
 
+
 func close():
 	for i in current_inventories:
 		container.remove_child(i)
@@ -26,13 +27,14 @@ func setSize():
 	
 	var inventorySizes = 0
 	
-	if current_inventories.is_empty():
-		return
+	#if current_inventories.is_empty():
+		#return
 	
 
 	
 	print("current_inventories:", current_inventories)
 	for inv in current_inventories:
+		
 		print("inv size y:", inv.size.y)
 		inventorySizes = inventorySizes + inv.size.y
 		inventorySizes = inventorySizes + 3

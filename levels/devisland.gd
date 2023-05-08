@@ -16,6 +16,10 @@ var instancePackage:Node
 var saveFile : String = "res://saves/" + level_name + ".tscn"
 
 
+
+var print_debug = false
+
+
 func _ready():
 	if (unvisited):
 		genesis()
@@ -92,7 +96,7 @@ func genesis():
 	
 	# gets the level's foragables from the pool node
 	var foragePool = $ForagePool.get_children()
-	print("Available forage pool:", foragePool)
+	if (print_debug): print("Available forage pool:", foragePool)
 	
 	
 	# gets the empty entity spawn zones that can be picked to spawn on
@@ -102,7 +106,7 @@ func genesis():
 		if _i.is_in_group("EntitySpawn") and _i.get_child_count() == 2:
 			entitySpawnZonePool.append(_i)
 			
-	print ("Available entity spawn pool:", entitySpawnZonePool)
+	if (print_debug): print ("Available entity spawn pool:", entitySpawnZonePool)
 	
 	
 	# roll 1-8 (but with special odds) to determine how many foragys will spawn
