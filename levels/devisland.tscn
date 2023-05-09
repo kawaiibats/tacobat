@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ct6rse4nt0l12"]
+[gd_scene load_steps=28 format=3 uid="uid://brwsknoiqt3yw"]
 
 [ext_resource type="Script" path="res://levels/devisland.gd" id="1_myjjd"]
 [ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="2_tboj6"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://prfcee3we6ob" path="res://art/sprout/Tilesets/Fences.png" id="8_b1ddv"]
 [ext_resource type="Texture2D" uid="uid://bgmdj24idfse0" path="res://art/taco/Forest Tilemap.png" id="9_fvw1p"]
 [ext_resource type="PackedScene" uid="uid://cxr5qfrfmofwu" path="res://characters/cow.tscn" id="10_0q86j"]
-[ext_resource type="PackedScene" uid="uid://csqdcdyiuh8qe" path="res://objects/chest.tscn" id="11_u610i"]
 [ext_resource type="PackedScene" uid="uid://bcrrv2ers6dgf" path="res://objects/bed.tscn" id="12_ku6aq"]
 [ext_resource type="PackedScene" uid="uid://bquf4add2un5n" path="res://world/berrybush.tscn" id="13_p0e18"]
 [ext_resource type="PackedScene" uid="uid://cyin5wgk4kyy5" path="res://world/bush.tscn" id="14_ou7jl"]
@@ -1316,20 +1315,6 @@ position = Vector2(73, 41)
 
 [node name="Cow3" parent="." instance=ExtResource("10_0q86j")]
 position = Vector2(33, -74)
-
-[node name="Chest" parent="." instance=ExtResource("11_u610i")]
-size = 5
-inventory_name = "Cool Chest"
-starting_items = ["red_mush"]
-
-[node name="Chest2" parent="." instance=ExtResource("11_u610i")]
-position = Vector2(5, 149)
-
-[node name="Chest3" parent="." instance=ExtResource("11_u610i")]
-position = Vector2(23, 0)
-
-[node name="Chest4" parent="." instance=ExtResource("11_u610i")]
-position = Vector2(159, -52)
 
 [node name="Bed" parent="." instance=ExtResource("12_ku6aq")]
 position = Vector2(-70, 9)

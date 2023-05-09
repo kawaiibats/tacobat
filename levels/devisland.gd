@@ -76,13 +76,13 @@ func place_foragy(foragyPool, zonePool):
 	
 	zonePool.erase(selectedZone)
 	
-	print("Foragy picked:", selectedForagy)
-	print("Zone picked:", selectedZone)
+	if (print_debug): print("Foragy picked:", selectedForagy)
+	if (print_debug): print("Zone picked:", selectedZone)
 	
 	#set foragy as visible
 	selectedForagyInstance.visible = true
 	selectedZone.add_child(selectedForagyInstance)
-	print("POSITION OF THIS FORAGY:", selectedForagyInstance.position)
+	if (print_debug): print("POSITION OF THIS FORAGY:", selectedForagyInstance.position)
 	#fix foragy position to be at 0 0 
 	var zed = Vector2(0,0)
 	selectedForagyInstance.position = zed

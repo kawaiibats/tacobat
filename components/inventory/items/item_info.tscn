@@ -41,9 +41,9 @@ patch_margin_bottom = 3
 
 [node name="label" type="Label" parent="title"]
 layout_mode = 1
-offset_left = 24.0
+offset_left = 26.0
 offset_top = 3.0
-offset_right = 161.0
+offset_right = 163.0
 offset_bottom = 30.0
 scale = Vector2(0.4, 0.4)
 text = "item name
