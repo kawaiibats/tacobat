@@ -15,8 +15,10 @@ extends CharacterBody2D
 @export var health : float = 100
 @onready var healthLabel = $InteractionComponents/HealthLabel
 
-
 @onready var warping : bool = false
+
+
+
 
 
 func _ready():
@@ -48,6 +50,8 @@ func _physics_process(_delta):
 		
 		if Input.is_action_just_pressed("altInteract"):
 			execute_alt_interaction()
+			
+
 
 
 # Update direction of player
@@ -182,6 +186,14 @@ func execute_interaction():
 				
 				if(forageParent.itemInside):
 					print("You found.. ", forageParent.itemInside)
+					
+					var itemToGive = ItemManager.get_item(forageParent.itemInside)
+					print("itemToGive: ", itemToGive)
+					
+					
+					# add that item to the player's inventory (still havent coded that)
+					#playerInventory.inventory.add_item(itemToGive)
+
 			
 				forageParent.queue_free()
 			"open_inventory":
@@ -223,4 +235,9 @@ func execute_alt_interaction():
 			match selectedInteraction.alt_interact_type:
 				"print_text" : print(selectedInteraction.alt_interact_value)
 
+
+
+
+	
+	
 

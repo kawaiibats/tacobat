@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ct6rse4nt0l12"]
+[gd_scene load_steps=30 format=3 uid="uid://ct6rse4nt0l12"]
 
 [ext_resource type="Script" path="res://levels/devisland.gd" id="1_myjjd"]
 [ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="2_tboj6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://csqdcdyiuh8qe" path="res://objects/chest.tscn" id="11_u610i"]
 [ext_resource type="PackedScene" uid="uid://bcrrv2ers6dgf" path="res://objects/bed.tscn" id="12_ku6aq"]
 [ext_resource type="PackedScene" uid="uid://bquf4add2un5n" path="res://world/berrybush.tscn" id="13_p0e18"]
+[ext_resource type="Script" path="res://objects/chest_rng.gd" id="13_x1nbe"]
 [ext_resource type="PackedScene" uid="uid://cyin5wgk4kyy5" path="res://world/bush.tscn" id="14_ou7jl"]
 [ext_resource type="PackedScene" uid="uid://bj3laokry4wae" path="res://components/warper/warpArea.tscn" id="15_32w7i"]
 [ext_resource type="AudioStream" uid="uid://ctwqrntpcclgo" path="res://sfx/magIn.mp3" id="16_u6edi"]
@@ -1327,9 +1328,17 @@ position = Vector2(5, 149)
 
 [node name="Chest3" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(23, 0)
+size = 7
+inventory_name = "Alt Chest"
+starting_items = ["brown_mush", "red_mush", "apple"]
 
-[node name="Chest4" parent="." instance=ExtResource("11_u610i")]
+[node name="RandomChest4" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(159, -52)
+script = ExtResource("13_x1nbe")
+num_of_items = 10
+size = 14
+inventory_name = "Random Loot Chest"
+starting_items = ["red_mush", "brown_mush", "apple", "wheat"]
 
 [node name="Bed" parent="." instance=ExtResource("12_ku6aq")]
 position = Vector2(-70, 9)
@@ -1412,6 +1421,14 @@ entitySpawnID = 2
 [node name="Entity Spawn Zone5" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
 position = Vector2(263, 69)
 entitySpawnID = 2
+
+[node name="RandomChest5" parent="." instance=ExtResource("11_u610i")]
+position = Vector2(179, -52)
+script = ExtResource("13_x1nbe")
+num_of_items = 2
+size = 5
+inventory_name = "Small Loot Chest"
+starting_items = ["red_mush", "brown_mush", "apple", "wheat"]
 
 [connection signal="warp_area_entered" from="warpArea2" to="." method="_on_warper_warp_area_entered"]
 [connection signal="warp_area_entered" from="warpdevlvl2" to="." method="_on_warpdevlvl_2_warp_area_entered"]

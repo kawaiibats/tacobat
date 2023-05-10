@@ -1,7 +1,11 @@
 extends NinePatchRect
 
+var print_debug = false
+
 @export var container_path: NodePath
 @onready var container = get_node( container_path ) 
+
+
 
 @onready var current_inventories = container.get_children()
 
@@ -21,31 +25,27 @@ func close():
 
 
 func setSize():
-	print("starting setSize() size.y: ", size.y)
+	if print_debug: print("starting setSize() size.y: ", size.y)
 	
 	size.y = 91
 	
 	var inventorySizes = 0
-	
-	#if current_inventories.is_empty():
-		#return
-	
 
 	
-	print("current_inventories:", current_inventories)
+	if print_debug: print("current_inventories:", current_inventories)
 	for inv in current_inventories:
 		
-		print("inv size y:", inv.size.y)
+		if print_debug: print("inv size y:", inv.size.y)
 		inventorySizes = inventorySizes + inv.size.y
 		inventorySizes = inventorySizes + 3
-		print("current total inventorySizes: ", inventorySizes)
+		if print_debug: print("current total inventorySizes: ", inventorySizes)
 	
 	inventorySizes = inventorySizes + 20
 	
-	print("inventorySizes:", inventorySizes)
+	if print_debug: print("inventorySizes:", inventorySizes)
 	
 	var difference = inventorySizes - 91
-	print("difference:", difference)
+	if print_debug: print("difference:", difference)
 	
 	if difference > 0:
 		size.y += difference
@@ -54,7 +54,7 @@ func setSize():
 		#size.y += 5
 		return
 	
-	print("final size.y:", size.y)
+	if print_debug: print("final size.y:", size.y)
 	
 	
 func _on_inventory_opened( inventory: Inventory ):

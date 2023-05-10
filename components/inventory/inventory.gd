@@ -32,10 +32,12 @@ func _ready():
 	
 
 func set_inventory_size(value):
-	print("setting inventory size")
 	inventory_size = value
+	
+	
 	size.y = 43 + ( ceil( inventory_size / 7.0 ) - 1 ) * 24
-	print("setting size to: ", size.y)
+	custom_minimum_size.y = size.y
+
 	
 	if slots == []:
 		for s in inventory_size:
