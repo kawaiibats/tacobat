@@ -11,11 +11,24 @@ func _init():
 	
 
 func _ready():
+
 	print("chest on ready")
 	
-	inventory.inventory_size = size
 	inventory.inventory_name = inventory_name
-	set_items(starting_items)
+	inventory.inventory_size = size
+	
+	print("chest parent:", get_parent())
+	
+	# Initialize chest inventory
+	if(get_parent().unvisited == true):
+		
+		set_items(starting_items)
+		
+	# Set chest inventory to its current inventory of items
+	else:
+		pass
+
+	
 	
 func set_items(items):
 	for item in items:
@@ -23,7 +36,6 @@ func set_items(items):
 	
 
 	
-
 
 
 

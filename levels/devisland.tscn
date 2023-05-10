@@ -1325,6 +1325,9 @@ starting_items = ["red_mush"]
 
 [node name="Chest2" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(5, 149)
+size = 1
+inventory_name = "Chest"
+starting_items = []
 
 [node name="Chest3" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(23, 0)
@@ -1335,10 +1338,10 @@ starting_items = ["brown_mush", "red_mush", "apple"]
 [node name="RandomChest4" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(159, -52)
 script = ExtResource("13_x1nbe")
-num_of_items = 10
 size = 14
 inventory_name = "Random Loot Chest"
 starting_items = ["red_mush", "brown_mush", "apple", "wheat"]
+num_of_items = 10
 
 [node name="Bed" parent="." instance=ExtResource("12_ku6aq")]
 position = Vector2(-70, 9)
@@ -1425,10 +1428,10 @@ entitySpawnID = 2
 [node name="RandomChest5" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(179, -52)
 script = ExtResource("13_x1nbe")
-num_of_items = 2
 size = 5
 inventory_name = "Small Loot Chest"
 starting_items = ["red_mush", "brown_mush", "apple", "wheat"]
+num_of_items = 2
 
 [connection signal="warp_area_entered" from="warpArea2" to="." method="_on_warper_warp_area_entered"]
 [connection signal="warp_area_entered" from="warpdevlvl2" to="." method="_on_warpdevlvl_2_warp_area_entered"]

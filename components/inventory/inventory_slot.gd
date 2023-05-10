@@ -20,6 +20,8 @@ func set_item( new_item ):
 func pick_item():
 	item.pick_item()
 	container.remove_child(item)
+	#new
+	get_parent().get_parent().current_items.erase(item)
 	item = null
 	
 func put_item( new_item ):
