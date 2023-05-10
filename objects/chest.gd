@@ -1,4 +1,4 @@
-extends StaticBody2D
+class_name Chest extends StaticBody2D
 
 @export var size : int = 1
 @export var inventory_name : String = "Chest"
@@ -7,7 +7,7 @@ extends StaticBody2D
 @onready var inventory : Inventory
 
 func _init():
-	inventory = load("res://components/inventory/inventory.tscn").instantiate()
+	inventory = preload("res://components/inventory/inventory.tscn").instantiate()
 	
 
 func _ready():
@@ -15,10 +15,11 @@ func _ready():
 	
 	inventory.inventory_size = size
 	inventory.inventory_name = inventory_name
+	set_items(starting_items)
 	
-	for item in starting_items:
-		print("item: ", item)
-		inventory.add_item(load("res://components/inventory/items/data/" + item + ".tscn").instantiate())
+func set_items(items):
+	for item in items:
+		inventory.add_item( ItemManager.get_item( item ))
 	
 
 	

@@ -1,7 +1,11 @@
 extends NinePatchRect
 
+var print_debug = false
+
 @export var container_path: NodePath
 @onready var container = get_node( container_path ) 
+
+
 
 @onready var current_inventories = container.get_children()
 
@@ -10,6 +14,7 @@ func _ready():
 	SignalManager.inventory_opened.connect(self._on_inventory_opened)
 	SignalManager.inventory_closed.connect(self._on_inventory_closed)
 	setSize()
+
 
 func close():
 	for i in current_inventories:
@@ -20,27 +25,27 @@ func close():
 
 
 func setSize():
-	print("starting setSize() size.y: ", size.y)
+	if print_debug: print("starting setSize() size.y: ", size.y)
 	
 	size.y = 91
 	
 	var inventorySizes = 0
-	
-	if current_inventories.is_empty():
-		return
-	
 
 	
-	print("current_inventories:", current_inventories)
+	if print_debug: print("current_inventories:", current_inventories)
 	for inv in current_inventories:
-		print("inv size y:", inv.size.y)
+		
+		if print_debug: print("inv size y:", inv.size.y)
 		inventorySizes = inventorySizes + inv.size.y
 		inventorySizes = inventorySizes + 3
-		
-	inventorySizes = inventorySizes - 3
+		if print_debug: print("current total inventorySizes: ", inventorySizes)
+	
+	inventorySizes = inventorySizes + 20
+	
+	if print_debug: print("inventorySizes:", inventorySizes)
 	
 	var difference = inventorySizes - 91
-	print("difference:", difference)
+	if print_debug: print("difference:", difference)
 	
 	if difference > 0:
 		size.y += difference
@@ -49,7 +54,7 @@ func setSize():
 		#size.y += 5
 		return
 	
-	print("final size.y:", size.y)
+	if print_debug: print("final size.y:", size.y)
 	
 	
 func _on_inventory_opened( inventory: Inventory ):
@@ -81,7 +86,8 @@ func _on_inventory_closed( inventory: Inventory ):
 		container.remove_child( inventory )
 		current_inventories.erase( inventory )
 	
-		setSize()
+	setSize()
+	
 	if current_inventories == []:
 		hide()
 
