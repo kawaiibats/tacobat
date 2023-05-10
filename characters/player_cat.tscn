@@ -251,6 +251,10 @@ texture = ExtResource("1_4ykey")
 hframes = 4
 vframes = 4
 
+[node name="Camera2D" type="Camera2D" parent="."]
+editor_draw_screen = false
+editor_draw_limits = true
+
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_segf6")
