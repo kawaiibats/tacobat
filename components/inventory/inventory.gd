@@ -80,8 +80,10 @@ func add_item( item ):
 	print("current slots in here:", slots)
 	for s in slots:
 		if not s.item:
-			print("adding item: ", item)
+			print("adding item: ", item.id)
 			s.set_item ( item )
+
+			
 			return
 
 

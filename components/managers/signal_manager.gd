@@ -4,7 +4,9 @@ extends Node
 signal inventory_opened
 signal inventory_closed
 signal inventory_ready
+signal player_inventory_ready ( inventories )
 
 
-
+# Interactables
+signal item_picked ( item )
 
