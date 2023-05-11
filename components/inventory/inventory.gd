@@ -16,6 +16,19 @@ var slots : Array = []
 
 
 
+
+# current items in inventory
+@export var current_items : Array = []
+
+
+
+
+# optional chest variables
+@export var chest_path : NodePath
+@onready var chest = get_node( chest_path )
+
+
+
 func _ready():
 	print("inventory on _ready")
 
@@ -49,8 +62,8 @@ func set_inventory_size(value):
 
 func add_slots():
 	for s in slots:
-		slot_container.add_child( s )
-	print("slot container children:", slot_container.get_children())
+		slot_container.add_child.call_deferred( s )
+	#print("slot container children:", slot_container.get_children())
 
 
 

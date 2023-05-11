@@ -78,7 +78,7 @@ func transfer_data(old_scene, new_scene):
 	#print(newPlayerLocation)
 	
 	new_scene.remove_child(newPlayer)
-	new_scene.add_child(oldPlayerCopy)
+	new_scene.add_child.call_deferred(oldPlayerCopy)
 	
 	var showChildren = new_scene.get_children()
 	#print(showChildren)

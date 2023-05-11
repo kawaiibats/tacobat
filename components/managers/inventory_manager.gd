@@ -54,7 +54,7 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 				temp_item.global_position = event.global_position - item_offset
 				slot.put_item( item_in_hand )
 				item_in_hand = temp_item
-				item_in_hand_node.add_child (item_in_hand)
+				item_in_hand_node.add_child.call_deferred (item_in_hand)
 				
 			else:
 				slot.put_item( item_in_hand )

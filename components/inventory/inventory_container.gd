@@ -67,7 +67,7 @@ func _on_inventory_opened( inventory: Inventory ):
 		print("inventory container already has this inventory, return")
 		return
 	
-	container.add_child( inventory )
+	container.add_child.call_deferred( inventory )
 	current_inventories.append ( inventory )
 	
 	setSize()
