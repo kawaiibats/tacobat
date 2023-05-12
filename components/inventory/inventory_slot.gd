@@ -59,6 +59,11 @@ func put_item( new_item : Item) -> Item:
 			if true:
 				var temp_item = item
 				container.remove_child( item )
+				
+				# ?
+				print("APPEND: ", container.get_parent().get_parent().get_parent().chest.current_items.item.id)
+				container.get_parent().get_parent().get_parent().chest.current_items.append(item.id)
+				
 				set_item( new_item )
 				new_item = temp_item
 			

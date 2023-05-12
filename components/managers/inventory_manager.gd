@@ -77,6 +77,9 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 				
 			else:
 				slot.put_item( item_in_hand )
+				if slot.container.get_parent().get_parent().get_parent().chest:
+					print("APPENDING 2: ", slot.container.get_parent().get_parent().get_parent().chest.current_items)
+					slot.container.get_parent().get_parent().get_parent().chest.current_items.append(item_in_hand.id)
 				item_in_hand = null
 				
 		elif slot.item:
