@@ -8,6 +8,10 @@ var item
 var whenready = false
 
 
+var debug = false
+
+
+
 func _ready():
 	whenready = true
 	if item:
@@ -24,9 +28,9 @@ func set_item( new_item ):
 		item_container.add_child ( new_item )
 	
 	#prints
-	print("old item: ")
-	if item: print(item.id)
-	print("new_item:", new_item.id)
+	if debug: print("old item: ")
+	if debug: if item: print(item.id)
+	if debug: print("new_item:", new_item.id)
 	
 	item = new_item
 	
