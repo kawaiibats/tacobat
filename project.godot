@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="myProject"
-run/main_scene="res://master.tscn"
+run/main_scene="res://scenes/master.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalManager="*res://components/managers/signal_manager.gd"
 ItemManager="*res://components/managers/item_manager.gd"
+SettingsManager="*res://components/managers/settings_manager.gd"
 
 [display]
 

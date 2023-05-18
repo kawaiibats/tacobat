@@ -10,3 +10,6 @@ signal player_inventory_ready ( inventories )
 # Interactables
 signal item_picked ( item )
 
+
+# UI
+signal ui_scale_changed ( uiScale )

@@ -1,4 +1,4 @@
-extends NinePatchRect
+extends Scale_Control
 
 var print_debug = false
 
