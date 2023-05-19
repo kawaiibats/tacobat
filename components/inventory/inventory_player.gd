@@ -15,7 +15,7 @@ var print_debug = false
 func _ready():
 	setSize()
 	
-	var inventories = [ inventory ] #, hotbar, etc
+	var inventories = [ inventory ] #, hotbar, backpack, etc
 	SignalManager.emit_signal( "player_inventory_ready", inventories ) 
 
 
@@ -25,7 +25,7 @@ func _physics_process(_delta):
 
 
 func close():
-	#not needed for player inventory, it stays always
+	#not needed for player inventory, it stays always. If there is some kind of temporary inventory maybe
 	#for i in players_inventories:
 		#remove_child(i)
 		
