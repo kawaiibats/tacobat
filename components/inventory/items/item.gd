@@ -7,5 +7,6 @@ func pick_item():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func put_item():
+	print("the item pos: ", position)
 	mouse_filter = Control.MOUSE_FILTER_PASS
 

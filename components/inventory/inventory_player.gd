@@ -1,9 +1,11 @@
-extends NinePatchRect
+extends Scale_Control
 
 var print_debug = false
 
 @export var inventory_path: NodePath
 @onready var inventory = get_node( inventory_path ) as Inventory
+
+#hotbar etc here ~
 
 @onready var players_inventories = inventory.get_parent().get_children()
 
@@ -12,6 +14,9 @@ var print_debug = false
 
 func _ready():
 	setSize()
+	
+	var inventories = [ inventory ] #, hotbar, backpack, etc
+	SignalManager.emit_signal( "player_inventory_ready", inventories ) 
 
 
 func _physics_process(_delta):
@@ -20,6 +25,7 @@ func _physics_process(_delta):
 
 
 func close():
+	#not needed for player inventory, it stays always. If there is some kind of temporary inventory maybe
 	#for i in players_inventories:
 		#remove_child(i)
 		

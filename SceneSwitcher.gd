@@ -39,12 +39,14 @@ func handle_level_changed(destination_name: String, destID: int):
 			next_level = load("res://saves/" + destination_name + ".tscn").instantiate() 	
 			
 		next_level.visible = false
+		
+		# this generates some errors but it cannot be deferred
 		add_child(next_level)
 		anim.play("fade_in")
 		next_level.level_changed.connect(self.handle_level_changed)
 		transfer_data(current_level, next_level)
 
-		
+
 
 func transfer_data(old_scene, new_scene):
 	
@@ -78,7 +80,7 @@ func transfer_data(old_scene, new_scene):
 	#print(newPlayerLocation)
 	
 	new_scene.remove_child(newPlayer)
-	new_scene.add_child(oldPlayerCopy)
+	new_scene.add_child.call_deferred(oldPlayerCopy)
 	
 	var showChildren = new_scene.get_children()
 	#print(showChildren)

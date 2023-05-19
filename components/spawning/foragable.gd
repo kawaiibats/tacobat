@@ -26,3 +26,8 @@ func getRarity():
 
 func getStones():
 	return stoneCount
+
+func interact():
+	SignalManager.emit_signal( "item_picked", itemInside, null)
+
+

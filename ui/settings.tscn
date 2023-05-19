@@ -1,0 +1,168 @@
+[gd_scene load_steps=10 format=3 uid="uid://m242l4ohceuy"]
+
+[ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_ls8o3"]
+[ext_resource type="Script" path="res://ui/settings.gd" id="2_rb7a7"]
+[ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="2_s1xxi"]
+[ext_resource type="Texture2D" uid="uid://y61m20p4xdwr" path="res://art/calame/x_normal.png" id="3_sbyde"]
+[ext_resource type="Texture2D" uid="uid://b2rsr3rfkr086" path="res://art/calame/x_pressed.png" id="4_kehco"]
+[ext_resource type="Texture2D" uid="uid://b8ocnoig8tjtm" path="res://art/calame/x_hover.png" id="5_g0dst"]
+[ext_resource type="Texture2D" uid="uid://dk07cw0l7qoou" path="res://art/calame/x_disabled.png" id="6_cujrb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aah60"]
+font = ExtResource("2_s1xxi")
+font_size = 32
+font_color = Color(0.180392, 0.278431, 0.431373, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_33m2r"]
+font = ExtResource("2_s1xxi")
+font_size = 32
+font_color = Color(0.729412, 0.45098, 0.137255, 1)
+
+[node name="settings" type="NinePatchRect"]
+offset_left = 63.0
+offset_top = 58.0
+offset_right = 259.0
+offset_bottom = 155.0
+size_flags_vertical = 4
+texture = ExtResource("1_ls8o3")
+region_rect = Rect2(768, 64, 48, 48)
+patch_margin_left = 5
+patch_margin_top = 43
+patch_margin_right = 5
+patch_margin_bottom = 43
+script = ExtResource("2_rb7a7")
+scale_slider_path = NodePath("setting_list/scale/HSlider")
+
+[node name="title" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = -6.0
+offset_right = 49.5
+offset_bottom = 10.0
+grow_horizontal = 2
+texture = ExtResource("1_ls8o3")
+region_rect = Rect2(80, 304, 32, 16)
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 3
+
+[node name="label_settings" type="Label" parent="title"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.5
+offset_top = 1.0
+offset_right = 103.5
+offset_bottom = 28.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+text = "Settings
+"
+label_settings = SubResource("LabelSettings_aah60")
+horizontal_alignment = 1
+
+[node name="close_button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 2.0
+offset_bottom = 6.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_sbyde")
+texture_pressed = ExtResource("4_kehco")
+texture_hover = ExtResource("5_g0dst")
+texture_disabled = ExtResource("6_cujrb")
+
+[node name="setting_list" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 15.0
+offset_right = 187.0
+offset_bottom = 58.0
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="scale" type="NinePatchRect" parent="setting_list"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+texture = ExtResource("1_ls8o3")
+region_rect = Rect2(354, 274, 28, 12)
+patch_margin_left = 27
+patch_margin_top = 11
+patch_margin_right = 27
+patch_margin_bottom = 11
+
+[node name="label_setting_name" type="Label" parent="setting_list/scale"]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 431.0
+offset_bottom = 29.0
+scale = Vector2(0.4, 0.4)
+text = "- Scale -"
+label_settings = SubResource("LabelSettings_33m2r")
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="setting_list/scale"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -8.0
+offset_right = -23.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.5
+max_value = 1.5
+step = 0.1
+value = 1.0
+
+[node name="fullscreen" type="NinePatchRect" parent="setting_list"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+texture = ExtResource("1_ls8o3")
+region_rect = Rect2(354, 274, 28, 12)
+patch_margin_left = 27
+patch_margin_top = 11
+patch_margin_right = 27
+patch_margin_bottom = 11
+
+[node name="label_setting_name" type="Label" parent="setting_list/fullscreen"]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 431.0
+offset_bottom = 29.0
+scale = Vector2(0.4, 0.4)
+text = "- Fullscreen -"
+label_settings = SubResource("LabelSettings_33m2r")
+horizontal_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="setting_list/fullscreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed"]
+[connection signal="gui_input" from="setting_list/scale/HSlider" to="." method="_on_scale_slider_gui_input"]
+[connection signal="toggled" from="setting_list/fullscreen/CheckBox" to="." method="_on_fullscreen_toggled"]
