@@ -6,7 +6,6 @@
 [node name="inventory_slot" type="TextureRect"]
 texture = ExtResource("1_82850")
 script = ExtResource("2_5h6sb")
-container_path = NodePath("item_container")
 
 [node name="item_container" type="CenterContainer" parent="."]
 layout_mode = 0

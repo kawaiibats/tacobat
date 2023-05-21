@@ -190,9 +190,16 @@ func execute_interaction():
 					var itemToGive = ItemManager.get_item(forageParent.itemInside)
 					print("itemToGive: ", itemToGive)
 					
+					# add item to players inventory 
+					SignalManager.emit_signal("item_picked", itemToGive)
 					
-					# add that item to the player's inventory (still havent coded that)
-					#playerInventory.inventory.add_item(itemToGive)
+					
+				
+					
+					
+					
+					
+					
 
 			
 				forageParent.queue_free()
@@ -237,7 +244,10 @@ func execute_alt_interaction():
 
 
 
+#
+# Player Inventory Methods
+# ///////////////////////////////////////////////////////////////////////////	
 
-	
-	
+func add_to_player_inventory(item):
+	var inventory_player_path : NodePath = "ui/inventory_player" 
 
