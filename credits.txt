@@ -19,7 +19,7 @@ Test assets used during development
 
 
 Magso - https://godotengine.org/qa/89680/how-get-the-node-closest-to-my-position
-godot find_closest_or_furthest() function 
+godot find_closest_or_furthest() node function 
 
 
 jmbiv - https://www.youtube.com/@jmbiv_dev
@@ -28,7 +28,7 @@ Saving data between levels, changing scenes
 
 
 Calame321 - https://www.youtube.com/@calame3218
-Various UI and inventory implementations
+Various UI and inventory implementations, test assets
 -> https://www.youtube.com/watch?v=dMYv6InQgno&list=PLcZp9zrMgnmOOQXevC-2CfH67QP3mB4wv
 
 

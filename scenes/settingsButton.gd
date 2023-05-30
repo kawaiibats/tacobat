@@ -9,5 +9,5 @@ extends Button
 func _on_pressed():
 	print("settings button pressed.. ")
 	settings.settingsGUI()
-	
+
 	

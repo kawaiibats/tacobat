@@ -31,37 +31,66 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.998363)
 
-[node name="inventory_container" parent="ui/ui_container" instance=ExtResource("3_bsu4f")]
+[node name="windows" type="Control" parent="ui/ui_container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="settings" parent="ui/ui_container/windows" instance=ExtResource("7_vcl2h")]
 visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.486
+anchor_top = 0.488
+anchor_right = 0.486
+anchor_bottom = 0.488
+offset_left = -77.12
+offset_top = -38.9
+offset_right = 118.88
+offset_bottom = 58.1
+scale = Vector2(0.8, 0.8)
+
+[node name="inventory_container" parent="ui/ui_container/windows" instance=ExtResource("3_bsu4f")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -45.5
-offset_right = 98.0
-offset_bottom = 45.5
+offset_left = -23.0
+offset_top = -82.4802
+offset_right = 173.0
+offset_bottom = 8.51978
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.75, 0.75)
 
-[node name="inventory_player" parent="ui/ui_container" instance=ExtResource("4_8d7eg")]
+[node name="inventory_player" parent="ui/ui_container/windows" instance=ExtResource("4_8d7eg")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -68.0
-offset_right = 194.0
-offset_bottom = 23.0
+offset_left = -43.0
+offset_top = -64.4507
+offset_right = 153.0
+offset_bottom = 26.5493
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.7, 0.7)
 
 [node name="item_in_hand" type="Control" parent="ui/ui_container"]
 top_level = true
@@ -73,25 +102,11 @@ mouse_filter = 2
 
 [node name="item_info" parent="ui/ui_container" instance=ExtResource("5_b3xb5")]
 visible = false
+layout_mode = 0
 offset_left = 16.0
 offset_top = 22.0
 offset_right = 130.0
 offset_bottom = 75.0
-
-[node name="settings" parent="ui/ui_container" instance=ExtResource("7_vcl2h")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -39.0
-offset_right = 124.0
-offset_bottom = 58.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
 
 [node name="buttons" type="Control" parent="ui/ui_container"]
 layout_mode = 3
@@ -117,7 +132,7 @@ scale = Vector2(0.5, 0.5)
 text = "Settings
 "
 script = ExtResource("4_0tdh4")
-settings_path = NodePath("../../settings")
+settings_path = NodePath("../../windows/settings")
 
 [node name="testScaleWIP2" type="Button" parent="ui/ui_container/buttons"]
 visible = false
