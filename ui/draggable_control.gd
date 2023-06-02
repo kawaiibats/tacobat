@@ -1,7 +1,7 @@
 class_name Draggable_Control extends Scale_Control
 
-@export var x_safe_zone : int = 100
-@export var y_safe_zone : int = 60
+@export var x_safe_zone : int = 50
+@export var y_safe_zone : int = 50
 
 var screen_size : Vector2
 var dragging : bool = false
@@ -21,14 +21,23 @@ func _process( delta ):
 
 
 
+func set_ui_scale2 ( value ):
+	set_ui_scale( value )
+	
+	set_pos( position )
+
+
+
 func set_pos( pos ):
+	
+	var scaled_size = size * scale
 	
 	
 	screen_size = DisplayServer.window_get_size()
 	
 	
-	pos.x = clamp( pos.x, -size.x + x_safe_zone, (screen_size.x / 5) - x_safe_zone)
-	pos.y = clamp( pos.y, -size.y + y_safe_zone, (screen_size.y / 4.2) - y_safe_zone)
+	pos.x = clamp( pos.x, -scaled_size.x + x_safe_zone, (screen_size.x / 4.6) - x_safe_zone)
+	pos.y = clamp( pos.y, -scaled_size.y + y_safe_zone, (screen_size.y / 4) - y_safe_zone)
 	position = pos
 
 
