@@ -7,7 +7,9 @@
 [node name="inventory_container" instance=ExtResource("1_a2f07")]
 script = ExtResource("2_5261l")
 inventory_path = NodePath("inventory_container/inventory")
-safe_zone = null
+
+[node name="inventory_container" parent="." index="2"]
+mouse_filter = 0
 
 [node name="inventory" parent="inventory_container" index="0" instance=ExtResource("3_bpnd6")]
 layout_mode = 2
