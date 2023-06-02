@@ -1,4 +1,4 @@
-extends NinePatchRect
+extends Draggable_Control
 
 var print_debug = false
 

@@ -1,4 +1,4 @@
-extends Scale_Control
+extends Draggable_Control
 
 var print_debug = false
 

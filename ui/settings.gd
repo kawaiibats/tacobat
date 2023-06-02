@@ -11,8 +11,10 @@ func _physics_process(_delta):
 
 func settingsGUI():
 	if (visible):
+		print("hideme")
 		hide()
 	else:
+		print("showme")
 		show()
 
 
