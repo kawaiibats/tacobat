@@ -11,6 +11,16 @@ extends Node
 # 
 
 
+@onready var placeholders = {
+	Game_Enums.ITEM_TYPE.EQUIPMENT_HEAD : load( "res://art/calame/placeholder_head.png" ),
+	Game_Enums.ITEM_TYPE.EQUIPMENT_TORSO : load( "res://art/calame/placeholder_torso.png" ),
+	Game_Enums.ITEM_TYPE.EQUIPMENT_BOTTOM : load( "res://art/calame/placeholder_bottom.png" ),
+	Game_Enums.ITEM_TYPE.EQUIPMENT_FEET : load( "res://art/calame/placeholder_feet.png" ),
+	Game_Enums.ITEM_TYPE.EQUIPMENT_TRINKET : load( "res://art/calame/placeholder_trinket.png" ),
+	Game_Enums.ITEM_TYPE.SEED : load ( "res://art/calame/placeholder_seeds.png" )
+}
+
+
 
 # Item Manager functions
 
@@ -39,6 +49,8 @@ func get_itemIDs(path):
 func get_item( id : String ):
 	return items[ id ].instantiate()
 
+func get_placeholder( id ):
+	return placeholders[ id ]
 
 
 

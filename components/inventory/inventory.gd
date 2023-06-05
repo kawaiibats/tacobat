@@ -34,7 +34,7 @@ var debug = false
 func _ready():
 	if (debug): print("inventory on _ready")
 
-	title.text = "- " + inventory_name + " -"
+	set_title()
 
 	if (debug): print("InvSize:", inventory_size)
 
@@ -43,7 +43,17 @@ func _ready():
 	add_slots()
 	
 	SignalManager.emit_signal( "inventory_ready", self )
-	
+
+
+
+
+func set_title():
+	title.text = "- " + inventory_name + " -"
+
+
+
+
+
 	
 
 func set_inventory_size(value):

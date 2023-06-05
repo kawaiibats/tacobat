@@ -9,3 +9,6 @@ func display( slot : Inventory_Slot ):
 	item.text = slot.item.item_name
 	
 	show()
+
+	
+	
