@@ -2,6 +2,8 @@ extends Draggable_Control
 
 var print_debug = false
 
+# item tooltip info on hover
+
 @export var item_info_path: NodePath
 @onready var item_info = get_node( item_info_path ) 
 

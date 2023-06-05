@@ -60,6 +60,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.75, 0.75)
+item_info_path = NodePath("../../item_info")
 
 [node name="quick_inventory_player" parent="ui/ui_container/windows" instance=ExtResource("6_5vlix")]
 layout_mode = 1
