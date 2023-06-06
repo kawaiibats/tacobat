@@ -230,7 +230,10 @@ func update_alt_interactions():
 		altInteractLabel.text = ""
 
 func execute_alt_interaction():
+	print("executing alt interaction")
 	if alt_interactions:
+		
+		print("alt interactions:", alt_interactions)
 		
 		var selectedInteraction
 		for interaction in alt_interactions:
