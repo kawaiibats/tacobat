@@ -1,9 +1,38 @@
-extends NinePatchRect
+extends Draggable_Control
 
 var print_debug = false
 
+# item tooltip info on hover
+
+@export var item_info_path: NodePath
+@onready var item_info = get_node( item_info_path ) 
+
+
+
+
+#hotbar etc will be here ~
+
 @export var inventory_path: NodePath
 @onready var inventory = get_node( inventory_path ) as Inventory
+
+@export var pockets_path: NodePath
+@onready var pockets = get_node( pockets_path ) as Inventory
+
+
+
+
+# ~~~
+
+
+
+
+
+
+
+
+
+
+
 
 @onready var players_inventories = inventory.get_parent().get_children()
 
@@ -12,6 +41,9 @@ var print_debug = false
 
 func _ready():
 	setSize()
+	
+	var inventories = [ inventory, pockets ] #, hotbar, backpack, etc
+	SignalManager.emit_signal( "player_inventory_ready", inventories ) 
 
 
 func _physics_process(_delta):
@@ -20,6 +52,7 @@ func _physics_process(_delta):
 
 
 func close():
+	#not needed for player inventory, it stays always. If there is some kind of temporary inventory maybe
 	#for i in players_inventories:
 		#remove_child(i)
 		
@@ -66,6 +99,10 @@ func setSize():
 func inventoryGUI():
 	if (visible):
 		hide()
+		## hide tooltip if an item is being hovered when the gui is closed
+		item_info.hide()
+		
+		
 	else:
 		show()
 

@@ -1,6 +1,14 @@
-extends NinePatchRect
+extends Draggable_Control
 
 var print_debug = false
+
+
+
+# item tooltip info on hover
+@export var item_info_path: NodePath
+@onready var item_info = get_node( item_info_path ) 
+
+
 
 @export var container_path: NodePath
 @onready var container = get_node( container_path ) 
@@ -22,6 +30,7 @@ func close():
 		
 	current_inventories = []
 	hide()
+	item_info.hide()
 
 
 func setSize():
@@ -67,7 +76,7 @@ func _on_inventory_opened( inventory: Inventory ):
 		print("inventory container already has this inventory, return")
 		return
 	
-	container.add_child( inventory )
+	container.add_child.call_deferred( inventory )
 	current_inventories.append ( inventory )
 	
 	setSize()
@@ -87,6 +96,7 @@ func _on_inventory_closed( inventory: Inventory ):
 		current_inventories.erase( inventory )
 	
 	setSize()
+	item_info.hide()
 	
 	if current_inventories == []:
 		hide()

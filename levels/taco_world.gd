@@ -76,7 +76,7 @@ func place_foragy(foragyPool, zonePool):
 	
 	#set foragy as visible
 	selectedForagyInstance.visible = true
-	selectedZone.add_child(selectedForagyInstance)
+	selectedZone.add_child.call_deferred(selectedForagyInstance)
 	print("POSITION OF THIS FORAGY:", selectedForagyInstance.position)
 	#fix foragy position to be at 0 0 
 	var zed = Vector2(0,0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c7iitbywx1ru3"]
+[gd_scene load_steps=24 format=3]
 
 [ext_resource type="Script" path="res://levels/taco_world.gd" id="1_ejeul"]
 [ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="2_v4bfj"]
