@@ -76,13 +76,13 @@ func place_foragy(foragyPool, zonePool):
 	
 	zonePool.erase(selectedZone)
 	
-	print("Foragy picked:", selectedForagy)
-	print("Zone picked:", selectedZone)
+	if (print_debug): print("Foragy picked:", selectedForagy)
+	if (print_debug): print("Zone picked:", selectedZone)
 	
 	#set foragy as visible
 	selectedForagyInstance.visible = true
-	selectedZone.add_child.call_deferred(selectedForagyInstance)
-	print("POSITION OF THIS FORAGY:", selectedForagyInstance.position)
+	selectedZone.add_child(selectedForagyInstance)
+	if (print_debug): print("POSITION OF THIS FORAGY:", selectedForagyInstance.position)
 	#fix foragy position to be at 0 0 
 	var zed = Vector2(0,0)
 	selectedForagyInstance.position = zed
@@ -153,7 +153,7 @@ func genesis():
 				for foragy in foragePool:
 					if foragy.getRarity() == 1:
 						for j in foragy.getStones():
-							if (print_debug): print("appending ", foragy, " to common pool")
+							print("appending ", foragy, " to common pool")
 							commonPool.append(foragy)
 			
 				if commonPool.is_empty():
@@ -172,7 +172,7 @@ func genesis():
 				for foragy in foragePool:
 					if foragy.getRarity() == 2:
 						for j in foragy.getStones():
-							if (print_debug): print("appending ", foragy, " to uncommon pool")
+							print("appending ", foragy, " to uncommon pool")
 							uncommonPool.append(foragy)
 			
 				if uncommonPool.is_empty():
@@ -191,7 +191,7 @@ func genesis():
 				for foragy in foragePool:
 					if foragy.getRarity() == 3:
 						for j in foragy.getStones():
-							if (print_debug): print("appending ", foragy, " to rare pool")
+							print("appending ", foragy, " to rare pool")
 							rarePool.append(foragy)
 			
 				if rarePool.is_empty():
@@ -210,7 +210,7 @@ func genesis():
 				for foragy in foragePool:
 					if foragy.getRarity() == 4:
 						for j in foragy.getStones():
-							if (print_debug): print("appending ", foragy, " to except pool")
+							print("appending ", foragy, " to except pool")
 							exceptPool.append(foragy)
 			
 				if exceptPool.is_empty():
@@ -229,7 +229,7 @@ func genesis():
 				for foragy in foragePool:
 					for j in foragy.getStones():
 						if foragy.getRarity() == 5:
-							if (print_debug): print("appending ", foragy, " to exotic pool")
+							print("appending ", foragy, " to exotic pool")
 							exoticPool.append(foragy)
 			
 				if exoticPool.is_empty():
