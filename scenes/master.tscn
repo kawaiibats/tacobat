@@ -109,5 +109,6 @@ scale = Vector2(0.5, 0.5)
 text = "Settings
 "
 script = ExtResource("4_0tdh4")
+pause_path = NodePath("../../windows/pause_menu")
 
 [connection signal="pressed" from="ui/ui_container/buttons/settingsButton" to="ui/ui_container/buttons/settingsButton" method="_on_pressed"]
