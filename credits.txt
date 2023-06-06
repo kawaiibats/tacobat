@@ -1,0 +1,37 @@
+kawaiibats - Lead Coder
+DaTacoX - Lead Artist
+
+
+
+
+
+##############################
+     ESPECIALLY THANKS TO 
+##############################
+
+Chris' Tutorials - https://www.youtube.com/@ChrisTutorialsYT
+Godot 4 top-down crash course
+-> https://www.youtube.com/watch?v=Luf2Kr5s3BM
+
+
+StaToasty - https://srtoasty.itch.io/ui-assets-pack-2
+Test assets used during development
+
+
+Magso - https://godotengine.org/qa/89680/how-get-the-node-closest-to-my-position
+godot find_closest_or_furthest() node function 
+
+
+jmbiv - https://www.youtube.com/@jmbiv_dev
+Saving data between levels, changing scenes
+-> https://www.youtube.com/watch?v=XHbrKdsZrxY&list=PLpwc3ughKbZe2jkEs0w-PdPg-PZJ0457x
+
+
+Calame321 - https://www.youtube.com/@calame3218
+Various UI and inventory implementations, test assets
+-> https://www.youtube.com/watch?v=dMYv6InQgno&list=PLcZp9zrMgnmOOQXevC-2CfH67QP3mB4wv
+
+
+
+
+

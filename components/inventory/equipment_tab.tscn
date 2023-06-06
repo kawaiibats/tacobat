@@ -1,0 +1,170 @@
+[gd_scene load_steps=12 format=3 uid="uid://bosuak312gxia"]
+
+[ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_d5su7"]
+[ext_resource type="Texture2D" uid="uid://y61m20p4xdwr" path="res://art/calame/x_normal.png" id="2_lgwdp"]
+[ext_resource type="Texture2D" uid="uid://b2rsr3rfkr086" path="res://art/calame/x_pressed.png" id="3_idylf"]
+[ext_resource type="Texture2D" uid="uid://b8ocnoig8tjtm" path="res://art/calame/x_hover.png" id="4_61yi8"]
+[ext_resource type="Texture2D" uid="uid://dk07cw0l7qoou" path="res://art/calame/x_disabled.png" id="5_pmshu"]
+[ext_resource type="Script" path="res://components/inventory/equipment.gd" id="6_l5ef1"]
+[ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="7_4887q"]
+[ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="8_oi8ge"]
+[ext_resource type="PackedScene" uid="uid://c1tg1acvqvqy6" path="res://components/inventory/equipment_slot.tscn" id="9_thk8r"]
+[ext_resource type="Texture2D" uid="uid://dqwtu0c2iqrk1" path="res://art/sprout/Characters/Basic Charakter Spritesheet.png" id="10_atb5p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_80oy0"]
+font = ExtResource("8_oi8ge")
+font_size = 32
+font_color = Color(0.729412, 0.45098, 0.137255, 1)
+
+[node name="equipment_tab" type="NinePatchRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -45.0
+offset_right = 98.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(98, 45)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+texture = ExtResource("1_d5su7")
+region_rect = Rect2(768, 64, 48, 48)
+patch_margin_left = 5
+patch_margin_top = 43
+patch_margin_right = 5
+patch_margin_bottom = 43
+
+[node name="close_button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 2.0
+offset_bottom = 6.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_lgwdp")
+texture_pressed = ExtResource("3_idylf")
+texture_hover = ExtResource("4_61yi8")
+texture_disabled = ExtResource("5_pmshu")
+
+[node name="inventory_container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 15.0
+offset_right = 187.0
+offset_bottom = 58.0
+mouse_filter = 0
+theme_override_constants/separation = 3
+
+[node name="equipment" type="NinePatchRect" parent="inventory_container"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+texture = ExtResource("1_d5su7")
+region_rect = Rect2(354, 274, 28, 12)
+patch_margin_left = 27
+patch_margin_top = 11
+patch_margin_right = 27
+patch_margin_bottom = 11
+script = ExtResource("6_l5ef1")
+inventory_name = "Equipment"
+title_path = NodePath("divider_texture/label_equipment_name")
+slot_path = NodePath("slot_container")
+
+[node name="divider_texture" type="TextureRect" parent="inventory_container/equipment"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.0
+offset_top = 13.0
+offset_right = 18.0
+offset_bottom = 15.0
+grow_horizontal = 2
+texture = ExtResource("7_4887q")
+
+[node name="label_equipment_name" type="Label" parent="inventory_container/equipment/divider_texture"]
+layout_mode = 1
+offset_left = -67.0
+offset_top = -11.0
+offset_right = 360.0
+offset_bottom = 16.0
+scale = Vector2(0.4, 0.4)
+text = "Equipment"
+label_settings = SubResource("LabelSettings_80oy0")
+horizontal_alignment = 1
+
+[node name="slot_container" type="Control" parent="inventory_container/equipment"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.5
+offset_top = 18.0
+offset_right = 83.5
+offset_bottom = 38.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="equipment_head" parent="inventory_container/equipment/slot_container" instance=ExtResource("9_thk8r")]
+layout_mode = 0
+offset_left = 18.5
+offset_top = 7.0
+offset_right = 38.5
+offset_bottom = 27.0
+type = 5
+
+[node name="equipment_torso" parent="inventory_container/equipment/slot_container" instance=ExtResource("9_thk8r")]
+layout_mode = 0
+offset_left = 18.5
+offset_top = 35.0
+offset_right = 38.5
+offset_bottom = 55.0
+type = 6
+
+[node name="equipment_bottom" parent="inventory_container/equipment/slot_container" instance=ExtResource("9_thk8r")]
+layout_mode = 0
+offset_left = 18.5
+offset_top = 63.0
+offset_right = 38.5
+offset_bottom = 83.0
+type = 7
+
+[node name="equipment_feet" parent="inventory_container/equipment/slot_container" instance=ExtResource("9_thk8r")]
+layout_mode = 0
+offset_left = 18.5
+offset_top = 93.0
+offset_right = 38.5
+offset_bottom = 113.0
+type = 8
+
+[node name="equipment_trinket" parent="inventory_container/equipment/slot_container" instance=ExtResource("9_thk8r")]
+layout_mode = 0
+offset_left = 122.5
+offset_top = 7.0
+offset_right = 142.5
+offset_bottom = 27.0
+type = 9
+
+[node name="equipment_trinket2" parent="inventory_container/equipment/slot_container" instance=ExtResource("9_thk8r")]
+layout_mode = 0
+offset_left = 122.5
+offset_top = 37.0
+offset_right = 142.5
+offset_bottom = 57.0
+type = 9
+
+[node name="TextureRectWIP" type="Sprite2D" parent="."]
+position = Vector2(93, 88)
+texture = ExtResource("10_atb5p")
+hframes = 4
+vframes = 4
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input" flags=18]
+[connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed" flags=18]
