@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnw7vi52y7yg5"]
+[gd_scene load_steps=4 format=3 uid="uid://ddk1p1eyt60y5"]
 
 [ext_resource type="PackedScene" uid="uid://cp7u6hwhqcqni" path="res://components/inventory/inventory_container.tscn" id="1_a2f07"]
-[ext_resource type="Script" path="res://components/inventory/inventory_player.gd" id="2_5261l"]
+[ext_resource type="Script" path="res://components/inventory/quick_inventory.gd" id="2_dmlwj"]
 [ext_resource type="PackedScene" uid="uid://b1ntgr14g40s7" path="res://components/inventory/inventory.tscn" id="3_bpnd6"]
 
 [node name="inventory_container" instance=ExtResource("1_a2f07")]
-script = ExtResource("2_5261l")
+script = ExtResource("2_dmlwj")
 inventory_path = NodePath("inventory_container/inventory")
+pockets_path = NodePath("")
 
 [node name="inventory" parent="inventory_container" index="0" instance=ExtResource("3_bpnd6")]
 layout_mode = 2

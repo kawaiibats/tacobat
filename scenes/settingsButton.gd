@@ -1,13 +1,13 @@
 extends Button
 
-@export var settings_path: NodePath
-@onready var settings = get_node(settings_path)
+@export var pause_path: NodePath
+@onready var pause = get_node(pause_path)
 
 
 
 
 func _on_pressed():
 	print("settings button pressed.. ")
-	settings.settingsGUI()
+	pause.pauseGUI()
 
 	
