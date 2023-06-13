@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy1680n2fk5dj"]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Texture2D" uid="uid://cx8xc6qc0alwv" path="res://art/calame/item_slot.png" id="1_82850"]
-[ext_resource type="Script" path="res://components/inventory/inventory_slot.gd" id="2_5h6sb"]
+[ext_resource type="Script" path="res://components/inventory/core/inventory_slot.gd" id="2_5h6sb"]
 
 [node name="inventory_slot" type="TextureRect"]
 texture = ExtResource("1_82850")

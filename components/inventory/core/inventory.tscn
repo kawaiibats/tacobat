@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1ntgr14g40s7"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_cu7l0"]
 [ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="2_3sd5b"]
-[ext_resource type="Script" path="res://components/inventory/inventory.gd" id="2_kpppc"]
+[ext_resource type="Script" path="res://components/inventory/core/inventory.gd" id="2_kpppc"]
 [ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="3_r2642"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_33m2r"]

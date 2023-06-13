@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bosuak312gxia"]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_d5su7"]
 [ext_resource type="Texture2D" uid="uid://y61m20p4xdwr" path="res://art/calame/x_normal.png" id="2_lgwdp"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://components/inventory/equipment.gd" id="6_l5ef1"]
 [ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="7_4887q"]
 [ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="8_oi8ge"]
-[ext_resource type="PackedScene" uid="uid://c1tg1acvqvqy6" path="res://components/inventory/equipment_slot.tscn" id="9_thk8r"]
+[ext_resource type="PackedScene" path="res://components/inventory/equipment_slot.tscn" id="9_thk8r"]
 [ext_resource type="Texture2D" uid="uid://dqwtu0c2iqrk1" path="res://art/sprout/Characters/Basic Charakter Spritesheet.png" id="10_atb5p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_80oy0"]

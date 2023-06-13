@@ -12,7 +12,7 @@ var debug = false
 
 
 func _init():
-	inventory = preload("res://components/inventory/inventory.tscn").instantiate()
+	inventory = preload("res://components/inventory/core/inventory.tscn").instantiate()
 	
 
 func _ready():
