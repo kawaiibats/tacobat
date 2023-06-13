@@ -23,6 +23,7 @@ func _on_inventory_ready ( inventory ):
 	inventories.append ( inventory )
 	
 	for slot in inventory.slots:
+		print("slotname:", slot)
 		slot.mouse_entered.connect(self._on_mouse_entered_slot.bind(slot) )
 		slot.mouse_exited.connect(self._on_mouse_exited_slot)
 		slot.gui_input.connect(self._on_gui_input_slot.bind(slot) )
@@ -77,9 +78,12 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 				
 			else:
 				slot.put_item( item_in_hand )
+				
+				# placing into a chest
 				if slot.container.get_parent().get_parent().get_parent().chest:
 					print("APPENDING 2: ", slot.container.get_parent().get_parent().get_parent().chest.current_items)
 					slot.container.get_parent().get_parent().get_parent().chest.current_items.append(item_in_hand.id)
+					
 				item_in_hand = null
 				
 		elif slot.item:

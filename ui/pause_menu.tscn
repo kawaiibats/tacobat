@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=14 format=3 uid="uid://b23u72mvao1qr"]
 
 [ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_ls8o3"]
 [ext_resource type="Script" path="res://ui/settings.gd" id="2_rb7a7"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dk07cw0l7qoou" path="res://art/calame/x_disabled.png" id="6_cujrb"]
 [ext_resource type="Script" path="res://components/inventory/equipment.gd" id="8_8ufja"]
 [ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="9_gke0u"]
-[ext_resource type="PackedScene" path="res://components/inventory/equipment_slot.tscn" id="10_s15y4"]
+[ext_resource type="PackedScene" uid="uid://cbqdc7e76pno0" path="res://components/inventory/equipment_slot.tscn" id="10_s15y4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aah60"]
 font = ExtResource("2_s1xxi")

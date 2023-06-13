@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scenes/settingsButton.gd" id="4_0tdh4"]
 [ext_resource type="PackedScene" uid="uid://deixwe760mer0" path="res://components/inventory/items/item_info.tscn" id="5_b3xb5"]
 [ext_resource type="PackedScene" uid="uid://dvl3qw5nrggby" path="res://components/inventory/hud/quick_inventory_player.tscn" id="6_5vlix"]
-[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="7_vcl2h"]
+[ext_resource type="PackedScene" uid="uid://b23u72mvao1qr" path="res://ui/pause_menu.tscn" id="7_vcl2h"]
 
 [node name="master" type="Node"]
 
@@ -44,6 +44,7 @@ mouse_filter = 1
 metadata/_edit_lock_ = true
 
 [node name="pause_menu" parent="ui/ui_container/windows" instance=ExtResource("7_vcl2h")]
+visible = false
 top_level = true
 layout_mode = 1
 scale = Vector2(0.75, 0.75)
