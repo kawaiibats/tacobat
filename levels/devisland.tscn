@@ -1328,9 +1328,9 @@ position = Vector2(5, 149)
 
 [node name="Chest3" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(23, 0)
-size = 7
+size = 14
 inventory_name = "Alt Chest"
-starting_items = ["brown_mush", "red_mush", "apple"]
+starting_items = ["brown_mush", "red_mush", "apple", "speed_trinket"]
 
 [node name="RandomChest4" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(159, -52)
