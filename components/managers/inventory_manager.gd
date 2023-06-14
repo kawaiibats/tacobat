@@ -9,7 +9,7 @@ extends Node
 
 var player_inventories : Array = []
 var inventories : Array = []
-var item_in_hand = null
+var item_in_hand : Item = null
 var item_offset = Vector2(-8, -8)
 
 func _ready():
@@ -64,8 +64,13 @@ func _on_mouse_exited_slot():
 	
 func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 	if Input.is_action_just_pressed("primaryClick"):
-		print(slot, "clicked on!")
+		#print(slot, "clicked on!")
 		if item_in_hand:
+			# prevents items of incorrect type placed in equipment slots
+			if slot is Equipment_Slot and item_in_hand.type != slot.type:
+				return
+			
+
 			item_in_hand_node.remove_child(item_in_hand)
 			
 			if slot.item:

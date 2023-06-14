@@ -20,6 +20,9 @@ func _ready():
 		container.add_child.call_deferred(item)
 
 func set_item( new_item ):
+	
+	print("activate set_item")
+	
 	var item_container = get_node("item_container")
 	
 	if not new_item:
@@ -36,30 +39,41 @@ func set_item( new_item ):
 	
 
 func pick_item():
-	item.pick_item()
 	
-	print("pick item wip ID: ", item.id)
+	print("activate pick_item")
 	
-	print("pick item wip pos ", item.position)
+	#print("pick item wip ID: ", item.id)
+	#print("pick item wip pos ", item.position)
 	
-	# chest inventory updating ?
+	
+	
+	# chest inventory updating ???
 	if container.get_parent().get_parent().get_parent().chest:
 		print("TESTWIP: ", container.get_parent().get_parent().get_parent().chest.current_items)
 	
 		container.get_parent().get_parent().get_parent().chest.current_items.erase(item.id)
 	
+	
+	# finish pick_item()
 	container.remove_child(item)
 	item = null
 
 	
 func put_item( new_item : Item) -> Item:
+	
+	print("activate put_item")
+	
 	if new_item:
 		if item:
+			
+			
 			#if item.id == new_item.id and item.quantity < item.stack_size:
 				#var remainder = item.add_item_quantity( new_item.quantity )
 				
 				#if remainder < 1:
 					#return null
+					
+					
 			if true:
 				var temp_item = item
 				container.remove_child( item )

@@ -18,10 +18,9 @@ class_name Item extends TextureRect
 @export var type : Game_Enums.ITEM_TYPE
 
 
-func pick_item():
+func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-
-func put_item():
-	print("the item pos: ", position)
-	mouse_filter = Control.MOUSE_FILTER_PASS
-
+	
+	
+	
+	
