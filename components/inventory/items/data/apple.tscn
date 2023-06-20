@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckhbnckpmydef"]
+[gd_scene load_steps=3 format=3 uid="uid://cpdre5gnapoo"]
 
-[ext_resource type="Texture2D" uid="uid://b5yr5kopdndpi" path="res://art/forage/apple.png" id="1_mk67j"]
+[ext_resource type="Texture2D" uid="uid://b5yr5kopdndpi" path="res://art/item_icon/apple.png" id="1_m5vpy"]
 [ext_resource type="Script" path="res://components/inventory/items/item.gd" id="2_dxuf5"]
 
 [node name="item" type="TextureRect"]
-texture = ExtResource("1_mk67j")
+texture = ExtResource("1_m5vpy")
 script = ExtResource("2_dxuf5")
 id = "apple"
 item_name = "Apple"

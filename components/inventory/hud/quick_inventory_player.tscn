@@ -1,13 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://duem2gpsjamib"]
+[gd_scene load_steps=12 format=3 uid="uid://dvl3qw5nrggby"]
 
 [ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_1dse3"]
-[ext_resource type="Script" path="res://components/inventory/quick_inventory.gd" id="2_08qrc"]
+[ext_resource type="Script" path="res://components/inventory/hud/quick_inventory.gd" id="2_73vgd"]
 [ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="3_su3bu"]
 [ext_resource type="Texture2D" uid="uid://y61m20p4xdwr" path="res://art/calame/x_normal.png" id="4_odyqp"]
 [ext_resource type="Texture2D" uid="uid://b2rsr3rfkr086" path="res://art/calame/x_pressed.png" id="5_n3r35"]
 [ext_resource type="Texture2D" uid="uid://b8ocnoig8tjtm" path="res://art/calame/x_hover.png" id="6_tlcsw"]
 [ext_resource type="Texture2D" uid="uid://dk07cw0l7qoou" path="res://art/calame/x_disabled.png" id="7_cw6q5"]
-[ext_resource type="Script" path="res://components/inventory/inventory.gd" id="8_bmpn1"]
+[ext_resource type="Script" path="res://components/inventory/core/inventory.gd" id="8_ds6a3"]
 [ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="9_qkeej"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aah60"]
@@ -41,7 +41,7 @@ patch_margin_left = 5
 patch_margin_top = 43
 patch_margin_right = 5
 patch_margin_bottom = 43
-script = ExtResource("2_08qrc")
+script = ExtResource("2_73vgd")
 inventory_path = NodePath("inventory_container/inventory_backpack")
 pockets_path = NodePath("inventory_container/inventory_pockets")
 
@@ -115,7 +115,7 @@ patch_margin_left = 27
 patch_margin_top = 11
 patch_margin_right = 27
 patch_margin_bottom = 11
-script = ExtResource("8_bmpn1")
+script = ExtResource("8_ds6a3")
 inventory_name = "Pockets"
 inventory_size = 3
 title_path = NodePath("divider_texture/label_inventory_name")
@@ -167,7 +167,7 @@ patch_margin_left = 27
 patch_margin_top = 11
 patch_margin_right = 27
 patch_margin_bottom = 11
-script = ExtResource("8_bmpn1")
+script = ExtResource("8_ds6a3")
 inventory_name = "Backpack"
 inventory_size = 14
 title_path = NodePath("divider_texture/label_inventory_name")

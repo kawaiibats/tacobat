@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfryvnvbd81ci"
-path="res://.godot/imported/wheat.png-2e46e75cb67ed8e967ab08ed5436a5e3.ctex"
+uid="uid://b5yr5kopdndpi"
+path="res://.godot/imported/apple.png-bf776a7c140a352862552cd888b1e6e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/forage/wheat.png"
-dest_files=["res://.godot/imported/wheat.png-2e46e75cb67ed8e967ab08ed5436a5e3.ctex"]
+source_file="res://art/item_icon/apple.png"
+dest_files=["res://.godot/imported/apple.png-bf776a7c140a352862552cd888b1e6e1.ctex"]
 
 [params]
 

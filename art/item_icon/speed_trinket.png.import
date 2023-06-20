@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5yr5kopdndpi"
-path="res://.godot/imported/apple.png-31709386865ffd15c6b717fa1b09e95b.ctex"
+uid="uid://ds3wiwrmksk4m"
+path="res://.godot/imported/speed_trinket.png-f427d19bbdd32f2d619a37ff5a9c3dd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/forage/apple.png"
-dest_files=["res://.godot/imported/apple.png-31709386865ffd15c6b717fa1b09e95b.ctex"]
+source_file="res://art/item_icon/speed_trinket.png"
+dest_files=["res://.godot/imported/speed_trinket.png-f427d19bbdd32f2d619a37ff5a9c3dd7.ctex"]
 
 [params]
 
