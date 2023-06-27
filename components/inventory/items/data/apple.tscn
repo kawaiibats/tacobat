@@ -8,3 +8,5 @@ texture = ExtResource("1_m5vpy")
 script = ExtResource("2_dxuf5")
 id = "apple"
 item_name = "Apple"
+lore = "A really shiny apple. Crunchy."
+rarity = 3

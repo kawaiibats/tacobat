@@ -8,3 +8,6 @@ texture = ExtResource("1_bddsu")
 script = ExtResource("2_13mje")
 id = "red_mush"
 item_name = "Red Mushroom"
+lore = "Considered especially tasty by many foodies from across the Isles."
+family = "Fungi"
+rarity = 1

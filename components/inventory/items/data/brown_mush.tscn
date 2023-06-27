@@ -8,3 +8,6 @@ texture = ExtResource("1_jlkyd")
 script = ExtResource("2_hxqxl")
 id = "brown_mush"
 item_name = "Brown Mushroom"
+lore = "A rather common, earthy fungi. Flourishes across many marshes and caves in the region."
+family = "Fungi"
+rarity = 1

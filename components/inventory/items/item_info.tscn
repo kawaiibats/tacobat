@@ -1,13 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://deixwe760mer0"]
+[gd_scene load_steps=8 format=3 uid="uid://deixwe760mer0"]
 
 [ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_8f1q2"]
 [ext_resource type="Script" path="res://components/inventory/items/item_info.gd" id="2_katqg"]
 [ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="2_op2dg"]
+[ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="4_e0d54"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0mt6g"]
 font = ExtResource("2_op2dg")
 font_size = 32
 font_color = Color(0.180392, 0.278431, 0.431373, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_igh7d"]
+font = ExtResource("2_op2dg")
+font_size = 32
+font_color = Color(0.670588, 0.305882, 0.407843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ckae4"]
+line_spacing = 2.0
+font = ExtResource("2_op2dg")
+font_size = 32
+font_color = Color(0.34902, 0.470588, 0.470588, 1)
 
 [node name="item_info" type="NinePatchRect"]
 offset_right = 114.0
@@ -20,7 +32,9 @@ patch_margin_top = 13
 patch_margin_right = 13
 patch_margin_bottom = 13
 script = ExtResource("2_katqg")
-item_path = NodePath("title/label")
+display_name_path = NodePath("title/item_name")
+tagline_path = NodePath("item_info_container/item_tagline")
+lore_path = NodePath("item_info_container/item_lore")
 
 [node name="title" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -39,7 +53,7 @@ patch_margin_top = 3
 patch_margin_right = 7
 patch_margin_bottom = 3
 
-[node name="label" type="Label" parent="title"]
+[node name="item_name" type="Label" parent="title"]
 layout_mode = 1
 offset_left = 6.0
 offset_top = 3.0
@@ -50,3 +64,53 @@ text = "item name
 "
 label_settings = SubResource("LabelSettings_0mt6g")
 horizontal_alignment = 1
+
+[node name="item_info_container" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="item_tagline" type="Label" parent="item_info_container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_top = 9.0
+offset_right = 323.0
+offset_bottom = 36.0
+grow_horizontal = 2
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 4
+text = "tagline rarity + type"
+label_settings = SubResource("LabelSettings_igh7d")
+horizontal_alignment = 1
+
+[node name="divider_texture" type="TextureRect" parent="item_info_container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -9.0
+offset_right = 18.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_e0d54")
+
+[node name="item_lore" type="Label" parent="item_info_container"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 22.0
+offset_right = 498.0
+offset_bottom = 132.0
+scale = Vector2(0.2, 0.2)
+text = "Considered especially tasty by many foodies from across the Isles."
+label_settings = SubResource("LabelSettings_ckae4")
+autowrap_mode = 2
