@@ -12,7 +12,7 @@ func _ready():
 	var texture_name = itemInside
 	print(texture_name)
 	
-	var newTexture = load("res://art/forage/" + texture_name + ".png")
+	var newTexture = load("res://art/item_icon/" + texture_name + ".png")
 
 	spr.texture = newTexture
 
