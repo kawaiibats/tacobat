@@ -1,0 +1,201 @@
+[gd_scene load_steps=11 format=3 uid="uid://bts7qesniabqh"]
+
+[ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_hanng"]
+[ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="3_njws8"]
+[ext_resource type="Texture2D" uid="uid://y61m20p4xdwr" path="res://art/calame/x_normal.png" id="4_iaugl"]
+[ext_resource type="Texture2D" uid="uid://b2rsr3rfkr086" path="res://art/calame/x_pressed.png" id="5_0opda"]
+[ext_resource type="Texture2D" uid="uid://b8ocnoig8tjtm" path="res://art/calame/x_hover.png" id="6_52ees"]
+[ext_resource type="Texture2D" uid="uid://dk07cw0l7qoou" path="res://art/calame/x_disabled.png" id="7_i8x5n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aah60"]
+font = ExtResource("3_njws8")
+font_size = 32
+font_color = Color(0.180392, 0.278431, 0.431373, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_33m2r"]
+font = ExtResource("3_njws8")
+font_size = 32
+font_color = Color(0.729412, 0.45098, 0.137255, 1)
+
+[sub_resource type="Theme" id="Theme_65brn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vii5"]
+bg_color = Color(0.25098, 0.25098, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.329412, 0.329412, 0.329412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 12
+anti_aliasing_size = 0.524
+
+[node name="split_stack" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.466667)
+
+[node name="main_panel" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -48.0
+offset_right = 98.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(98, 48)
+size_flags_vertical = 4
+texture = ExtResource("1_hanng")
+region_rect = Rect2(768, 64, 48, 48)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="title" type="NinePatchRect" parent="main_panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = -6.0
+offset_right = 49.5
+offset_bottom = 10.0
+grow_horizontal = 2
+texture = ExtResource("1_hanng")
+region_rect = Rect2(80, 304, 32, 16)
+patch_margin_left = 7
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 3
+
+[node name="label_settings" type="Label" parent="main_panel/title"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.5
+offset_top = 1.0
+offset_right = 127.5
+offset_bottom = 28.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+text = "Split
+"
+label_settings = SubResource("LabelSettings_aah60")
+horizontal_alignment = 1
+
+[node name="close_button" type="TextureButton" parent="main_panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 2.0
+offset_bottom = 6.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_iaugl")
+texture_pressed = ExtResource("5_0opda")
+texture_hover = ExtResource("6_52ees")
+texture_disabled = ExtResource("7_i8x5n")
+
+[node name="scale" type="NinePatchRect" parent="main_panel"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -18.0
+offset_right = 89.0
+offset_bottom = 18.0
+texture = ExtResource("1_hanng")
+region_rect = Rect2(354, 274, 28, 12)
+patch_margin_left = 27
+patch_margin_top = 11
+patch_margin_right = 27
+patch_margin_bottom = 11
+
+[node name="label_qty" type="Label" parent="main_panel/scale"]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 431.0
+offset_bottom = 29.0
+scale = Vector2(0.4, 0.4)
+text = "- Quantity -"
+label_settings = SubResource("LabelSettings_33m2r")
+horizontal_alignment = 1
+
+[node name="quantity_slider" type="HSlider" parent="main_panel/scale"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -8.0
+offset_right = -23.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.4
+max_value = 1.0
+step = 0.1
+value = 0.7
+
+[node name="original_qty" type="Label" parent="main_panel/scale"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 431.0
+offset_bottom = 29.0
+scale = Vector2(0.4, 0.4)
+text = "10
+"
+label_settings = SubResource("LabelSettings_33m2r")
+
+[node name="new_qty" type="Label" parent="main_panel/scale"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 431.0
+offset_bottom = 29.0
+scale = Vector2(0.4, 0.4)
+text = "10
+"
+label_settings = SubResource("LabelSettings_33m2r")
+horizontal_alignment = 2
+
+[node name="split_button" type="Button" parent="main_panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.5
+offset_top = -22.0
+offset_right = 38.5
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_65brn")
+theme_override_fonts/font = ExtResource("3_njws8")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_6vii5")
+text = "Split!"
+
+[connection signal="pressed" from="main_panel/close_button" to="main_panel" method="_on_close_button_pressed" flags=18]
+[connection signal="gui_input" from="main_panel/scale/quantity_slider" to="main_panel" method="_on_scale_slider_gui_input" flags=18]

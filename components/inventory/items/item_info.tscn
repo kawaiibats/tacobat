@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://deixwe760mer0"]
+[gd_scene load_steps=9 format=3 uid="uid://deixwe760mer0"]
 
 [ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_8f1q2"]
 [ext_resource type="Script" path="res://components/inventory/items/item_info.gd" id="2_katqg"]
@@ -21,6 +21,13 @@ font = ExtResource("2_op2dg")
 font_size = 32
 font_color = Color(0.34902, 0.470588, 0.470588, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_pqdqy"]
+line_spacing = 2.0
+font = ExtResource("2_op2dg")
+font_size = 32
+font_color = Color(0.34902, 0.470588, 0.470588, 1)
+outline_color = Color(0.886275, 0.305882, 0.815686, 1)
+
 [node name="item_info" type="NinePatchRect"]
 offset_right = 114.0
 offset_bottom = 53.0
@@ -34,7 +41,8 @@ patch_margin_bottom = 13
 script = ExtResource("2_katqg")
 display_name_path = NodePath("title/item_name")
 tagline_path = NodePath("item_info_container/item_tagline")
-lore_path = NodePath("item_info_container/item_lore")
+lore_path = NodePath("item_info_container/lore_and_stats_container/item_lore")
+stat_path = NodePath("item_info_container/lore_and_stats_container/item_stat")
 
 [node name="title" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -91,26 +99,34 @@ horizontal_alignment = 1
 
 [node name="divider_texture" type="TextureRect" parent="item_info_container"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -18.0
-offset_top = -9.0
+offset_top = 18.0
 offset_right = 18.0
-offset_bottom = -7.0
+offset_bottom = 20.0
 grow_horizontal = 2
-grow_vertical = 2
 texture = ExtResource("4_e0d54")
 
-[node name="item_lore" type="Label" parent="item_info_container"]
-layout_mode = 0
-offset_left = 8.0
+[node name="lore_and_stats_container" type="VBoxContainer" parent="item_info_container"]
+layout_mode = 1
+offset_left = 9.0
 offset_top = 22.0
-offset_right = 498.0
-offset_bottom = 132.0
-scale = Vector2(0.2, 0.2)
+offset_right = 393.0
+offset_bottom = 142.0
+scale = Vector2(0.25, 0.25)
+
+[node name="item_lore" type="Label" parent="item_info_container/lore_and_stats_container"]
+custom_minimum_size = Vector2(0, 78)
+layout_mode = 2
 text = "Considered especially tasty by many foodies from across the Isles."
 label_settings = SubResource("LabelSettings_ckae4")
+autowrap_mode = 2
+
+[node name="item_stat" type="Label" parent="item_info_container/lore_and_stats_container"]
+layout_mode = 2
+text = "+1 SPEED"
+label_settings = SubResource("LabelSettings_pqdqy")
+horizontal_alignment = 1
 autowrap_mode = 2

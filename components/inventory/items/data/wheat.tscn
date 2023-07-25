@@ -6,8 +6,3 @@
 [node name="item" type="TextureRect"]
 texture = ExtResource("1_w3xfh")
 script = ExtResource("2_x35kd")
-id = "wheat"
-item_name = "Stalk of Wheat"
-lore = "Bushy. Ground up to make flour."
-type = 1
-rarity = 1

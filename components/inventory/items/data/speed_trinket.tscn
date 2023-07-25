@@ -6,7 +6,3 @@
 [node name="item" type="TextureRect"]
 texture = ExtResource("1_bsicw")
 script = ExtResource("2_305ck")
-id = "speed_trinket"
-item_name = "Ring of Speed"
-lore = "Makes you move ever so slightly more swiftly."
-type = 9

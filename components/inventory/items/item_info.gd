@@ -1,4 +1,4 @@
-extends NinePatchRect
+class_name Item_Info extends NinePatchRect
 
 
 # "Red Mushroom" - ITEM NAME
@@ -15,6 +15,11 @@ extends NinePatchRect
 
 @export var lore_path: NodePath
 @onready var lore = get_node( lore_path )
+
+
+
+@export var stat_path: NodePath
+@onready var stat_display = get_node( stat_path )
 
 
 
@@ -51,11 +56,33 @@ func display( slot : Inventory_Slot ):
 			tagline.label_settings.font_color = Color.DARK_SLATE_BLUE
 		
 		4 : 
-			tagText += "Exceptional "
+			if slot.item.type == Game_Enums.ITEM_TYPE.FORAGY:
+				tagText += "Elusive "
+			elif slot.item.type == Game_Enums.ITEM_TYPE.CROP:
+				tagText += "Superior "	
+			elif slot.item.type == Game_Enums.ITEM_TYPE.SEED:
+				tagText += "Mystical "
+			elif slot.item.type == Game_Enums.ITEM_TYPE.RESOURCE:
+				tagText += "Pristine "	
+			else:
+				tagText += "Very Rare "
+			
+			
+			
 			tagline.label_settings.font_color = Color.VIOLET
 		
 		5 : 
-			tagText += "Exotic "
+			if slot.item.type == Game_Enums.ITEM_TYPE.FORAGY:
+				tagText += "Exotic "
+			elif slot.item.type == Game_Enums.ITEM_TYPE.CROP:
+				tagText += "Extraordinary "	
+			elif slot.item.type == Game_Enums.ITEM_TYPE.SEED:
+				tagText += "Exquisite "	
+			elif slot.item.type == Game_Enums.ITEM_TYPE.RESOURCE:
+				tagText += "Perfect "	
+			else:
+				tagText += "Exceptional "
+				
 			tagline.label_settings.font_color = Color.GOLDENROD
 			
 	
@@ -104,7 +131,59 @@ func display( slot : Inventory_Slot ):
 	lore.text = slot.item.lore
 	
 	
-	show()
-
 	
+	
+	
+	# SET ITEM STATS OR HIDE IT
+	
+	var components = slot.item.components
+	
+	#used for resizing window height
+	var statHeight : int = 0
+	
+	if components.has( "base_stats" ):
+		
+		var base_stat_lines = components.base_stats.get_lines()
+		
+		print("BSL: ", base_stat_lines)
+		
+		var text_to_show = ""
+		
+		for line in base_stat_lines:
+			
+			print("line: ", line)
+			
+			text_to_show += line
+			text_to_show += '\n'
+			
+		stat_display.text = text_to_show
+		stat_display.show()
+		
+		statHeight += 13
+			
+	else: 
+		
+		# Items without stats do not show anything at the bottom
+		
+		statHeight = 0
+		
+		stat_display.text = "No stats"
+		stat_display.hide()
+	
+	
+	print ("STAT DISPLAY: ", stat_display.text)
+	
+	show()
+	
+	
+	# Auto size the item_info window ################
+	var max_width = 114
+	var height = 53
+	
+	# Add bonus height when there are stats
+	height += statHeight
+	
+	# Add padding and set item_info size
+	size = Vector2( max_width , height )
+
 	
