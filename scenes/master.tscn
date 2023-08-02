@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk0ifp1oylbw"]
+[gd_scene load_steps=8 format=3 uid="uid://2ip6fskv3mhq"]
 
 [ext_resource type="PackedScene" uid="uid://kl5pdu75i3mp" path="res://scene_switcher.tscn" id="1_rifhj"]
 [ext_resource type="Script" path="res://components/managers/inventory_manager.gd" id="2_pqi57"]
 [ext_resource type="PackedScene" path="res://components/inventory/core/inventory_container.tscn" id="3_bsu4f"]
 [ext_resource type="Script" path="res://scenes/settingsButton.gd" id="4_0tdh4"]
 [ext_resource type="PackedScene" uid="uid://deixwe760mer0" path="res://components/inventory/items/item_info.tscn" id="5_b3xb5"]
-[ext_resource type="PackedScene" uid="uid://dvl3qw5nrggby" path="res://components/inventory/hud/quick_inventory_player.tscn" id="6_5vlix"]
+[ext_resource type="PackedScene" uid="uid://orrk5jk7tb7" path="res://components/inventory/inventory_ui/quick_inventory_player.tscn" id="6_5vlix"]
 [ext_resource type="PackedScene" uid="uid://b23u72mvao1qr" path="res://ui/pause_menu.tscn" id="7_vcl2h"]
 
 [node name="master" type="Node"]
@@ -32,6 +32,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 metadata/_edit_lock_ = true
+
+[node name="item_info" parent="ui/ui_container" instance=ExtResource("5_b3xb5")]
+visible = false
+top_level = true
+z_index = 1
+layout_mode = 0
+offset_left = 16.0
+offset_top = 22.0
+offset_right = 130.0
+offset_bottom = 75.0
 
 [node name="windows" type="Control" parent="ui/ui_container"]
 layout_mode = 1
@@ -81,14 +91,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
-
-[node name="item_info" parent="ui/ui_container" instance=ExtResource("5_b3xb5")]
-visible = false
-layout_mode = 0
-offset_left = 16.0
-offset_top = 22.0
-offset_right = 130.0
-offset_bottom = 75.0
 
 [node name="buttons" type="Control" parent="ui/ui_container"]
 layout_mode = 3

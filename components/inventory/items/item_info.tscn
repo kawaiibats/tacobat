@@ -29,6 +29,7 @@ font_color = Color(0.34902, 0.470588, 0.470588, 1)
 outline_color = Color(0.886275, 0.305882, 0.815686, 1)
 
 [node name="item_info" type="NinePatchRect"]
+z_index = -1
 offset_right = 114.0
 offset_bottom = 53.0
 size_flags_horizontal = 4
@@ -125,6 +126,7 @@ label_settings = SubResource("LabelSettings_ckae4")
 autowrap_mode = 2
 
 [node name="item_stat" type="Label" parent="item_info_container/lore_and_stats_container"]
+z_index = 2
 layout_mode = 2
 text = "+1 SPEED"
 label_settings = SubResource("LabelSettings_pqdqy")
