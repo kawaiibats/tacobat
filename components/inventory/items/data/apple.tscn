@@ -6,5 +6,3 @@
 [node name="item" type="TextureRect"]
 texture = ExtResource("1_m5vpy")
 script = ExtResource("2_dxuf5")
-id = "apple"
-item_name = "Apple"

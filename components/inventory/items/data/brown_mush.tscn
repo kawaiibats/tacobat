@@ -6,5 +6,3 @@
 [node name="item" type="TextureRect"]
 texture = ExtResource("1_jlkyd")
 script = ExtResource("2_hxqxl")
-id = "brown_mush"
-item_name = "Brown Mushroom"

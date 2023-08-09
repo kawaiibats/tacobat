@@ -15,7 +15,9 @@ var next_destID : int = 0
 
 
 func _ready() -> void:
+	# temporary -- resets the saved level data every time program is run
 	clear_save_cache()
+	
 	current_level.level_changed.connect(self.handle_level_changed)
 	
 	

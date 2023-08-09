@@ -1,22 +1,22 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvl3qw5nrggby"]
+[gd_scene load_steps=12 format=3 uid="uid://orrk5jk7tb7"]
 
-[ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_1dse3"]
-[ext_resource type="Script" path="res://components/inventory/hud/quick_inventory.gd" id="2_73vgd"]
-[ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="3_su3bu"]
-[ext_resource type="Texture2D" uid="uid://y61m20p4xdwr" path="res://art/calame/x_normal.png" id="4_odyqp"]
-[ext_resource type="Texture2D" uid="uid://b2rsr3rfkr086" path="res://art/calame/x_pressed.png" id="5_n3r35"]
-[ext_resource type="Texture2D" uid="uid://b8ocnoig8tjtm" path="res://art/calame/x_hover.png" id="6_tlcsw"]
-[ext_resource type="Texture2D" uid="uid://dk07cw0l7qoou" path="res://art/calame/x_disabled.png" id="7_cw6q5"]
-[ext_resource type="Script" path="res://components/inventory/core/inventory.gd" id="8_ds6a3"]
-[ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="9_qkeej"]
+[ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_c3tha"]
+[ext_resource type="Script" path="res://components/inventory/inventory_ui/quick_inventory.gd" id="2_eglvi"]
+[ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="3_8n3ca"]
+[ext_resource type="Texture2D" uid="uid://y61m20p4xdwr" path="res://art/calame/x_normal.png" id="4_uba3o"]
+[ext_resource type="Texture2D" uid="uid://b2rsr3rfkr086" path="res://art/calame/x_pressed.png" id="5_xleed"]
+[ext_resource type="Texture2D" uid="uid://b8ocnoig8tjtm" path="res://art/calame/x_hover.png" id="6_dnq53"]
+[ext_resource type="Texture2D" uid="uid://dk07cw0l7qoou" path="res://art/calame/x_disabled.png" id="7_wmi8b"]
+[ext_resource type="Script" path="res://components/inventory/core/inventory.gd" id="8_a4xj2"]
+[ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="9_i4ply"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aah60"]
-font = ExtResource("3_su3bu")
+font = ExtResource("3_8n3ca")
 font_size = 32
 font_color = Color(0.180392, 0.278431, 0.431373, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_33m2r"]
-font = ExtResource("3_su3bu")
+font = ExtResource("3_8n3ca")
 font_size = 32
 font_color = Color(0.729412, 0.45098, 0.137255, 1)
 
@@ -35,13 +35,13 @@ grow_vertical = 2
 pivot_offset = Vector2(98, 45)
 size_flags_vertical = 4
 mouse_filter = 1
-texture = ExtResource("1_1dse3")
+texture = ExtResource("1_c3tha")
 region_rect = Rect2(768, 64, 48, 48)
 patch_margin_left = 5
 patch_margin_top = 43
 patch_margin_right = 5
 patch_margin_bottom = 43
-script = ExtResource("2_73vgd")
+script = ExtResource("2_eglvi")
 inventory_path = NodePath("inventory_container/inventory_backpack")
 pockets_path = NodePath("inventory_container/inventory_pockets")
 
@@ -56,7 +56,7 @@ offset_right = 60.0
 offset_bottom = 10.0
 grow_horizontal = 2
 mouse_filter = 1
-texture = ExtResource("1_1dse3")
+texture = ExtResource("1_c3tha")
 region_rect = Rect2(80, 304, 32, 16)
 patch_margin_left = 7
 patch_margin_top = 3
@@ -93,10 +93,10 @@ offset_top = -3.0
 offset_right = 2.0
 offset_bottom = 6.0
 grow_horizontal = 0
-texture_normal = ExtResource("4_odyqp")
-texture_pressed = ExtResource("5_n3r35")
-texture_hover = ExtResource("6_tlcsw")
-texture_disabled = ExtResource("7_cw6q5")
+texture_normal = ExtResource("4_uba3o")
+texture_pressed = ExtResource("5_xleed")
+texture_hover = ExtResource("6_dnq53")
+texture_disabled = ExtResource("7_wmi8b")
 
 [node name="inventory_container" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -109,13 +109,13 @@ theme_override_constants/separation = 3
 
 [node name="inventory_pockets" type="NinePatchRect" parent="inventory_container"]
 layout_mode = 2
-texture = ExtResource("1_1dse3")
+texture = ExtResource("1_c3tha")
 region_rect = Rect2(354, 274, 28, 12)
 patch_margin_left = 27
 patch_margin_top = 11
 patch_margin_right = 27
 patch_margin_bottom = 11
-script = ExtResource("8_ds6a3")
+script = ExtResource("8_a4xj2")
 inventory_name = "Pockets"
 inventory_size = 3
 title_path = NodePath("divider_texture/label_inventory_name")
@@ -131,7 +131,7 @@ offset_top = 13.0
 offset_right = 18.0
 offset_bottom = 15.0
 grow_horizontal = 2
-texture = ExtResource("9_qkeej")
+texture = ExtResource("9_i4ply")
 
 [node name="label_inventory_name" type="Label" parent="inventory_container/inventory_pockets/divider_texture"]
 layout_mode = 1
@@ -161,13 +161,13 @@ columns = 7
 
 [node name="inventory_backpack" type="NinePatchRect" parent="inventory_container"]
 layout_mode = 2
-texture = ExtResource("1_1dse3")
+texture = ExtResource("1_c3tha")
 region_rect = Rect2(354, 274, 28, 12)
 patch_margin_left = 27
 patch_margin_top = 11
 patch_margin_right = 27
 patch_margin_bottom = 11
-script = ExtResource("8_ds6a3")
+script = ExtResource("8_a4xj2")
 inventory_name = "Backpack"
 inventory_size = 14
 title_path = NodePath("divider_texture/label_inventory_name")
@@ -183,7 +183,7 @@ offset_top = 13.0
 offset_right = 18.0
 offset_bottom = 15.0
 grow_horizontal = 2
-texture = ExtResource("9_qkeej")
+texture = ExtResource("9_i4ply")
 
 [node name="label_inventory_name" type="Label" parent="inventory_container/inventory_backpack/divider_texture"]
 layout_mode = 1
