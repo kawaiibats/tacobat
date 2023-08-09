@@ -34,8 +34,8 @@ func display( slot ):
 
 func set_labels():
 	lbl_original.text = str( qty_slider.value )
-	new_quantity = quantity - qty_slider.value 
-	lbl_new.text = str ( new_quantity )
+	new_quantity = qty_slider.value 
+	lbl_new.text = str ( quantity - new_quantity )
 	
 
 	
