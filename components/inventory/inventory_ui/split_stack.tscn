@@ -204,5 +204,6 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_6vii5")
 text = "Split!"
 
-[connection signal="pressed" from="main_panel/close_button" to="main_panel" method="_on_close_button_pressed" flags=18]
-[connection signal="gui_input" from="main_panel/scale/quantity_slider" to="main_panel" method="_on_scale_slider_gui_input" flags=18]
+[connection signal="pressed" from="main_panel/close_button" to="." method="_on_close_button_pressed"]
+[connection signal="value_changed" from="main_panel/scale/quantity_slider" to="." method="_on_quantity_slider_value_changed"]
+[connection signal="pressed" from="main_panel/split_button" to="." method="_on_split_button_pressed"]

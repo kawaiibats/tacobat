@@ -1,5 +1,9 @@
 class_name Split_Stack extends Scale_Control
 
+
+signal stack_splitted
+
+
 @export var qty_slider_path: NodePath
 @onready var qty_slider = get_node( qty_slider_path ) 
 
@@ -30,10 +34,35 @@ func display( slot ):
 
 func set_labels():
 	lbl_original.text = str( qty_slider.value )
-	# new_quantity = quantity - qty_slider.value inventory_slot
-	# lbl_new_text 
+	new_quantity = quantity - qty_slider.value 
+	lbl_new.text = str ( new_quantity )
 	
-	# ~~~~~~~~~ 37:50
+
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 
+
+
+func _on_close_button_pressed():
+	hide()
+	
+	
+func _on_quantity_slider_value_changed(value):
+	set_labels()
+	
+	
+func _on_split_button_pressed():
+	emit_signal( "stack_splitted", inventory_slot, new_quantity)
+	hide()
+	
+	
+	
+	

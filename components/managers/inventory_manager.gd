@@ -6,6 +6,9 @@ extends Node
 @export var item_info_path: NodePath
 @onready var item_info = get_node( item_info_path ) 
 
+@export var split_stack_path: NodePath
+@onready var split_stack = get_node( split_stack_path )
+
 
 var player_inventories : Array = []
 var inventories : Array = []
@@ -16,6 +19,8 @@ func _ready():
 	SignalManager.item_picked.connect(self._on_item_picked_up)
 	SignalManager.inventory_ready.connect(self._on_inventory_ready)
 	SignalManager.player_inventory_ready.connect(self._on_player_inventory_ready)
+	
+	split_stack.stack_splitted.connect(self._on_stack_splitted)
 
 
 func _on_inventory_ready ( inventory ):
@@ -30,6 +35,10 @@ func _on_inventory_ready ( inventory ):
 		
 
 
+
+
+
+# WIP !!!!
 
 func _on_item_picked_up( item ):
 	print("inv manager, detected an item has been picked up: ", item)
@@ -72,6 +81,31 @@ func _on_mouse_exited_slot():
 	item_info.hide()
 	
 func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
+	
+	
+	# PICK UP HALF OF A STACK (SPLIT) AUTOMAGICALLY
+	
+	if !Input.is_action_just_pressed("shiftAlt") and Input.is_action_just_pressed("altInteract") and slot.item.quantity > 1 and item_in_hand == null:
+		print("auto half pickup")
+		
+		split_stack.emit_signal( "stack_splitted", slot , ceil(slot.item.quantity / 2) )
+		
+		
+	
+	
+	
+	# OPEN UP THE ADVANCED SPLIT STACK MENU
+	
+	if Input.is_action_just_pressed("shiftAlt") and slot.item.quantity > 1 and item_in_hand == null:
+		print("open advanced split menu")
+		split_stack.display( slot )
+	
+	
+	
+
+	
+	# PICK UP ITEMS, PUT DOWN ITEMS WITH LEFT CLICK ////
+	
 	if Input.is_action_just_pressed("primaryClick"):
 		#print(slot, "clicked on!")
 		if item_in_hand:
@@ -118,5 +152,30 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 			item_in_hand.global_position = event.global_position - item_offset
 			
 		
+		
+		
+		
+	
+func _on_stack_splitted( slot, new_quantity ):
+	print("on_stack_splitted: ", slot, " quantity: ", new_quantity)
+	
+	print("old quantity: ", slot.item.quantity)
+	slot.item.quantity -= new_quantity
+	slot.item.set_quantity(slot.item.quantity)
+	
+	var new_item = ItemManager.get_item( slot.item.id )
+	new_item.quantity = new_quantity
+	
+	print("new item to be in hand: ", new_item, "its quantity: ", new_item.quantity)
+	
+	item_in_hand = new_item
+	item_in_hand_node.add_child( item_in_hand )
+	item_in_hand.set_quantity(new_quantity)
+	
+	
+
+	
+
+	
 
 
