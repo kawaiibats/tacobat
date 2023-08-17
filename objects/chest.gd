@@ -22,6 +22,7 @@ func _ready():
 	inventory.inventory_name = inventory_name
 	inventory.inventory_size = size
 	inventory.chest_path = self.get_path()
+	inventory.isChest = true
 	
 	if (debug): print("chest parent:", get_parent())
 	

@@ -48,7 +48,7 @@ func pick_item():
 	
 	
 	# chest inventory updating ???
-	if container.get_parent().get_parent().get_parent().chest:
+	if container.get_parent().get_parent().get_parent().isChest == true:
 		print("TESTWIP: ", container.get_parent().get_parent().get_parent().chest.current_items)
 	
 		container.get_parent().get_parent().get_parent().chest.current_items.erase(item.id)
