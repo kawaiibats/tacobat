@@ -131,10 +131,12 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 					var temp_item = slot.item
 					slot.pick_item()
 					temp_item.global_position = event.global_position - item_offset
+					
 					slot.put_item( item_in_hand )
 					item_in_hand = temp_item
 					item_in_hand_node.add_child.call_deferred (item_in_hand)
-					item_in_hand_node.get_child(0).z_index = 1 #  # fix for item in hand display on cursor
+					await get_tree().create_timer(0.1).timeout
+					item_in_hand_node.get_child(0).z_index = 1 # fix for item in hand display on cursor
 				
 			else:
 				slot.put_item( item_in_hand )
