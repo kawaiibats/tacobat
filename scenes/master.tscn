@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bts7qesniabqh" path="res://components/inventory/inventory_ui/split_stack.tscn" id="4_n7w7y"]
 [ext_resource type="PackedScene" uid="uid://deixwe760mer0" path="res://components/inventory/items/item_info.tscn" id="5_b3xb5"]
 [ext_resource type="PackedScene" uid="uid://orrk5jk7tb7" path="res://components/inventory/inventory_ui/quick_inventory_player.tscn" id="6_5vlix"]
-[ext_resource type="PackedScene" uid="uid://b23u72mvao1qr" path="res://ui/pause_menu.tscn" id="7_vcl2h"]
+[ext_resource type="PackedScene" uid="uid://bn3fyevp02niv" path="res://ui/pause_menu.tscn" id="7_vcl2h"]
 
 [node name="master" type="Node"]
 
@@ -37,6 +37,7 @@ metadata/_edit_lock_ = true
 
 [node name="item_in_hand" type="Control" parent="ui/ui_container"]
 top_level = true
+clip_children = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
