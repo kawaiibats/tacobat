@@ -64,13 +64,14 @@ func _on_player_inventory_ready ( inv ):
 
 
 func _input( event : InputEvent ):
+	
 	if event is InputEventMouseMotion and item_in_hand:
 		#print("Item in hand pos:", item_in_hand.position)
 		#print("Event pos:", event.position)
 	
 		item_in_hand.position = event.position + Vector2(-8, -8) # no idea why this breaks if i use a variable3
 
-
+		
 
 
 
@@ -86,10 +87,11 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 	
 	# PICK UP HALF OF A STACK (SPLIT) AUTOMAGICALLY
 	
-	if !Input.is_action_just_pressed("shiftAlt") and Input.is_action_just_pressed("altInteract") and slot.item.quantity > 1 and item_in_hand == null:
-		print("auto half pickup")
+	if slot.item:
+		if !Input.is_action_just_pressed("shiftAlt") and Input.is_action_just_pressed("altInteract") and slot.item.quantity > 1 and item_in_hand == null:
+			print("auto half pickup")
 		
-		split_stack.emit_signal( "stack_splitted", slot , ceil(slot.item.quantity / 2) )
+			split_stack.emit_signal( "stack_splitted", slot , ceil(slot.item.quantity / 2) )
 		
 		
 	
@@ -174,11 +176,15 @@ func _on_stack_splitted( slot, new_quantity ):
 	
 	print("new item to be in hand: ", new_item, "its quantity: ", new_item.quantity)
 	
+	new_item.visible = false
+	
 	item_in_hand = new_item
 	item_in_hand_node.add_child( item_in_hand )
-	item_in_hand.set_quantity(new_quantity)
+	item_in_hand_node.get_child(0).set_quantity(new_quantity)
 	
 	
+	await get_tree().create_timer(0.1).timeout
+	item_in_hand_node.get_child(0).show()
 
 	
 
