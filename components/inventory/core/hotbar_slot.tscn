@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://y4qpa4pl1ybo"]
+
+[ext_resource type="PackedScene" path="res://components/inventory/core/inventory_slot.tscn" id="1_3r2fr"]
+[ext_resource type="Script" path="res://components/inventory/core/hotbar_slot.gd" id="2_b7hw0"]
+[ext_resource type="LabelSettings" uid="uid://bgkfb6rn46cwb" path="res://font/hotbarKey.tres" id="2_qifa4"]
+
+[node name="hotbar_slot" instance=ExtResource("1_3r2fr")]
+anchors_preset = -1
+anchor_left = -0.001
+anchor_right = 0.013
+anchor_bottom = 0.025
+offset_left = 0.42
+offset_right = 0.539999
+script = ExtResource("2_b7hw0")
+lbl_key_path = NodePath("lbl_key")
+
+[node name="item_container" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lbl_key" type="Label" parent="." index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.536
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 0.28
+offset_right = 36.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+text = "1"
+label_settings = ExtResource("2_qifa4")
+horizontal_alignment = 1
+vertical_alignment = 1

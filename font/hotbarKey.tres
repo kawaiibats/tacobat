@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bgkfb6rn46cwb"]
+
+[ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="1_xs0ru"]
+
+[resource]
+font = ExtResource("1_xs0ru")
+font_size = 32
+shadow_color = Color(0.411765, 0.411765, 0.411765, 0.32549)

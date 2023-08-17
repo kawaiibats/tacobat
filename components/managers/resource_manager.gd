@@ -15,7 +15,6 @@ var sprites = {
 }
 
 
-
 @onready var stat_info = {}
 
 

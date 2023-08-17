@@ -28,7 +28,7 @@ func _on_inventory_ready ( inventory ):
 	inventories.append ( inventory )
 	
 	for slot in inventory.slots:
-		print("slotname:", slot)
+		#print("slotname:", slot)
 		slot.mouse_entered.connect(self._on_mouse_entered_slot.bind(slot) )
 		slot.mouse_exited.connect(self._on_mouse_exited_slot)
 		slot.gui_input.connect(self._on_gui_input_slot.bind(slot) )
@@ -67,6 +67,7 @@ func _input( event : InputEvent ):
 	if event is InputEventMouseMotion and item_in_hand:
 		#print("Item in hand pos:", item_in_hand.position)
 		#print("Event pos:", event.position)
+	
 		item_in_hand.position = event.position + Vector2(-8, -8) # no idea why this breaks if i use a variable3
 
 
@@ -112,8 +113,8 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 			# prevents items of incorrect type placed in equipment slots
 			if slot is Equipment_Slot and item_in_hand.type != slot.type:
 				return
-			
-
+		
+			item_in_hand.z_index = 0 # fix for item in hand display on cursor
 			item_in_hand_node.remove_child(item_in_hand)
 			
 			if slot.item:
@@ -133,12 +134,15 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 					slot.put_item( item_in_hand )
 					item_in_hand = temp_item
 					item_in_hand_node.add_child.call_deferred (item_in_hand)
+					item_in_hand_node.get_child(0).z_index = 1 #  # fix for item in hand display on cursor
 				
 			else:
 				slot.put_item( item_in_hand )
 				
-				# placing into a chest
-				if slot.container.get_parent().get_parent().get_parent().chest:
+				# placing into a chest JANK
+				print("jank name:", slot.container.get_parent().get_parent().get_parent().name)
+				if slot.container.get_parent().get_parent().get_parent().isChest == true:
+					print(slot.container.get_parent().get_parent().get_parent())
 					print("APPENDING 2: ", slot.container.get_parent().get_parent().get_parent().chest.current_items)
 					slot.container.get_parent().get_parent().get_parent().chest.current_items.append(item_in_hand.id)
 					
@@ -149,8 +153,8 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 			item_offset = event.global_position - item_in_hand.global_position
 			slot.pick_item()
 			item_in_hand_node.add_child( item_in_hand )
+			item_in_hand_node.get_child(0).z_index = 1 # fix for item in hand display on cursor
 			item_in_hand.global_position = event.global_position - item_offset
-			
 		
 		
 		

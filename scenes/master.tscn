@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://2ip6fskv3mhq"]
+[gd_scene load_steps=10 format=3 uid="uid://2ip6fskv3mhq"]
 
 [ext_resource type="PackedScene" uid="uid://kl5pdu75i3mp" path="res://scene_switcher.tscn" id="1_rifhj"]
 [ext_resource type="Script" path="res://components/managers/inventory_manager.gd" id="2_pqi57"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bts7qesniabqh" path="res://components/inventory/inventory_ui/split_stack.tscn" id="4_n7w7y"]
 [ext_resource type="PackedScene" uid="uid://deixwe760mer0" path="res://components/inventory/items/item_info.tscn" id="5_b3xb5"]
 [ext_resource type="PackedScene" uid="uid://orrk5jk7tb7" path="res://components/inventory/inventory_ui/quick_inventory_player.tscn" id="6_5vlix"]
+[ext_resource type="PackedScene" uid="uid://ukw6pom5at6" path="res://components/inventory/core/hotbar.tscn" id="7_raxsw"]
 [ext_resource type="PackedScene" uid="uid://bn3fyevp02niv" path="res://ui/pause_menu.tscn" id="7_vcl2h"]
 
 [node name="master" type="Node"]
@@ -37,7 +38,6 @@ metadata/_edit_lock_ = true
 
 [node name="item_in_hand" type="Control" parent="ui/ui_container"]
 top_level = true
-clip_children = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -47,7 +47,7 @@ mouse_filter = 2
 [node name="item_info" parent="ui/ui_container" instance=ExtResource("5_b3xb5")]
 visible = false
 top_level = true
-z_index = 0
+z_index = 1
 layout_mode = 0
 offset_left = 16.0
 offset_top = 22.0
@@ -77,10 +77,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = -90.0
-offset_right = 179.0
-offset_bottom = 1.0
+offset_left = -33.0
+offset_top = -68.0
+offset_right = 163.0
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.75, 0.75)
@@ -88,12 +88,17 @@ item_info_path = NodePath("../../item_info")
 
 [node name="quick_inventory_player" parent="ui/ui_container/windows" instance=ExtResource("6_5vlix")]
 layout_mode = 1
-offset_left = -205.0
-offset_top = -80.0
-offset_right = -9.0
-offset_bottom = 11.0
+offset_left = -170.0
+offset_top = -68.0
+offset_right = 26.0
+offset_bottom = 23.0
 scale = Vector2(0.75, 0.75)
 item_info_path = NodePath("../../item_info")
+
+[node name="hotbar" parent="ui/ui_container/windows" instance=ExtResource("7_raxsw")]
+layout_mode = 1
+scale = Vector2(0.85, 0.85)
+hotbarSize = 7
 
 [node name="buttons" type="Control" parent="ui/ui_container"]
 layout_mode = 3

@@ -14,6 +14,8 @@ var inventory_slot_res = preload("res://components/inventory/core/inventory_slot
 
 var slots : Array = []
 
+var isChest = false
+
 var debug = false
 
 
