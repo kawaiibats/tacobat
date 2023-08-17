@@ -24,8 +24,6 @@ ResourceManager="*res://components/managers/resource_manager.gd"
 
 [display]
 
-window/size/viewport_width=1420
-window/size/viewport_height=800
 window/stretch/mode="canvas_items"
 window/stretch/scale=3.5
 

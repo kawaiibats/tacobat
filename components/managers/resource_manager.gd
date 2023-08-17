@@ -14,11 +14,6 @@ var sprites = {
 	"speed_trinket" : preload( "res://art/item_icon/speed_trinket.png" )
 }
 
-var tscn = {
-	"hotbar_slot": preload("res://components/inventory/core/hotbar_slot.gd")
-}
-
-
 
 @onready var stat_info = {}
 
