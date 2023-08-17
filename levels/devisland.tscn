@@ -1321,16 +1321,16 @@ position = Vector2(33, -74)
 [node name="Chest" parent="." instance=ExtResource("11_u610i")]
 size = 5
 inventory_name = "Cool Chest"
-starting_items = ["red_mush"]
+starting_items = ["red_mush", "golden_berry", "jojiberry"]
 
 [node name="Chest2" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(5, 149)
 
 [node name="Chest3" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(23, 0)
-size = 7
+size = 14
 inventory_name = "Alt Chest"
-starting_items = ["brown_mush", "red_mush", "apple"]
+starting_items = ["brown_mush", "red_mush", "apple", "speed_trinket"]
 
 [node name="RandomChest4" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(159, -52)

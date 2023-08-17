@@ -1,12 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1ntgr14g40s7"]
+[gd_scene load_steps=6 format=3 uid="uid://dpmx0ddp7i1iv"]
 
-[ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_cu7l0"]
-[ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="2_3sd5b"]
-[ext_resource type="Script" path="res://components/inventory/inventory.gd" id="2_kpppc"]
-[ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="3_r2642"]
+[ext_resource type="Texture2D" uid="uid://1gygnx0x44wk" path="res://art/statoasty/UI books & more.png" id="1_4dr25"]
+[ext_resource type="Script" path="res://components/inventory/core/inventory.gd" id="2_tquji"]
+[ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="3_otgcd"]
+[ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="4_fl8p1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_33m2r"]
-font = ExtResource("3_r2642")
+font = ExtResource("4_fl8p1")
 font_size = 32
 font_color = Color(0.729412, 0.45098, 0.137255, 1)
 
@@ -22,13 +22,13 @@ offset_right = 88.0
 offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_cu7l0")
+texture = ExtResource("1_4dr25")
 region_rect = Rect2(354, 274, 28, 12)
 patch_margin_left = 27
 patch_margin_top = 11
 patch_margin_right = 27
 patch_margin_bottom = 11
-script = ExtResource("2_kpppc")
+script = ExtResource("2_tquji")
 title_path = NodePath("divider_texture/label_inventory_name")
 slot_path = NodePath("slot_container")
 
@@ -42,7 +42,7 @@ offset_top = 13.0
 offset_right = 18.0
 offset_bottom = 15.0
 grow_horizontal = 2
-texture = ExtResource("2_3sd5b")
+texture = ExtResource("3_otgcd")
 
 [node name="label_inventory_name" type="Label" parent="divider_texture"]
 layout_mode = 1

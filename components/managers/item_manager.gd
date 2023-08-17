@@ -1,14 +1,10 @@
 extends Node
 
 
-@onready var itemIDs = [ ]
-# "red_mush", "brown_mush"
-
+const ITEM_PATH = "res://components/inventory/items/data/items.json"
 
 
 @onready var items = { }
-# dictionary "red_mush" : load( "res://components/inventory/items/data/red_mush.tscn" )
-# 
 
 
 @onready var placeholders = {
@@ -22,23 +18,48 @@ extends Node
 
 
 
+
+
 # Item Manager functions
 
-func get_itemIDs(path):
-	var dir = DirAccess.open(path)
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if dir.current_is_dir():
-				print("Found directory: " + file_name)
-			else:
-				print("Found file: " + file_name)
-				var edit_file_name = file_name.trim_suffix(".tscn")
-				itemIDs.append(edit_file_name)
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# LEGACY ITEM MANAGER FUNCTIONS
+# func get_itemIDs(path):
+#	var dir = DirAccess.open(path)
+#	if dir:
+#		dir.list_dir_begin()
+#		var file_name = dir.get_next()
+#		while file_name != "":
+#			if dir.current_is_dir():
+#				print("Found directory: " + file_name)
+#			else:
+#				print("Found file: " + file_name)
+#				var edit_file_name = file_name.trim_suffix(".tscn")
+#				# itemIDs.append(edit_file_name) outdated
+#			file_name = dir.get_next()
+#	else:
+#		print("An error occurred when trying to access the path.")
 
 
 
@@ -47,31 +68,29 @@ func get_itemIDs(path):
 # Global functions
 
 func get_item( id : String ):
-	return items[ id ].instantiate()
+	return Item.new( id, items[ id ] )
 
 func get_placeholder( id ):
 	return placeholders[ id ]
 
 
-
-
-
-
-
+# JSON parsing function
+# Credit to u/condekua https://www.reddit.com/r/godot/comments/116nd15/tutorial_read_a_json_file_in_godot_4_rc2/
+func readJSON(json_file_path):
+	var file = FileAccess.open(json_file_path, FileAccess.READ)
+	var content = file.get_as_text()
+	var json = JSON.new()
+	var finish = json.parse_string(content)
+	return finish
 
 
 # Main script
 
 func _ready():
 	
-	get_itemIDs("res://components/inventory/items/data/")
-	print("itemIDs is: ", itemIDs)
+	items = readJSON(ITEM_PATH)
 	
-	for item in itemIDs:
-		
-		items[item] = load( "res://components/inventory/items/data/" + item + ".tscn" )
-
-	print("items dictionary: ", items)
+	print("items dictionary FROM JSON: ", items)
 
 
 

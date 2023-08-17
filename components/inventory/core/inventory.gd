@@ -1,6 +1,6 @@
 class_name Inventory extends NinePatchRect
 
-var inventory_slot_res = preload("res://components/inventory/inventory_slot.tscn")
+var inventory_slot_res = preload("res://components/inventory/core/inventory_slot.tscn")
 
 
 @export var inventory_name: String
@@ -8,7 +8,7 @@ var inventory_slot_res = preload("res://components/inventory/inventory_slot.tscn
 
 @export var title_path: NodePath
 @onready var title = get_node( title_path ) 
-
+ 
 @export var slot_path: NodePath
 @onready var slot_container = get_node( slot_path ) 
 

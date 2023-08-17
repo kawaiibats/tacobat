@@ -1,0 +1,23 @@
+{
+
+
+	"SPEED": {
+		"name" : "Speed",
+		"display" : "+# Movement Speed"
+	},
+	"LUCKY": {
+		"name" : "Lucky",
+		"display" : "+# Lucky Find"
+	},
+	"MAX_HEALTH": {
+		"name" : "Health",
+		"display" : "+# Max Health"
+	},
+	"MAX_ENERGY": {
+		"name" : "Energy",
+		"display" : "+# Maximum Energy"
+	}
+
+
+
+}

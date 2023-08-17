@@ -1,10 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqsu3boxv03kf"]
+[gd_scene load_steps=4 format=3 uid="uid://dy3kxj14hamvw"]
 
-[ext_resource type="Texture2D" uid="uid://dn35pedtr1cug" path="res://art/forage/red_mush.png" id="1_bl3u8"]
+[ext_resource type="Texture2D" uid="uid://dn35pedtr1cug" path="res://art/item_icon/red_mush.png" id="1_bddsu"]
 [ext_resource type="Script" path="res://components/inventory/items/item.gd" id="2_13mje"]
+[ext_resource type="LabelSettings" uid="uid://b4r7kkvpb6k7c" path="res://font/quantity.tres" id="3_s3ap6"]
 
 [node name="item" type="TextureRect"]
-texture = ExtResource("1_bl3u8")
+texture = ExtResource("1_bddsu")
 script = ExtResource("2_13mje")
-id = "red_mush"
-item_name = "Red Mushroom"
+
+[node name="quantity" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 34.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "42"
+label_settings = ExtResource("3_s3ap6")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4cn7gom8pcp5"]
+
+[ext_resource type="Texture2D" uid="uid://ds3wiwrmksk4m" path="res://art/item_icon/speed_trinket.png" id="1_bsicw"]
+[ext_resource type="Script" path="res://components/inventory/items/item.gd" id="2_305ck"]
+
+[node name="item" type="TextureRect"]
+texture = ExtResource("1_bsicw")
+script = ExtResource("2_305ck")

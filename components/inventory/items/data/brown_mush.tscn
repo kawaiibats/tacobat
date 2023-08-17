@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3y7f6e8i6snp"]
+[gd_scene load_steps=3 format=3 uid="uid://c741dy2qjmwda"]
 
-[ext_resource type="Texture2D" uid="uid://bsnr7gqhj0aly" path="res://art/forage/brown_mush.png" id="1_mcs1u"]
+[ext_resource type="Texture2D" uid="uid://bsnr7gqhj0aly" path="res://art/item_icon/brown_mush.png" id="1_jlkyd"]
 [ext_resource type="Script" path="res://components/inventory/items/item.gd" id="2_hxqxl"]
 
 [node name="item" type="TextureRect"]
-texture = ExtResource("1_mcs1u")
+texture = ExtResource("1_jlkyd")
 script = ExtResource("2_hxqxl")
-id = "brown_mush"
-item_name = "Brown Mushroom"

@@ -1,0 +1,81 @@
+{
+
+
+	
+	"apple": {
+		"name" : "Apple",
+		"type" : 0,
+		"stack_size" : 64,
+
+		"rarity" : 3,
+		"family" : "Fruit",
+		"lore": "A really shiny apple. Crunchy."
+	},
+	"wheat": {
+		"name" : "Stalk of Wheat",
+		"type" : 0,
+		"stack_size" : 64,
+
+		"rarity" : 1,
+		"family" : "Grain",
+		"lore": "Bushy grass. Ground to make flour."
+	},
+	"brown_mush": {
+		"name" : "Brown Mushroom",
+		"type" : 0,
+		"stack_size" : 64,
+
+		"rarity" : 1,
+		"family" : "Fungi",
+		"lore": "A rather common, earthy fungus."
+	},
+	"red_mush": {
+		"name" : "Red Mushroom",
+		"type" : 0,
+		"stack_size" : 64,
+
+		"rarity" : 1,
+		"family" : "Fungi",
+		"lore": "Considered especially tasty by many foodies from the mainland."
+	},
+	"golden_berry": {
+		"name" : "Golden Berry",
+		"type" : 0,
+		"stack_size" : 64,
+
+		"rarity" : 4,
+		"family" : "Fruit",
+		"lore": "Rare, delicious golden variant of the raspberry family."
+	},
+	"jojiberry": {
+		"name" : "Jojiberry",
+		"type" : 0,
+		"stack_size" : 64,
+
+		"rarity" : 5,
+		"family" : "Fruit",
+		"lore": "Scientists describe this one as a 'superfood'. Could put years on your life."
+	},
+	"speed_trinket": {
+		"name" : "Ring of Speed",
+		"type" : 9,
+		"stack_size" : 1,
+
+		"rarity" : 1,
+		"lore": "Compels you to move ever so slightly more swiftly.",
+		"base_stats": [
+			{
+			"stat" : "SPEED",
+			"value" : 1
+			},
+			{
+			"stat" : "LUCKY",
+			"value" : 2 
+			}
+		]
+		
+	}
+
+
+
+}
