@@ -32,6 +32,7 @@ outline_color = Color(0.886275, 0.305882, 0.815686, 1)
 z_index = -1
 offset_right = 114.0
 offset_bottom = 53.0
+pivot_offset = Vector2(57, 26)
 size_flags_horizontal = 4
 texture = ExtResource("1_8f1q2")
 region_rect = Rect2(611.369, 83.4573, 40.936, 56.9753)
