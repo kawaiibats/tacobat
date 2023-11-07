@@ -37,15 +37,16 @@ func _on_inventory_ready ( inventory ):
 
 
 
-
+##################
 # WIP !!!!
 
-func _on_item_picked_up( item ):
+func _on_item_picked_up( item, sender ):
 	print("inv manager, detected an item has been picked up: ", item)
 	
 	for i in player_inventories:
 		i.add_item( item )  #add item validation and item overflow zone later
 		
+		sender.item_picked() #tell object its been picked up
 		
 		
 		
@@ -62,6 +63,9 @@ func _on_player_inventory_ready ( inv ):
 	player_inventories = inv
 
 
+
+# end item pickup WIP !!!!
+##################
 
 func _input( event : InputEvent ):
 	
@@ -103,6 +107,8 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 	if Input.is_action_just_pressed("shiftAlt") and slot.item.quantity > 1 and item_in_hand == null:
 		print("open advanced split menu")
 		split_stack.display( slot )
+	elif Input.is_action_just_pressed("shiftAlt") and slot.item.quantity == null and item_in_hand == null:
+		print("no quantity")
 	
 	
 	

@@ -191,18 +191,26 @@ func execute_interaction():
 					print("itemToGive: ", itemToGive)
 					
 					# add item to players inventory 
-					SignalManager.emit_signal("item_picked", itemToGive)
+					SignalManager.emit_signal("item_picked", itemToGive, forageParent)
 					
 					
 				
+				#forageParent.queue_free()
+			"pickup" : 
+				print("Executing item pickup")
+				
+				var pickupParent = cur_interaction.get_parent()
+				
+				print(pickupParent)
+				
+				if(pickupParent.itemInside):
+					print("You picked up a.. ", pickupParent.itemInside)
 					
+					var itemToGive = ItemManager.get_item(pickupParent.itemInside)
+					print("itemToGive: ", itemToGive)
 					
-					
-					
-					
-
-			
-				forageParent.queue_free()
+					# add item to players inventory 
+					SignalManager.emit_signal("item_picked", itemToGive, pickupParent)
 			"open_inventory":
 				var inventoryParent = cur_interaction.get_parent()
 				

@@ -4,7 +4,7 @@ class_name Inventory_Slot extends TextureRect
 
 @onready var container = get_node( container_path ) 
 
-var item
+var item : Item
 var whenready = false
 
 
@@ -25,7 +25,7 @@ func set_item( new_item ):
 	
 	var item_container = get_node("item_container")
 	
-	if not new_item:
+	if new_item == null:
 		item_container.remove_child ( item )
 	else: 
 		item_container.add_child ( new_item )

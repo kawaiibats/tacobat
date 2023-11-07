@@ -29,5 +29,9 @@ func getStones():
 
 func interact():
 	SignalManager.emit_signal( "item_picked", itemInside, null)
+	
+# on successful pickup, delete foragy
+func item_picked():
+	queue_free()
 
 

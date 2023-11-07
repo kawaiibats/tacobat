@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cma2tg2ud6lr4" path="res://art/sprout/Objects/Basic Plants.png" id="2_krx21"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pktne"]
+size = Vector2(16, 16)
 
 [node name="warpArea" type="Area2D"]
 script = ExtResource("1_asf7u")

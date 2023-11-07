@@ -10,7 +10,7 @@ var print_debug = false
 
 
 
-#hotbar etc will be here ~
+#all inventories including hotbar etc will be here ~
 
 @export var inventory_path: NodePath
 @onready var inventory = get_node( inventory_path ) as Inventory
@@ -18,7 +18,8 @@ var print_debug = false
 @export var pockets_path: NodePath
 @onready var pockets = get_node( pockets_path ) as Inventory
 
-
+@export var hotbar_path: NodePath
+@onready var hotbar = get_node( hotbar_path ) as Inventory
 
 
 # ~~~
