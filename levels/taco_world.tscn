@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3]
+[gd_scene load_steps=24 format=3 uid="uid://cp1d1dl3o6y7o"]
 
 [ext_resource type="Script" path="res://levels/taco_world.gd" id="1_ejeul"]
 [ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="2_v4bfj"]
@@ -1702,6 +1702,7 @@ sources/8 = SubResource("TileSetAtlasSource_xvouh")
 
 [node name="Taco World" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(-1, 2)
 script = ExtResource("1_ejeul")
 metadata/_edit_lock_ = true
 
@@ -1776,44 +1777,40 @@ stream = ExtResource("11_vcsfo")
 stream = ExtResource("12_hxaaj")
 
 [node name="warpArea" parent="." instance=ExtResource("13_s8gqm")]
-position = Vector2(32, 243)
+position = Vector2(41, 246)
 destination = "devisland"
 destID = 1
 
 [node name="Spawn1" parent="." groups=["Spawn"] instance=ExtResource("13_ohnr0")]
-position = Vector2(200, 212)
+position = Vector2(201, 214)
 destID = 1
 
 [node name="Spawn2" parent="." groups=["Spawn"] instance=ExtResource("13_ohnr0")]
-position = Vector2(127, 195)
+position = Vector2(135, 188)
 destID = 2
 
 [node name="Entity Spawn Zone3" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
-position = Vector2(195, 69)
+position = Vector2(201, 70)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone4" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
-position = Vector2(229, 69)
+position = Vector2(216, 70)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone7" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
-position = Vector2(405, 69)
-entitySpawnID = 2
-
-[node name="Entity Spawn Zone9" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
-position = Vector2(371, 69)
+position = Vector2(409, 70)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone8" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
-position = Vector2(333, 69)
+position = Vector2(249, 70)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone6" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
-position = Vector2(297, 69)
+position = Vector2(265, 70)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone5" parent="." groups=["EntitySpawn"] instance=ExtResource("14_napsf")]
-position = Vector2(263, 69)
+position = Vector2(233, 70)
 entitySpawnID = 2
 
 [connection signal="warp_area_entered" from="warpArea" to="." method="_on_warp_area_warp_area_entered"]
