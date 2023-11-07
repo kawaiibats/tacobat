@@ -798,19 +798,19 @@ rarity = 1
 stoneCount = 15
 
 [node name="Bush" parent="." instance=ExtResource("2_y5atj")]
-position = Vector2(195, 84)
+position = Vector2(183, 88)
 
 [node name="Bush2" parent="." instance=ExtResource("2_y5atj")]
-position = Vector2(200, 60)
+position = Vector2(199, 56)
 
 [node name="Bush3" parent="." instance=ExtResource("2_y5atj")]
-position = Vector2(224, 90)
+position = Vector2(231, 88)
 
 [node name="Bush4" parent="." instance=ExtResource("2_y5atj")]
-position = Vector2(85, 73)
+position = Vector2(87, 73)
 
 [node name="Bush5" parent="." instance=ExtResource("2_y5atj")]
-position = Vector2(107, 104)
+position = Vector2(103, 104)
 
 [node name="WarpAreaEnterSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_7hohh")
@@ -819,32 +819,32 @@ stream = ExtResource("11_7hohh")
 stream = ExtResource("12_u6p3x")
 
 [node name="Spawn1" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
-position = Vector2(147, 61)
+position = Vector2(151, 56)
 destID = 1
 
 [node name="Spawn2" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
-position = Vector2(148, 215)
+position = Vector2(135, 216)
 destID = 2
 
 [node name="Spawn3" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
-position = Vector2(162, 215)
+position = Vector2(151, 216)
 destID = 3
 
 [node name="Spawn4" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
-position = Vector2(176, 215)
+position = Vector2(167, 216)
 destID = 4
 
 [node name="Spawn5" parent="." groups=["Spawn"] instance=ExtResource("13_oj5b4")]
-position = Vector2(191, 215)
+position = Vector2(184, 216)
 destID = 5
 
 [node name="warp2devisland" parent="." instance=ExtResource("12_jje0v")]
-position = Vector2(66, 237)
+position = Vector2(71, 232)
 destination = "devisland"
 destID = 1
 
 [node name="warp2devisland2" parent="." instance=ExtResource("12_jje0v")]
-position = Vector2(66, 199)
+position = Vector2(71, 200)
 destination = "devisland"
 destID = 2
 
@@ -855,31 +855,31 @@ position = Vector2(223, 144)
 position = Vector2(223, 176)
 
 [node name="Entity Spawn Zone3" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
-position = Vector2(223, 210)
+position = Vector2(223, 208)
 
 [node name="Entity Spawn Zone5" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
-position = Vector2(67, 162)
+position = Vector2(63, 160)
 
 [node name="Entity Spawn Zone6" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
-position = Vector2(67, 128)
+position = Vector2(63, 128)
 
 [node name="Entity Spawn Zone4" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
-position = Vector2(223, 241)
+position = Vector2(223, 240)
 
 [node name="Entity Spawn Zone8" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
-position = Vector2(111, 61)
+position = Vector2(111, 64)
 
 [node name="Entity Spawn Zone7" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
-position = Vector2(223, 111)
+position = Vector2(223, 112)
 
 [node name="Entity Spawn Zone9" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
-position = Vector2(175, 116)
+position = Vector2(175, 128)
 
 [node name="Entity Spawn Zone10" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
-position = Vector2(91, 145)
+position = Vector2(79, 144)
 
 [node name="Entity Spawn Zone11" parent="." groups=["EntitySpawn"] instance=ExtResource("14_hvchv")]
-position = Vector2(87, 113)
+position = Vector2(79, 112)
 
 [connection signal="warp_area_entered" from="warp2devisland" to="." method="_on_warp_area_warp_area_entered"]
 [connection signal="warp_area_entered" from="warp2devisland2" to="." method="_on_warp_2_devisland_2_warp_area_entered"]

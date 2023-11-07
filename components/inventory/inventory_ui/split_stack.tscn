@@ -186,6 +186,27 @@ text = "10
 label_settings = SubResource("LabelSettings_33m2r")
 horizontal_alignment = 2
 
+[node name="qty_decoration1" type="Label" parent="main_panel/scale"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 23.0
+offset_right = 431.0
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+text = "TAKE"
+label_settings = SubResource("LabelSettings_33m2r")
+
+[node name="qty_decoration2" type="Label" parent="main_panel/scale"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 23.0
+offset_right = 431.0
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+text = "LEAVE"
+label_settings = SubResource("LabelSettings_33m2r")
+horizontal_alignment = 2
+
 [node name="split_button" type="Button" parent="main_panel"]
 layout_mode = 1
 anchors_preset = 7
