@@ -1231,13 +1231,13 @@ sources/8 = SubResource("TileSetAtlasSource_xvouh")
 
 [node name="Dev World" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(307, 280)
+position = Vector2(303, 274)
 script = ExtResource("1_myjjd")
 metadata/_edit_lock_ = true
 
 [node name="PlayerCat" parent="." instance=ExtResource("2_tboj6")]
 y_sort_enabled = true
-position = Vector2(-9, -23)
+position = Vector2(-7, -42)
 health = 69.0
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCat"]
@@ -1311,29 +1311,31 @@ rarity = 1
 stoneCount = 2
 
 [node name="Cow1" parent="." instance=ExtResource("10_0q86j")]
+position = Vector2(5, 69)
 
 [node name="Cow2" parent="." instance=ExtResource("10_0q86j")]
-position = Vector2(73, 41)
+position = Vector2(85, 38)
 
 [node name="Cow3" parent="." instance=ExtResource("10_0q86j")]
-position = Vector2(33, -74)
+position = Vector2(21, -91)
 
 [node name="Chest" parent="." instance=ExtResource("11_u610i")]
+position = Vector2(9, 6)
 size = 5
 inventory_name = "Cool Chest"
 starting_items = ["red_mush", "golden_berry", "jojiberry"]
 
 [node name="Chest2" parent="." instance=ExtResource("11_u610i")]
-position = Vector2(5, 149)
+position = Vector2(9, 150)
 
 [node name="Chest3" parent="." instance=ExtResource("11_u610i")]
-position = Vector2(23, 0)
+position = Vector2(25, 6)
 size = 14
 inventory_name = "Alt Chest"
 starting_items = ["brown_mush", "red_mush", "apple", "speed_trinket"]
 
 [node name="RandomChest4" parent="." instance=ExtResource("11_u610i")]
-position = Vector2(159, -52)
+position = Vector2(201, -26)
 script = ExtResource("13_x1nbe")
 num_of_items = 10
 size = 14
@@ -1341,89 +1343,91 @@ inventory_name = "Random Loot Chest"
 starting_items = ["red_mush", "brown_mush", "apple", "wheat"]
 
 [node name="Bed" parent="." instance=ExtResource("12_ku6aq")]
-position = Vector2(-70, 9)
+position = Vector2(-71, 6)
 
 [node name="BerryBush" parent="." instance=ExtResource("13_p0e18")]
-position = Vector2(-155, 30)
+position = Vector2(-151, 38)
 
 [node name="Bush" parent="." instance=ExtResource("14_ou7jl")]
-position = Vector2(-71, 93)
+position = Vector2(-71, 86)
 
 [node name="Bush2" parent="." instance=ExtResource("14_ou7jl")]
-position = Vector2(-107, 105)
+position = Vector2(-103, 102)
 
 [node name="Bush3" parent="." instance=ExtResource("14_ou7jl")]
-position = Vector2(-81, 123)
+position = Vector2(-71, 118)
 
 [node name="warpArea2" parent="." instance=ExtResource("15_32w7i")]
-position = Vector2(126, -49)
+position = Vector2(121, -58)
 destID = 5
 
 [node name="warpdevlvl2" parent="." instance=ExtResource("15_32w7i")]
-position = Vector2(71, -269)
+position = Vector2(73, -266)
 destID = 3
 
 [node name="warp2devlvl2" parent="." instance=ExtResource("15_32w7i")]
-position = Vector2(91, -269)
+position = Vector2(89, -266)
 destID = 4
 
 [node name="warp2Taco" parent="." instance=ExtResource("15_32w7i")]
-position = Vector2(95, -49)
+position = Vector2(89, -58)
 destination = "taco_world"
 destID = 1
 
 [node name="WarpAreaEnterSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-72, -28)
 stream = ExtResource("16_u6edi")
 
 [node name="LevelLoadedSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-67, -28)
 stream = ExtResource("17_jasi3")
 
 [node name="Spawn1" parent="." groups=["Spawn"] instance=ExtResource("20_f7r1p")]
-position = Vector2(27, -21)
+position = Vector2(25, -26)
 destID = 1
 
 [node name="Spawn2" parent="." groups=["Spawn"] instance=ExtResource("20_f7r1p")]
-position = Vector2(-21, 48)
+position = Vector2(-23, 54)
 destID = 2
 
 [node name="Entity Spawn Zone" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
-position = Vector2(126, -18)
+position = Vector2(129, -18)
 entitySpawnID = 1
 
 [node name="Entity Spawn Zone2" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
-position = Vector2(126, 13)
+position = Vector2(129, 14)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone3" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
-position = Vector2(195, 69)
+position = Vector2(193, 78)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone4" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
-position = Vector2(229, 69)
+position = Vector2(225, 78)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone7" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
-position = Vector2(405, 69)
+position = Vector2(385, 78)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone9" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
-position = Vector2(371, 69)
+position = Vector2(353, 78)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone8" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
-position = Vector2(333, 69)
+position = Vector2(321, 78)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone6" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
-position = Vector2(297, 69)
+position = Vector2(289, 78)
 entitySpawnID = 2
 
 [node name="Entity Spawn Zone5" parent="." groups=["EntitySpawn"] instance=ExtResource("18_baknj")]
-position = Vector2(263, 69)
+position = Vector2(257, 78)
 entitySpawnID = 2
 
 [node name="RandomChest5" parent="." instance=ExtResource("11_u610i")]
-position = Vector2(179, -52)
+position = Vector2(169, -58)
 script = ExtResource("13_x1nbe")
 num_of_items = 2
 size = 5

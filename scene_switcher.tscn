@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://kl5pdu75i3mp"]
 
 [ext_resource type="Script" path="res://SceneSwitcher.gd" id="1_5f4ih"]
-[ext_resource type="PackedScene" uid="uid://ct6rse4nt0l12" path="res://saves/devisland.tscn" id="2_u4xp7"]
+[ext_resource type="PackedScene" uid="uid://ct6rse4nt0l12" path="res://levels/devisland.tscn" id="2_u4xp7"]
 
 [sub_resource type="Animation" id="Animation_7khwv"]
 resource_name = "fade_in"
