@@ -69,11 +69,12 @@ func _input( event : InputEvent ):
 		#print("Item in hand pos:", item_in_hand.position)
 		#print("Event pos:", event.position)
 	
-		item_in_hand.position = event.position + Vector2(-8, -8) # no idea why this breaks if i use a variable3
-
+		# item in hand scaling and positioning depending on global scaling settings
+		if (SettingsManager.scale >= 1):
+			item_in_hand.position = (event.position / SettingsManager.scale) + (Vector2(-8, -8) * SettingsManager.scale)  # no idea why this breaks if i use a variable3
+		else:
+			item_in_hand.position = (event.position / SettingsManager.scale) + (Vector2(-8, -8)) # no idea why this breaks if i use a variable3
 		
-
-
 
 func _on_mouse_entered_slot( slot : Inventory_Slot ):
 	if slot.item:

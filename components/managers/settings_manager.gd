@@ -1,7 +1,7 @@
 extends Node
 
-var fullscreen
-var scale
+var fullscreen = false
+var scale = 1
 
 func _ready():
 	scale = 1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://kl5pdu75i3mp"]
 
 [ext_resource type="Script" path="res://SceneSwitcher.gd" id="1_5f4ih"]
-[ext_resource type="PackedScene" uid="uid://ct6rse4nt0l12" path="res://saves/devisland.tscn" id="2_u4xp7"]
+[ext_resource type="PackedScene" uid="uid://ct6rse4nt0l12" path="res://levels/devisland.tscn" id="2_u4xp7"]
 
 [sub_resource type="Animation" id="Animation_7khwv"]
 resource_name = "fade_in"
@@ -56,10 +56,10 @@ layer = 10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3000.0
-offset_top = -3000.0
-offset_right = 1580.0
-offset_bottom = 2200.0
+offset_left = -3022.0
+offset_top = -2812.0
+offset_right = 1558.0
+offset_bottom = 2388.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

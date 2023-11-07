@@ -98,6 +98,7 @@ func setSize():
 
 func inventoryGUI():
 	if (visible):
+		
 		hide()
 		## hide tooltip if an item is being hovered when the gui is closed
 		item_info.hide()
