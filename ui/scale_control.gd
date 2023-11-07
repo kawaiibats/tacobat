@@ -8,7 +8,6 @@ var uiScale : float
 func _init():
 	SignalManager.ui_scale_changed.connect(self._on_ui_scale_changed)
 
-
 func set_ui_scale( value ):
 	uiScale = value
 	scale = Vector2( uiScale, uiScale)

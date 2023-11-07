@@ -9,7 +9,7 @@ var emitted = false
 @export var destID: int
 
 func _on_body_entered(body: CharacterBody2D):
-	if (body.name == "PlayerCat"):
+	if ("Player" in body.name):
 		body.warping = true
 		entered = true
 

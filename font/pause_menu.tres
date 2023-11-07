@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dscamsml51w4"]
+
+[ext_resource type="FontFile" uid="uid://bk0dqa8dqm8de" path="res://font/Arcadepix Plus.ttf" id="1_bqtiv"]
+
+[resource]
+font = ExtResource("1_bqtiv")
+font_size = 28
+font_color = Color(0.729412, 0.45098, 0.137255, 1)

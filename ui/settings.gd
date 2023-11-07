@@ -1,8 +1,22 @@
 extends Scale_Control
 
+
+
+
+# settings
 @export var scale_slider_path: NodePath
 @onready var scale_slider = get_node( scale_slider_path ) as HSlider
 
+@export var label_min_path: NodePath
+@onready var label_min = get_node( label_min_path ) as Label
+
+@export var label_max_path: NodePath
+@onready var label_max = get_node( label_max_path ) as Label
+
+
+
+
+# tabs
 @export var tab_list_path: NodePath
 @onready var tab_list = get_node( tab_list_path ) as Control
 
@@ -25,6 +39,12 @@ var selected_tab = "settings"
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("openSettings"):
 		pauseGUI()
+
+
+func _ready():
+	label_min.text = "Min: %s" % scale_slider.min_value
+	label_max.text = "Max: %s" % scale_slider.max_value
+
 
 
 

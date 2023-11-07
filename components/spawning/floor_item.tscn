@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxfueuihw66nu"]
+
+[ext_resource type="Script" path="res://components/spawning/floor_item.gd" id="1_82utd"]
+[ext_resource type="PackedScene" uid="uid://bnvbqf63w3284" path="res://components/interact area/interact_area.tscn" id="2_hkjvi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rixkm"]
+
+[node name="floor_item" type="Area2D"]
+script = ExtResource("1_82utd")
+
+[node name="interactCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rixkm")
+
+[node name="FloorItemSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="InteractArea" parent="." instance=ExtResource("2_hkjvi")]
+interact_label = "Pick Up?"
+interact_type = "pickup"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

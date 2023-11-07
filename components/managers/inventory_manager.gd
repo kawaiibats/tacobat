@@ -37,15 +37,16 @@ func _on_inventory_ready ( inventory ):
 
 
 
-
+##################
 # WIP !!!!
 
-func _on_item_picked_up( item ):
+func _on_item_picked_up( item, sender ):
 	print("inv manager, detected an item has been picked up: ", item)
 	
 	for i in player_inventories:
 		i.add_item( item )  #add item validation and item overflow zone later
 		
+		sender.item_picked() #tell object its been picked up
 		
 		
 		
@@ -63,16 +64,21 @@ func _on_player_inventory_ready ( inv ):
 
 
 
+# end item pickup WIP !!!!
+##################
+
 func _input( event : InputEvent ):
+	
 	if event is InputEventMouseMotion and item_in_hand:
 		#print("Item in hand pos:", item_in_hand.position)
 		#print("Event pos:", event.position)
 	
-		item_in_hand.position = event.position + Vector2(-8, -8) # no idea why this breaks if i use a variable3
-
-
-
-
+		# item in hand scaling and positioning depending on global scaling settings
+		if (SettingsManager.scale >= 1):
+			item_in_hand.position = (event.position / SettingsManager.scale) + (Vector2(-8, -8) * SettingsManager.scale)  # no idea why this breaks if i use a variable3
+		else:
+			item_in_hand.position = (event.position / SettingsManager.scale) + (Vector2(-8, -8)) # no idea why this breaks if i use a variable3
+		
 
 func _on_mouse_entered_slot( slot : Inventory_Slot ):
 	if slot.item:
@@ -86,10 +92,11 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 	
 	# PICK UP HALF OF A STACK (SPLIT) AUTOMAGICALLY
 	
-	if !Input.is_action_just_pressed("shiftAlt") and Input.is_action_just_pressed("altInteract") and slot.item.quantity > 1 and item_in_hand == null:
-		print("auto half pickup")
+	if slot.item:
+		if !Input.is_action_just_pressed("shiftAlt") and Input.is_action_just_pressed("altInteract") and slot.item.quantity > 1 and item_in_hand == null:
+			print("auto half pickup")
 		
-		split_stack.emit_signal( "stack_splitted", slot , ceil(slot.item.quantity / 2) )
+			split_stack.emit_signal( "stack_splitted", slot , ceil(slot.item.quantity / 2) )
 		
 		
 	
@@ -100,6 +107,8 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 	if Input.is_action_just_pressed("shiftAlt") and slot.item.quantity > 1 and item_in_hand == null:
 		print("open advanced split menu")
 		split_stack.display( slot )
+	elif Input.is_action_just_pressed("shiftAlt") and slot.item.quantity == null and item_in_hand == null:
+		print("no quantity")
 	
 	
 	
@@ -174,11 +183,15 @@ func _on_stack_splitted( slot, new_quantity ):
 	
 	print("new item to be in hand: ", new_item, "its quantity: ", new_item.quantity)
 	
+	new_item.visible = false
+	
 	item_in_hand = new_item
 	item_in_hand_node.add_child( item_in_hand )
-	item_in_hand.set_quantity(new_quantity)
+	item_in_hand_node.get_child(0).set_quantity(new_quantity)
 	
 	
+	await get_tree().create_timer(0.1).timeout
+	item_in_hand_node.get_child(0).show()
 
 	
 

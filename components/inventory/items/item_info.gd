@@ -1,4 +1,4 @@
-class_name Item_Info extends NinePatchRect
+class_name Item_Info extends Scale_Control
 
 
 # "Red Mushroom" - ITEM NAME
@@ -26,7 +26,7 @@ class_name Item_Info extends NinePatchRect
 
 
 func display( slot : Inventory_Slot ):
-	self.global_position = slot.size + slot.global_position
+	self.global_position = (slot.size * SettingsManager.scale) + slot.global_position
 	
 	# SET DISPLAY NAME
 	display_name.text = slot.item.item_name
