@@ -1311,13 +1311,13 @@ rarity = 1
 stoneCount = 2
 
 [node name="Cow1" parent="." instance=ExtResource("10_0q86j")]
-position = Vector2(5, 69)
+position = Vector2(9, 75)
 
 [node name="Cow2" parent="." instance=ExtResource("10_0q86j")]
-position = Vector2(85, 38)
+position = Vector2(89, 43)
 
 [node name="Cow3" parent="." instance=ExtResource("10_0q86j")]
-position = Vector2(21, -91)
+position = Vector2(25, -85)
 
 [node name="Chest" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(9, 6)
