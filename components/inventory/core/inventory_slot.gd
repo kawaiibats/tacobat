@@ -53,10 +53,18 @@ func put_item( new_item : Item) -> Item:
 		
 		if item:
 			if item.id == new_item.id and item.quantity < item.stack_size:
+				
+				print( "item qty: ", item.quantity)
+				print( "new item qty: ", new_item.quantity)
+				
 				var remainder = item.add_item_quantity( new_item.quantity )
+				
+				print( "remainder: ", remainder )
 					
 				if remainder < 1:
 					return null
+				elif remainder >= 1: ## 
+					new_item.quantity = remainder ## fix
 					
 			else: 
 				var temp_item = item

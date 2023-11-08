@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://dh2yxemg16nm1"]
 
 [ext_resource type="Texture2D" uid="uid://cx8xc6qc0alwv" path="res://art/calame/item_slot.png" id="1_82850"]
 [ext_resource type="Script" path="res://components/inventory/core/inventory_slot.gd" id="2_5h6sb"]
