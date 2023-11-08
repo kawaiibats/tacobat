@@ -12,17 +12,21 @@ func _ready():
 
 
 func try_put_item( new_item : Item ) -> bool:
-	return new_item.equipment_type == type and get_owner().try_put_item( new_item )
+	return new_item.equipment_type == type and super.try_put_item( new_item )
 
 	
 func put_item( new_item : Item ) -> Item: 
-	if new_item.type != type:
-		return new_item
+	if new_item:
+		if new_item.type != type:
+			return new_item
+		else: 
+			container.add_child ( new_item )
+		
 		
 		icon.hide()
 	else:
 		icon.show()
 		
 	
-	return super( new_item )
+	return super.put_item( new_item )
 

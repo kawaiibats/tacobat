@@ -8,7 +8,7 @@ var item : Item
 var whenready = false
 
 
-var debug = false
+var debug = true
 
 
 
@@ -27,11 +27,11 @@ func set_item( new_item ):
 		container.remove_child( item )
 	elif (whenready): 
 		container.add_child ( new_item )
+		print("new_item TODO:", container.get_children)
 	
 	#prints
-	if debug: print("old item: ")
-	if debug: if item: print(item.id)
-	if debug: print("new_item:", new_item.id)
+	if debug: if (item): if(item.id): print("old item: ", item.id)
+	if debug: if (new_item): if(new_item.id): print("new_item:", new_item.id)
 
 	# set new item	
 	item = new_item
