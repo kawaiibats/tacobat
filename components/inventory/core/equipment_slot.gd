@@ -16,7 +16,7 @@ func try_put_item( new_item : Item ) -> bool:
 
 	
 func put_item( new_item : Item ) -> Item: 
-	if new_item.equipment_type != type:
+	if new_item.type != type:
 		return new_item
 		
 		icon.hide()
@@ -24,5 +24,5 @@ func put_item( new_item : Item ) -> Item:
 		icon.show()
 		
 	
-	return get_owner().put_item( new_item )
+	return super( new_item )
 

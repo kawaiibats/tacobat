@@ -40,6 +40,7 @@ metadata/_edit_lock_ = true
 
 [node name="item_in_hand" type="Control" parent="ui/ui_container"]
 top_level = true
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
