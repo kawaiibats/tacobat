@@ -46,8 +46,14 @@ func _physics_process(_delta):
 		pick_new_state()
 	
 		if Input.is_action_just_pressed("interact"):
-			execute_interaction()
+			execute_interaction()		
 		
+#		if Input.is_action_just_pressed("altInteract"):
+#			execute_alt_interaction()
+		
+		
+		
+func _unhandled_input(event):
 		if Input.is_action_just_pressed("altInteract"):
 			execute_alt_interaction()
 			

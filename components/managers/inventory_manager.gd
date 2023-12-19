@@ -165,13 +165,63 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 				item_in_hand_node.add_child( item_in_hand )
 			
 			set_hand_position( event.global_position )
+			
+			
+			
+			
+		# NEW ---- PICK UP ITEMS, PUT DOWN PARTIAL ITEMS WITH RIGHT CLICK ////
 		
+#		if Input.is_action_just_pressed("altInteract"):
+#
+#			var had_empty_hand = item_in_hand != null
+#
+#
+#			print(slot, "right clicked on!")
+#			if item_in_hand:
+#				# prevents items of incorrect type placed in equipment slots
+#				if slot is Equipment_Slot and item_in_hand.type != slot.type:
+#					print("wrong item type, can't go in this slot!")
+#					return
+#
+#			if item_in_hand:
+#				print ("in hand R // before:", item_in_hand)
+#				print ("in hand R // quantity before: ", item_in_hand.quantity)
+#
+#			if item_in_hand.quantity == 1:
+#				print("right click dropping LAST one -- put_item()")
+#				item_in_hand_node.remove_child( item_in_hand )
+#				item_in_hand = await slot.put_item( item_in_hand )
+#			elif item_in_hand.quantity > 1:
+#				var new_item = ItemManager.get_item( item_in_hand.id ) 
+#				print("right click dropping ONLY ONE from MANY -- creating and dropping single item in put_item()")
+#				#item_in_hand.set_quantity(item_in_hand.quantity - 1)
+#				item_in_hand = await slot.put_item( new_item )
+#
+#			if item_in_hand:
+#				print ("R // after:", item_in_hand)
+#				print ("R // quantity after: ", item_in_hand.quantity)
+#
+#			if item_in_hand:
+#				if had_empty_hand:
+#					item_offset = event.global_position - slot.global_position
+#
+#				item_in_hand_node.add_child( item_in_hand )
+#
+#			set_hand_position( event.global_position )
+		
+
+
+
+
+
 
 
 func set_hand_position( pos ):
 	if item_in_hand:
 		item_in_hand.z_index = 0 # fix for item in hand display on cursor
 		item_in_hand.position = ( pos - item_offset ) / SettingsManager.scale
+
+
 
 
 func _on_stack_splitted( slot, new_quantity ):
@@ -195,7 +245,10 @@ func _on_stack_splitted( slot, new_quantity ):
 	
 	
 	await get_tree().create_timer(0.1).timeout
-	item_in_hand_node.get_child(0).show()
+	if item_in_hand_node.get_child(0):
+		item_in_hand_node.get_child(0).show()
+	else:
+		print("!!! Error Null Item In hand Child")
 	
 	had_full_hand = false
 
