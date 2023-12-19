@@ -10,7 +10,7 @@
 [ext_resource type="LabelSettings" uid="uid://dscamsml51w4" path="res://font/pause_menu.tres" id="8_8bngl"]
 [ext_resource type="Script" path="res://components/inventory/core/equipment.gd" id="8_q18nj"]
 [ext_resource type="Texture2D" uid="uid://tfnokk56peh2" path="res://art/calame/bar.png" id="9_gke0u"]
-[ext_resource type="PackedScene" path="res://components/inventory/core/equipment_slot.tscn" id="10_s15y4"]
+[ext_resource type="PackedScene" uid="uid://bdsvcaok0a6gg" path="res://components/inventory/core/equipment_slot.tscn" id="10_s15y4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aah60"]
 font = ExtResource("2_s1xxi")

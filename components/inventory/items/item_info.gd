@@ -1,6 +1,11 @@
 class_name Item_Info extends Scale_Control
 
 
+
+var debug = false
+
+
+
 # "Red Mushroom" - ITEM NAME
 @export var display_name_path: NodePath
 @onready var display_name = get_node( display_name_path ) 
@@ -145,13 +150,13 @@ func display( slot : Inventory_Slot ):
 		
 		var base_stat_lines = components.base_stats.get_lines()
 		
-		print("BSL: ", base_stat_lines)
+		if (debug): print("BSL: ", base_stat_lines)
 		
 		var text_to_show = ""
 		
 		for line in base_stat_lines:
 			
-			print("line: ", line)
+			if (debug): print("line: ", line)
 			
 			text_to_show += line
 			text_to_show += '\n'
@@ -171,7 +176,7 @@ func display( slot : Inventory_Slot ):
 		stat_display.hide()
 	
 	
-	print ("STAT DISPLAY: ", stat_display.text)
+	if (debug): print ("STAT DISPLAY: ", stat_display.text)
 	
 	show()
 	

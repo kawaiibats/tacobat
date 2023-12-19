@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://kl5pdu75i3mp" path="res://scene_switcher.tscn" id="1_rifhj"]
 [ext_resource type="Script" path="res://components/managers/inventory_manager.gd" id="2_pqi57"]
-[ext_resource type="PackedScene" path="res://components/inventory/core/inventory_container.tscn" id="3_bsu4f"]
+[ext_resource type="PackedScene" uid="uid://bxrcfuylfubts" path="res://components/inventory/core/inventory_container.tscn" id="3_bsu4f"]
 [ext_resource type="Script" path="res://ui/scale_control.gd" id="3_hjfki"]
 [ext_resource type="Script" path="res://scenes/settingsButton.gd" id="4_0tdh4"]
 [ext_resource type="PackedScene" uid="uid://bts7qesniabqh" path="res://components/inventory/inventory_ui/split_stack.tscn" id="4_n7w7y"]
@@ -40,6 +40,7 @@ metadata/_edit_lock_ = true
 
 [node name="item_in_hand" type="Control" parent="ui/ui_container"]
 top_level = true
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

@@ -8,55 +8,40 @@ var item : Item
 var whenready = false
 
 
-var debug = false
+var debug = true
 
 
 
 func _ready():
 	whenready = true
 	if item:
-		print("THE ITEM IS:", item)
-		print("THE CONTAINER IS:", container)
+		#print("THE ITEM IS:", item)
+		#print("THE CONTAINER IS:", container)
 		container.add_child.call_deferred(item)
 
 func set_item( new_item ):
 	
 	print("activate set_item")
 	
-	var item_container = get_node("item_container")
-	
-	if new_item == null:
-		item_container.remove_child ( item )
-	else: 
-		item_container.add_child ( new_item )
+	if not new_item:
+		container.remove_child( item )
+	elif (whenready): 
+		container.add_child ( new_item )
+		print("new_item TODO:", container.get_children)
+	else:
+		print("SET ITEM WASNT READY !!!!!")
 	
 	#prints
-	if debug: print("old item: ")
-	if debug: if item: print(item.id)
-	if debug: print("new_item:", new_item.id)
-	
-	item = new_item
-	
+	if debug: if (item): if(item.id): print("old item: ", item.id)
+	if debug: if (new_item): if(new_item.id): print("new_item:", new_item.id)
 
-func pick_item():
-	
-	print("activate pick_item")
-	
-	#print("pick item wip ID: ", item.id)
-	#print("pick item wip pos ", item.position)
-	
-	
-	
-	# chest inventory updating ???
-	if container.get_parent().get_parent().get_parent().isChest == true:
-		print("TESTWIP: ", container.get_parent().get_parent().get_parent().chest.current_items)
-	
-		container.get_parent().get_parent().get_parent().chest.current_items.erase(item.id)
-	
-	
-	# finish pick_item()
-	container.remove_child(item)
-	item = null
+	# set new item	
+	item = new_item
+
+
+func try_put_item( new_item : Item ) -> bool:
+	return new_item and not item or ( item.id == new_item.id and item.quantity < item.stack_size )
+
 
 	
 func put_item( new_item : Item) -> Item:
@@ -64,37 +49,40 @@ func put_item( new_item : Item) -> Item:
 	print("activate put_item")
 	
 	if new_item:
+		
 		if item:
 			
-			
-			#if item.id == new_item.id and item.quantity < item.stack_size:
-				#var remainder = item.add_item_quantity( new_item.quantity )
+			if item.id == new_item.id and item.quantity < item.stack_size:
 				
-				#if remainder < 1:
-					#return null
+				print( "item qty: ", item.quantity)
+				print( "new item qty: ", new_item.quantity)
+				
+				var remainder = item.add_item_quantity( new_item.quantity )
+				
+				print( "remainder: ", remainder )
 					
+				if remainder < 1:
+					return null
+				elif remainder >= 1: ## 
+					new_item.quantity = remainder ## fix
 					
-			if true:
+			else: 
 				var temp_item = item
 				container.remove_child( item )
-				
-				# ?
-				print("APPEND: ", container.get_parent().get_parent().get_parent().chest.current_items.item.id)
-				container.get_parent().get_parent().get_parent().chest.current_items.append(item.id)
-				
 				set_item( new_item )
 				new_item = temp_item
-			
+				
 			return new_item
+			
 		else:
 			set_item( new_item )
 			return null
+				
 	elif item:
 		new_item = item
 		set_item( null )
 	
 	return new_item
-	
 
 func item_picked():
 	container.queue_free()

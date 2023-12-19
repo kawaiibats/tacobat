@@ -93,12 +93,20 @@ func add_item( item ):
 	
 	if (debug): print("current slots in here:", slots)
 	for s in slots:
-		if not s.item:
-			if (debug): print("adding item: ", item.id)
-			s.set_item ( item )
-
+		if s.try_put_item(item):
 			
-			return
+			if (debug): print("adding item: ", item.id)
+			
+			item._ready() # fix for chest items not displaying qty
+			
+			item = s.put_item( item )
+			
+			
+
+			if not item:
+				return null
+				
+	return item
 
 
 

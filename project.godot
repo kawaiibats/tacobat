@@ -26,6 +26,7 @@ ResourceManager="*res://components/managers/resource_manager.gd"
 
 window/stretch/mode="canvas_items"
 window/stretch/scale=3.5
+window/vsync/vsync_mode=0
 
 [input]
 

@@ -11,15 +11,22 @@ func _ready():
 	icon.texture = ItemManager.get_placeholder( type )
 
 
-func set_item( new_item ): 
-	super.set_item( new_item )
-	icon.hide()
+func try_put_item( new_item : Item ) -> bool:
+	return new_item.equipment_type == type and super.try_put_item( new_item )
+
 	
-func pick_item(): 
-	super.pick_item()
-	icon.show()
+func put_item( new_item : Item ) -> Item: 
+	if new_item:
+		if new_item.type != type:
+			return new_item
+		else: 
+			container.add_child ( new_item )
+		
+		
+		icon.hide()
+	else:
+		icon.show()
+		
 	
-func put_item( new_item ): 
-	super.put_item( new_item )
-	icon.hide()
+	return super.put_item( new_item )
 

@@ -34,6 +34,7 @@ offset_right = 114.0
 offset_bottom = 53.0
 pivot_offset = Vector2(57, 26)
 size_flags_horizontal = 4
+mouse_filter = 1
 texture = ExtResource("1_8f1q2")
 region_rect = Rect2(611.369, 83.4573, 40.936, 56.9753)
 patch_margin_left = 13
@@ -56,6 +57,7 @@ offset_top = -7.0
 offset_right = 49.0
 offset_bottom = 9.0
 grow_horizontal = 2
+mouse_filter = 1
 texture = ExtResource("1_8f1q2")
 region_rect = Rect2(80, 304, 32, 16)
 patch_margin_left = 7
@@ -82,6 +84,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="item_tagline" type="Label" parent="item_info_container"]
 layout_mode = 1
