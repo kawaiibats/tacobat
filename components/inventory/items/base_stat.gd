@@ -1,5 +1,7 @@
 class_name Base_Stat extends Resource 
 
+var debug = false
+
 var stats = []
 
 func _init( data ):
@@ -11,21 +13,21 @@ func _init( data ):
 func get_lines():
 	var lines =[]
 	
-	print("activated get_lines(), lines: ", lines)
+	if (debug): print("activated get_lines(), lines: ", lines)
 	
 	for stat in stats:
 		
-		print("this is stat: ", stat)
+		if (debug): print("this is stat: ", stat)
 		
-		print("rsz mngr stat info:", ResourceManager.stat_info)
+		if (debug): print("rsz mngr stat info:", ResourceManager.stat_info)
 		
 		var stat_info = ResourceManager.stat_info[ stat.stat ]
 		
-		print("final stat_info: ", stat_info)
+		if (debug): print("final stat_info: ", stat_info)
 		
 		var value = stat.value
 		
-		print("final stat_value: ", value)
+		if (debug): print("final stat_value: ", value)
 		
 		var text = stat_info.display.replace("#", str(value) )
 		

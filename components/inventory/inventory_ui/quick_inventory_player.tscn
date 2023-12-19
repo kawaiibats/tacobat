@@ -104,11 +104,11 @@ offset_left = 9.0
 offset_top = 15.0
 offset_right = 187.0
 offset_bottom = 58.0
-mouse_filter = 0
 theme_override_constants/separation = 3
 
 [node name="inventory_pockets" type="NinePatchRect" parent="inventory_container"]
 layout_mode = 2
+mouse_filter = 0
 texture = ExtResource("1_c3tha")
 region_rect = Rect2(354, 274, 28, 12)
 patch_margin_left = 27
@@ -161,6 +161,7 @@ columns = 7
 
 [node name="inventory_backpack" type="NinePatchRect" parent="inventory_container"]
 layout_mode = 2
+mouse_filter = 0
 texture = ExtResource("1_c3tha")
 region_rect = Rect2(354, 274, 28, 12)
 patch_margin_left = 27

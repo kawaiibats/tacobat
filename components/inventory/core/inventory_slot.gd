@@ -15,8 +15,8 @@ var debug = true
 func _ready():
 	whenready = true
 	if item:
-		print("THE ITEM IS:", item)
-		print("THE CONTAINER IS:", container)
+		#print("THE ITEM IS:", item)
+		#print("THE CONTAINER IS:", container)
 		container.add_child.call_deferred(item)
 
 func set_item( new_item ):
@@ -28,6 +28,8 @@ func set_item( new_item ):
 	elif (whenready): 
 		container.add_child ( new_item )
 		print("new_item TODO:", container.get_children)
+	else:
+		print("SET ITEM WASNT READY !!!!!")
 	
 	#prints
 	if debug: if (item): if(item.id): print("old item: ", item.id)
@@ -47,11 +49,9 @@ func put_item( new_item : Item) -> Item:
 	print("activate put_item")
 	
 	if new_item:
-		# prevents items of incorrect type placed in equipment slots
-		# if slot is Equipment_Slot and item_in_hand.type != slot.type:
-		# 	return
 		
 		if item:
+			
 			if item.id == new_item.id and item.quantity < item.stack_size:
 				
 				print( "item qty: ", item.quantity)
