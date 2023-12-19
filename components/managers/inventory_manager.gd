@@ -101,11 +101,11 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 	
 	#~~
 	
-	print("ON GUI INPUT TRIGGER")
+	##print("ON GUI INPUT TRIGGER")
 
 	if event.is_pressed() and not event.is_echo():
 		
-		print("- BOTTLENECK GUI INPUT TRIGGER")
+		##print("- BOTTLENECK GUI INPUT TRIGGER")
 	
 	
 		# PICK UP HALF OF A STACK (SPLIT) AUTOMAGICALLY
@@ -113,8 +113,12 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 		if slot.item:
 			if !Input.is_action_just_pressed("shiftAlt") and Input.is_action_just_pressed("altInteract") and slot.item.quantity > 1 and item_in_hand == null:
 				print("auto half pickup")
+				
+				var auto_half = ceil(slot.item.quantity / 2)
 		
-				split_stack.emit_signal( "stack_splitted", slot , ceil(slot.item.quantity / 2) )
+				split_stack.emit_signal( "stack_splitted", slot , auto_half )
+				
+				#slot.item.set_quantity(auto_half)
 		
 	
 		# OPEN UP THE ADVANCED SPLIT STACK MENU

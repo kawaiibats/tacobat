@@ -97,8 +97,8 @@ func add_item( item ):
 			
 			if (debug): print("adding item: ", item.id)
 			
-			item._ready() # fix for chest items not displaying qty
-			
+			item._ready() # fix for chest items not displaying qty. 
+
 			item = s.put_item( item )
 			
 			

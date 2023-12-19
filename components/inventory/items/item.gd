@@ -51,7 +51,7 @@ var components = {}
 
 
 # label for item quantity
-var lbl_quantity 
+var lbl_quantity = null
 
 
 
@@ -81,9 +81,11 @@ func _init( item_id, data ):
 
 
 func _ready():
-	lbl_quantity = Label.new()
-	lbl_quantity.label_settings = load("res://font/quantity.tres")
-	add_child( lbl_quantity )
+	if lbl_quantity == null: # This is necessary to prevent creating extra labels
+		lbl_quantity = Label.new()
+		lbl_quantity.label_settings = load("res://font/quantity.tres")
+		add_child( lbl_quantity )
+	set_quantity( quantity )
 	
 func set_quantity( value ):
 	quantity = value
