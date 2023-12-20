@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @export var item_hand_path: NodePath
 @onready var item_in_hand_node = get_node( item_hand_path ) 
@@ -196,6 +196,7 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 					item_in_hand = await slot.put_item( item_in_hand )
 				elif item_in_hand.quantity > 1:
 					var new_item = ItemManager.get_item( item_in_hand.id ) 
+					new_item.visible = false
 					print("right click dropping ONLY ONE from MANY -- creating and dropping single item in put_item()")
 					item_in_hand.set_quantity(item_in_hand.quantity - 1)
 					slot.put_item( new_item )
@@ -247,7 +248,7 @@ func _on_stack_splitted( slot, new_quantity ):
 	item_in_hand = new_item
 	item_in_hand_node.add_child( item_in_hand )
 	item_in_hand_node.get_child(0).set_quantity(new_quantity)
-	set_hand_position( slot.global_position )
+	set_hand_position( slot.position )
 	
 	
 	await get_tree().create_timer(0.1).timeout
