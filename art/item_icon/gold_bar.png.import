@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cutonbq80d0jh"
-path="res://.godot/imported/wheat.png-690f2683563a29365196903d9ffa6abd.ctex"
+uid="uid://dbknysvijrce0"
+path="res://.godot/imported/gold_bar.png-1b62ec49158be59e4211dd5fb67b8728.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/item_icon/wheat.png"
-dest_files=["res://.godot/imported/wheat.png-690f2683563a29365196903d9ffa6abd.ctex"]
+source_file="res://art/item_icon/gold_bar.png"
+dest_files=["res://.godot/imported/gold_bar.png-1b62ec49158be59e4211dd5fb67b8728.ctex"]
 
 [params]
 

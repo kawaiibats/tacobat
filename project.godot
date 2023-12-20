@@ -25,8 +25,8 @@ ResourceManager="*res://components/managers/resource_manager.gd"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/scale=3.5
-window/vsync/vsync_mode=0
+window/stretch/scale=3.0
+mouse_cursor/custom_image="res://art/taco/Cursor.png"
 
 [input]
 
