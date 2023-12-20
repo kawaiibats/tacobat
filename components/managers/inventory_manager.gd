@@ -81,7 +81,6 @@ func _input( event ):
 		
 		# without the wait, the click input executes before the item is even in hand, making tracking it to cursor impossible
 		if !item_in_hand: 
-			print("No item in hand")
 			await get_tree().create_timer(0.01).timeout
 		
 		if ((event is InputEventMouseMotion) or (event is InputEventMouseButton)) and item_in_hand:

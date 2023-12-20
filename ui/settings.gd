@@ -2,6 +2,17 @@ extends Scale_Control
 
 
 
+# other windows for closing
+
+@export var quick_inventory_path: NodePath
+@onready var quick_inventory = get_node(quick_inventory_path)
+
+@export var container_path: NodePath
+@onready var container = get_node(container_path)
+
+
+
+
 
 # settings
 @export var scale_slider_path: NodePath
@@ -57,6 +68,8 @@ func pauseGUI():
 		hide()
 	else:
 		print("showme")
+		quick_inventory.hide()
+		container.hide()
 		show()
 
 

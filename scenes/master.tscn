@@ -73,17 +73,8 @@ visible = false
 top_level = true
 layout_mode = 1
 scale = Vector2(0.75, 0.75)
-
-[node name="hotbar" parent="ui/ui_container/windows" instance=ExtResource("7_raxsw")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.512
-anchor_right = 0.512
-offset_left = -92.024
-offset_right = 91.976
-scale = Vector2(0.85, 0.85)
-pivot_offset = Vector2(92, 0)
-hotbarSize = 7
+quick_inventory_path = NodePath("../quick_inventory_player")
+container_path = NodePath("../inventory_container")
 
 [node name="inventory_container" parent="ui/ui_container/windows" instance=ExtResource("3_bsu4f")]
 layout_mode = 1
@@ -109,6 +100,17 @@ offset_right = 26.0
 offset_bottom = 23.0
 scale = Vector2(0.75, 0.75)
 item_info_path = NodePath("../../item_info")
+
+[node name="hotbar" parent="ui/ui_container/windows" instance=ExtResource("7_raxsw")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512
+anchor_right = 0.512
+offset_left = -92.024
+offset_right = 91.976
+scale = Vector2(0.85, 0.85)
+pivot_offset = Vector2(92, 0)
+hotbarSize = 7
 
 [node name="buttons" type="Control" parent="ui/ui_container"]
 layout_mode = 3

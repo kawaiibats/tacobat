@@ -247,8 +247,9 @@ func genesis():
 
 
 
-# TIMEMARCH - activates in visited levels at the beginning morning (excluding first morning)
+# TIMEMARCH - activates in visited levels at the beginning of every morning and night (excluding first morning)
 # Essentially is a weaker genesis that replenishes forages over time
+# Only affects previously visited levels
 func timemarch():
 	pass
 
