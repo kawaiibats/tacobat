@@ -12,7 +12,7 @@ func set_ui_scale( value ):
 	uiScale = value
 	scale = Vector2( uiScale, uiScale)
 
-
 func _on_ui_scale_changed( value ):
 	print("on_ui_scale_changed activated")
 	set_ui_scale( value )
+
