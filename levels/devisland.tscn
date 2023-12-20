@@ -1229,7 +1229,7 @@ sources/4 = SubResource("TileSetAtlasSource_hk1ph")
 sources/5 = SubResource("TileSetAtlasSource_knje7")
 sources/8 = SubResource("TileSetAtlasSource_xvouh")
 
-[node name="Dev World" type="Node2D"]
+[node name="devisland" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(303, 274)
 script = ExtResource("1_myjjd")

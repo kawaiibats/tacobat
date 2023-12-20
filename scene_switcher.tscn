@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://kl5pdu75i3mp"]
+[gd_scene load_steps=5 format=3 uid="uid://kl5pdu75i3mp"]
 
 [ext_resource type="Script" path="res://SceneSwitcher.gd" id="1_5f4ih"]
-[ext_resource type="PackedScene" uid="uid://ct6rse4nt0l12" path="res://levels/devisland.tscn" id="2_u4xp7"]
 
 [sub_resource type="Animation" id="Animation_7khwv"]
 resource_name = "fade_in"
@@ -42,8 +41,6 @@ _data = {
 [node name="SceneSwitcher" type="Node"]
 script = ExtResource("1_5f4ih")
 
-[node name="devisland" parent="." instance=ExtResource("2_u4xp7")]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_hj3jk")
@@ -65,5 +62,4 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[connection signal="level_changed" from="devisland" to="." method="_on_devisland_level_changed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

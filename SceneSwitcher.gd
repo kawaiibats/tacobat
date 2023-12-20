@@ -9,7 +9,7 @@ var next_destID : int = 0
 
 
 # set default level
-@onready var current_level = $devisland
+@onready var current_level = load("res://levels/devisland.tscn").instantiate()
 # reference fade out animation
 @onready var anim = $AnimationPlayer
 
@@ -20,20 +20,23 @@ func _ready() -> void:
 	
 	current_level.level_changed.connect(self.handle_level_changed)
 	
+	add_child(current_level)
 	
 	
 func handle_level_changed(destination_name: String, destID: int):
 	if not handling:
 		handling = true
-		#print("start handle_level_changed")
+		print("start handle_level_changed")
 		
 		next_destID = destID
-		#print("next dest ID is", next_destID)
+		print("next dest ID is: ", next_destID)
 
-		var check_next_level = load("res://saves/" + destination_name + ".tscn").instantiate()
-		print("checked: ", check_next_level)
+		#var check_next_level = load("res://saves/" + destination_name + ".tscn").instantiate()
+		
+		
+		print("going to: ", destination_name)
 
-		if check_next_level.unvisited == true:
+		if not destination_name in LevelManager.visited_levels:
 			print("level was unvisited, loading brand new copy")
 			next_level = load("res://levels/" + destination_name + ".tscn").instantiate()
 		else:

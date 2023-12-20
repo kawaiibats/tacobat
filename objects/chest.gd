@@ -29,7 +29,7 @@ func _ready():
 	if (debug): print("chest path: ", inventory.chest_path)
 	
 	# Initialize chest inventory
-	if(get_parent().unvisited == true):
+	if(get_parent().level_name not in LevelManager.visited_levels):
 		
 		set_items(starting_items)
 		

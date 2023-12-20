@@ -8,7 +8,7 @@ var item : Item
 var whenready = false
 
 
-var debug = true
+var debug = false
 
 
 
@@ -21,15 +21,15 @@ func _ready():
 
 func set_item( new_item ):
 	
-	print("activate set_item")
+	if debug: print("activate set_item")
 	
 	if not new_item:
 		container.remove_child( item )
 	elif (whenready): 
 		container.add_child ( new_item )
-		print("new_item TODO:", container.get_children)
+		if debug: print("new_item TODO:", container.get_children)
 	else:
-		print("SET ITEM WASNT READY !!!!!")
+		if debug: print("SET ITEM WASNT READY !!!!!")
 	
 	#prints
 	if debug: if (item): if(item.id): print("old item: ", item.id)
@@ -46,7 +46,7 @@ func try_put_item( new_item : Item ) -> bool:
 	
 func put_item( new_item : Item) -> Item:
 	
-	print("activate put_item")
+	if debug: print("activate put_item")
 	
 	if new_item:
 		
