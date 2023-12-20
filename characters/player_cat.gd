@@ -48,11 +48,8 @@ func _physics_process(_delta):
 		if Input.is_action_just_pressed("interact"):
 			execute_interaction()		
 		
-#		if Input.is_action_just_pressed("altInteract"):
-#			execute_alt_interaction()
 		
-		
-		
+# Prevents alternate interactions and GUI events happening at same time
 func _unhandled_input(event):
 		if Input.is_action_just_pressed("altInteract"):
 			execute_alt_interaction()
