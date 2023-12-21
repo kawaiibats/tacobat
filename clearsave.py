@@ -30,7 +30,9 @@ files=os.listdir(src)
 # iterating over all the files in
 # the source directory
 for fname in files:
+
+    if fname.endswith('tscn'):
      
-    # copying the files to the
-    # destination directory
-    shutil.copy2(os.path.join(src,fname), dst)
+        # copying the files to the
+        # destination directory
+        shutil.copy2(os.path.join(src,fname), dst)

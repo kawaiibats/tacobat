@@ -15,6 +15,9 @@ func _ready():
 
 func _input( event ):
 	if event is InputEventMouseMotion and dragging:
+		print("DEBUG: ", get_parent().get_children())
+		
+		get_parent().move_child(self, 2)
 		set_pos( event.position - offset ) 
 
 

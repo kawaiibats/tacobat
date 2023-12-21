@@ -21,6 +21,7 @@ func _ready():
 	SignalManager.item_picked.connect(self._on_item_picked_up)
 	SignalManager.inventory_ready.connect(self._on_inventory_ready)
 	SignalManager.player_inventory_ready.connect(self._on_player_inventory_ready)
+	SignalManager.item_dropped.connect(self._on_item_dropped)
 	
 	split_stack.stack_splitted.connect(self._on_stack_splitted)
 
@@ -42,11 +43,17 @@ func _on_inventory_ready ( inventory ):
 ##################
 # WIP !!!!
 
-func _on_item_picked_up( item, sender ):
-	print("inv manager, detected an item has been picked up: ", item)
+func _on_item_picked_up( item, sender, quantity ):
+	print("inv manager, detected an item has been picked up: ", item, ", with quantity of ", quantity)
+	
+	
 	
 	for i in player_inventories:
+		
+		item.quantity = quantity
+		
 		item = i.add_item( item )  #add item validation and item overflow zone later
+		
 		if not item:
 			sender.item_picked() #tell object its been picked up
 			return # accept item
@@ -72,10 +79,48 @@ func _on_player_inventory_ready ( inv ):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 # Controls positioning the item in hand around mouse motion
-func _input( event : InputEvent ):
+func _input( event ):
 	
-	if event is InputEventMouseMotion and item_in_hand:
+	#print("EVENT:", event)
+	
+	if event is InputEventMouseButton: if event.pressed == true: 
+		
+		# without the wait, the click input executes before the item is even in hand, making tracking it to cursor impossible
+		if !item_in_hand: 
+			await get_tree().create_timer(0.01).timeout
+		
+		if ((event is InputEventMouseMotion) or (event is InputEventMouseButton)) and item_in_hand:
+		
+			#item_in_hand.visible = true
+		
+			print("^^^^ setting item in hand pos to input")
+		
+			#print("Item in hand pos:", item_in_hand.position)
+			#print("Event pos:", event.position)
+	
+			# item in hand scaling and positioning depending on global scaling settings
+			if (SettingsManager.scale >= 1):
+				item_in_hand.position = (event.position / SettingsManager.scale) + (Vector2(-8, -8) * SettingsManager.scale)  # no idea why this breaks if i use a variable3
+			else:
+				item_in_hand.position = (event.position / SettingsManager.scale) + (Vector2(-8, -8)) # no idea why this breaks if i use a variable3
+				
+			
+	
+	if ((event is InputEventMouseMotion) or (event is InputEventMouseButton)) and item_in_hand:
+		
+		print("^^^^ setting item in hand pos to input")
 		
 		#print("Item in hand pos:", item_in_hand.position)
 		#print("Event pos:", event.position)
@@ -85,7 +130,14 @@ func _input( event : InputEvent ):
 			item_in_hand.position = (event.position / SettingsManager.scale) + (Vector2(-8, -8) * SettingsManager.scale)  # no idea why this breaks if i use a variable3
 		else:
 			item_in_hand.position = (event.position / SettingsManager.scale) + (Vector2(-8, -8)) # no idea why this breaks if i use a variable3
-		
+	
+
+
+
+
+
+
+
 
 func _on_mouse_entered_slot( slot : Inventory_Slot ):
 	if slot.item:
@@ -154,6 +206,8 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 				item_in_hand.z_index = 0 # fix for item in hand display on cursor
 				item_in_hand_node.remove_child( item_in_hand )
 				
+			if item_in_hand: item_in_hand.visible = false # # 
+				
 			print ("before:", item_in_hand)
 			item_in_hand = await slot.put_item( item_in_hand )
 			print ("after:", item_in_hand)
@@ -164,7 +218,9 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 				
 				item_in_hand_node.add_child( item_in_hand )
 			
-			set_hand_position( event.global_position )
+			set_hand_position( get_global_mouse_position() )
+			
+			if slot.item: slot.item.visible = true # # 
 			
 			
 			
@@ -196,10 +252,12 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 					item_in_hand = await slot.put_item( item_in_hand )
 				elif item_in_hand.quantity > 1:
 					var new_item = ItemManager.get_item( item_in_hand.id ) 
-					new_item.visible = false
+					new_item.visible = false # # 
 					print("right click dropping ONLY ONE from MANY -- creating and dropping single item in put_item()")
 					item_in_hand.set_quantity(item_in_hand.quantity - 1)
 					slot.put_item( new_item )
+					set_hand_position( get_global_mouse_position() ) # #
+					new_item.visible = true # #
 					
 			else:
 				print("return")
@@ -239,16 +297,18 @@ func _on_stack_splitted( slot, new_quantity ):
 	slot.item.set_quantity(slot.item.quantity)
 	
 	var new_item = ItemManager.get_item( slot.item.id )
+	new_item.visible = false # # 
 	new_item.quantity = new_quantity
 	
 	print("new item to be in hand: ", new_item, "its quantity: ", new_item.quantity)
-	
-	new_item.visible = false
-	
+
 	item_in_hand = new_item
 	item_in_hand_node.add_child( item_in_hand )
 	item_in_hand_node.get_child(0).set_quantity(new_quantity)
-	set_hand_position( slot.position )
+	
+	set_hand_position( get_global_mouse_position() ) # #
+	new_item.visible = true # #
+	
 	
 	
 	await get_tree().create_timer(0.1).timeout
@@ -261,6 +321,20 @@ func _on_stack_splitted( slot, new_quantity ):
 
 	
 
+
+# Throw hand item on the ground
+
+func _on_item_dropped():
 	
+	if item_in_hand:
+	
+		var floor_item = ResourceManager.tscn[ "floor_item" ].instantiate()
+		floor_item.itemInside = item_in_hand.id
+		floor_item.set_quantity(item_in_hand.quantity)
+		get_parent().add_child( floor_item )
+		floor_item.position = get_global_mouse_position()
+	
+		item_in_hand_node.remove_child( item_in_hand )
+		item_in_hand = null
 
 

@@ -9,6 +9,12 @@ var key
 
 
 func _ready():
+	whenready = true
+	if item:
+		#print("THE ITEM IS:", item)
+		#print("THE CONTAINER IS:", container)
+		container.add_child.call_deferred(item)
+		
 	lbl_key.text = key
 	
 	

@@ -12,12 +12,14 @@ extends CharacterBody2D
 @onready var alt_interactions = []
 @onready var altInteractLabel = $InteractionComponents/AltInteractLabel
 
+@export var item_drop_area_path: NodePath
+@onready var item_drop_area = get_node(item_drop_area_path)
+@onready var canDropItems : bool = false
+
 @export var health : float = 100
 @onready var healthLabel = $InteractionComponents/HealthLabel
 
 @onready var warping : bool = false
-
-
 
 
 
@@ -50,10 +52,47 @@ func _physics_process(_delta):
 		
 		
 # Prevents alternate interactions and GUI events happening at same time
-func _unhandled_input(event):
+func _unhandled_input(_event):
 		if Input.is_action_just_pressed("altInteract"):
 			execute_alt_interaction()
 			
+
+
+
+
+
+
+# Controls dropping items on mouse cursor
+func _input(event):
+	
+
+	if ((event.is_action("dropItem")) and (Input.is_action_just_pressed("dropItem"))):
+		print("dropItem")
+		if canDropItems: 
+			print ("YES -- canDropItems")
+			
+			## ~~ 
+			
+			SignalManager.emit_signal( "item_dropped" )
+			
+			
+			
+			
+			
+			
+			
+		else:
+			print ("NO -- can't drop")
+			
+
+
+
+
+# controls mouse out of item drop area
+func _on_item_drop_area_mouse_exited():
+	print ("DETECT mouse exit")
+	
+	canDropItems = false
 
 
 
@@ -193,8 +232,11 @@ func execute_interaction():
 					var itemToGive = ItemManager.get_item(forageParent.itemInside)
 					print("itemToGive: ", itemToGive)
 					
+					# temp, all foragys drop 1 quantity
+					var itemQuantity = 1
+					
 					# add item to players inventory 
-					SignalManager.emit_signal("item_picked", itemToGive, forageParent)
+					SignalManager.emit_signal("item_picked", itemToGive, forageParent, itemQuantity)
 					
 					
 				
@@ -208,12 +250,13 @@ func execute_interaction():
 				
 				if(pickupParent.itemInside):
 					print("You picked up a.. ", pickupParent.itemInside)
+					print("There are ", pickupParent.itemQuantity, " items inside")
 					
 					var itemToGive = ItemManager.get_item(pickupParent.itemInside)
 					print("itemToGive: ", itemToGive)
 					
 					# add item to players inventory 
-					SignalManager.emit_signal("item_picked", itemToGive, pickupParent)
+					SignalManager.emit_signal("item_picked", itemToGive, pickupParent, pickupParent.itemQuantity)
 			"open_inventory":
 				var inventoryParent = cur_interaction.get_parent()
 				
@@ -258,10 +301,18 @@ func execute_alt_interaction():
 
 
 
-#
+
+
+
 # Player Inventory Methods
 # ///////////////////////////////////////////////////////////////////////////	
 
 func add_to_player_inventory(item):
 	var inventory_player_path : NodePath = "ui/inventory_player" 
+
+
+
+
+
+
 

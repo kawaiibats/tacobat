@@ -15,6 +15,12 @@ var sprites = {
 }
 
 
+
+var tscn = {
+	"floor_item" : preload( "res://components/spawning/floor_item.tscn" )
+}
+
+
 @onready var stat_info = {}
 
 

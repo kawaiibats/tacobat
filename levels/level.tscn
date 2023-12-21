@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://2dh4nlr8t3ne"]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_8a5mw"]
+
+[node name="level" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(303, 274)
+script = ExtResource("1_8a5mw")
+metadata/_edit_lock_ = true
