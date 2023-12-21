@@ -13,9 +13,9 @@ var debug = false
 @export var container_path: NodePath
 @onready var container = get_node( container_path ) 
 
-
-
 @onready var current_inventories = container.get_children()
+
+
 
 
 func _ready():
@@ -67,13 +67,13 @@ func setSize():
 	
 	
 func _on_inventory_opened( inventory: Inventory ):
-	if debug: print ("ON INVENTORY OPEN")
+	print ("ON INVENTORY OPEN")
 	
 	if current_inventories.size() == 0:
 		size.y = 91
 	
 	if current_inventories.has( inventory ):
-		if debug: print("inventory container already has this inventory, return")
+		print("inventory container already has this inventory, return")
 		return
 	
 	container.add_child.call_deferred( inventory )

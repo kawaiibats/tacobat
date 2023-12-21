@@ -18,14 +18,13 @@ func _ready():
 		item = ItemManager.get_item( itemInside )
 	
 	
-	var texture_name = itemInside
-	print(texture_name)
+	var newTexture = ResourceManager.sprites[itemInside]
+
 	
 	if(itemInside == "noneset"):
-		var newTexture = load("res://art/item_icon/bag.png")
+		newTexture = load("res://art/item_icon/bag.png")
 		spr.texture = newTexture
 	else:
-		var newTexture = load("res://art/item_icon/" + texture_name + ".png")
 		spr.texture = newTexture
 
 	interactArea.interact_value = itemInside

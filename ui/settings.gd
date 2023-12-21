@@ -68,8 +68,20 @@ func pauseGUI():
 		hide()
 	else:
 		print("showme")
+		
+		# hides other windows
 		quick_inventory.hide()
 		container.hide()
+		
+		
+		# allows pause to close out inventories even when near by and they're already opened
+		for inv in container.current_inventories:
+			container._on_inventory_closed(inv)
+		
+		
+		container.item_info.hide()
+		
+		# 
 		show()
 
 

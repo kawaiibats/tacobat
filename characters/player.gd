@@ -76,11 +76,6 @@ func _input(event):
 			SignalManager.emit_signal( "item_dropped" )
 			
 			
-			
-			
-			
-			
-			
 		else:
 			print ("NO -- can't drop")
 			
@@ -261,6 +256,8 @@ func execute_interaction():
 				var inventoryParent = cur_interaction.get_parent()
 				
 				print("opening: ", inventoryParent.inventory)
+				
+				print("inventoryParent: ", inventoryParent)
 				
 				SignalManager.emit_signal("inventory_opened", inventoryParent.inventory)
 
