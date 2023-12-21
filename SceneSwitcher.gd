@@ -61,9 +61,9 @@ func transfer_data(old_scene, new_scene):
 	# 
 	# # # # # # # # # # # # # # # # #
 	
-	var oldPlayer = old_scene.get_node("PlayerCat")
+	var oldPlayer = old_scene.get_node("Player")
 	var oldPlayerCopy = oldPlayer.duplicate()
-	var newPlayer = new_scene.get_node("PlayerCat")
+	var newPlayer = new_scene.get_node("Player")
 	var spawnLocs = new_scene.get_tree().get_nodes_in_group("Spawn")
 	var spawnLoc
 	
@@ -114,7 +114,7 @@ func _on_animation_player_animation_finished(anim_name):
 			print("reset transition cooldown")
 			current_level.play_loaded_sound()
 			
-			current_level.get_node("PlayerCat").warping = false
+			current_level.get_node("Player").warping = false
 			handling = false
 
 

@@ -1,7 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://ct6rse4nt0l12"]
+[gd_scene load_steps=31 format=3 uid="uid://byf22o1kwlvyi"]
 
 [ext_resource type="Script" path="res://levels/devisland.gd" id="1_myjjd"]
-[ext_resource type="PackedScene" uid="uid://dm2smwgn156aj" path="res://characters/player_cat.tscn" id="2_tboj6"]
+[ext_resource type="PackedScene" uid="uid://clhxrxg5snbvl" path="res://characters/player.tscn" id="2_tboj6"]
 [ext_resource type="Texture2D" uid="uid://bnl63dtbpq01f" path="res://art/sprout/Tilesets/ground tiles/old tiles/Grass.png" id="3_l7wja"]
 [ext_resource type="Texture2D" uid="uid://dol2l2q32s6gr" path="res://art/sprout/Tilesets/ground tiles/old tiles/Hills.png" id="4_lkwgx"]
 [ext_resource type="Texture2D" uid="uid://dh853ea6b7qcd" path="res://art/sprout/Tilesets/ground tiles/old tiles/Tilled Dirt.png" id="5_f4kih"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cpyqhqfxrj71" path="res://components/spawning/entity_spawn.tscn" id="18_baknj"]
 [ext_resource type="PackedScene" uid="uid://cabat1prpspee" path="res://components/spawning/foragable.tscn" id="19_6hqs7"]
 [ext_resource type="PackedScene" uid="uid://ddawh1jfpd8ir" path="res://components/spawning/player_spawn.tscn" id="20_f7r1p"]
+[ext_resource type="PackedScene" uid="uid://dxfueuihw66nu" path="res://components/spawning/floor_item.tscn" id="22_xk8qr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mi6g"]
 texture = ExtResource("3_l7wja")
@@ -1235,12 +1236,12 @@ position = Vector2(303, 274)
 script = ExtResource("1_myjjd")
 metadata/_edit_lock_ = true
 
-[node name="PlayerCat" parent="." instance=ExtResource("2_tboj6")]
+[node name="Player" parent="." instance=ExtResource("2_tboj6")]
 y_sort_enabled = true
 position = Vector2(-7, -42)
 health = 69.0
 
-[node name="Camera2D" type="Camera2D" parent="PlayerCat"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0
 limit_top = 0
 limit_right = 835
@@ -1433,6 +1434,11 @@ num_of_items = 2
 size = 5
 inventory_name = "Small Loot Chest"
 starting_items = ["red_mush", "brown_mush", "apple", "wheat"]
+
+[node name="floor_item" parent="." instance=ExtResource("22_xk8qr")]
+position = Vector2(89, 102)
+itemInside = "apple"
+itemQuantity = 1
 
 [connection signal="warp_area_entered" from="warpArea2" to="." method="_on_warper_warp_area_entered"]
 [connection signal="warp_area_entered" from="warpdevlvl2" to="." method="_on_warpdevlvl_2_warp_area_entered"]
