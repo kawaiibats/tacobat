@@ -1,6 +1,6 @@
 class_name Inventory_Slot extends TextureRect
 
-@export var container_path: NodePath = "item_container"
+@export var container_path: NodePath
 
 @onready var container = get_node( container_path ) 
 
