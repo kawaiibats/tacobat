@@ -75,6 +75,17 @@ func _on_item_picked_up( item, sender, quantity ):
 					return
 					
 				# can fit partially into a stack
+				if (s.item.quantity < s.item.stack_size) and (s.item.quantity + quantity > s.item.stack_size):
+					print ("fits partially, topping off stack")
+					
+					var newQuant = quantity - (s.item.stack_size - s.item.quantity)
+					print ("newQuant: ", newQuant)
+					
+					sender.set_quantity(newQuant)
+					sender.item._ready()
+					
+					s.item.quantity = s.item.stack_size
+					s.item._ready()
 				
 				
 				

@@ -36,19 +36,15 @@ func _ready():
 	
 func set_quantity( value ):
 	itemQuantity = value
-		
-	if itemQuantity > 1:
-		
-		print ("Dropped a multi quantity item")
-		
-		if lbl_quantity == null: # This is necessary to prevent creating extra labels
-			lbl_quantity = Label.new()
-			lbl_quantity.label_settings = load("res://font/quantity.tres")
-			add_child( lbl_quantity )
+
+	if lbl_quantity == null: # This is necessary to prevent creating extra labels
+		lbl_quantity = Label.new()
+		lbl_quantity.label_settings = load("res://font/quantity.tres")
+		add_child( lbl_quantity )
 			
-		lbl_quantity.text = str( itemQuantity )
-		lbl_quantity.visible = itemQuantity > 1
-		lbl_quantity.scale = Vector2(0.2,0.2)
+	lbl_quantity.text = str( itemQuantity )
+	lbl_quantity.visible = itemQuantity > 1
+	lbl_quantity.scale = Vector2(0.2,0.2)
 
 
 
@@ -58,7 +54,7 @@ func set_quantity( value ):
 	
 # on try to pick up
 func interact():
-	SignalManager.emit_signal( "item_picked", itemInside, null, itemQuantity)
+	SignalManager.emit_signal( "item_picked", itemInside, self, itemQuantity)
 	
 
 # auto try to pick up the item if stepped over

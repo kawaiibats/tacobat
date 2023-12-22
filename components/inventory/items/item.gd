@@ -38,7 +38,7 @@ var type : Game_Enums.ITEM_TYPE
 # RARITY IS ONLY USED BY FORAGYS, SEEDS, CROPS, MAYBE RESOURCES
 # "None", Common", "Uncommon", "Rare", "Exceptional", "Exotic"
 var rarity : Game_Enums.ITEM_RARITY
-
+	
 # MAX STACK SIZE
 var stack_size : int = 1
 
