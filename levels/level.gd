@@ -251,6 +251,17 @@ func genesis():
 # Essentially is a weaker genesis that replenishes forages over time
 # Only affects previously visited levels
 func timemarch():
+	
+	if level_name in LevelManager.visited_levels:
+		
+		print(level_name, " is time-marching. ")
+		
+	else:
+		
+		print(level_name, " has not been visited and cannot time-march.")
+	
+	
+	
 	pass
 
 

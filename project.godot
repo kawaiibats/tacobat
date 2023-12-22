@@ -22,6 +22,7 @@ ItemManager="*res://components/managers/item_manager.gd"
 SettingsManager="*res://components/managers/settings_manager.gd"
 ResourceManager="*res://components/managers/resource_manager.gd"
 LevelManager="*res://components/managers/level_manager.gd"
+TimeManager="*res://components/managers/time_manager.gd"
 
 [display]
 

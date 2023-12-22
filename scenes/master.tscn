@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://2ip6fskv3mhq"]
+[gd_scene load_steps=13 format=3 uid="uid://2ip6fskv3mhq"]
 
 [ext_resource type="PackedScene" uid="uid://kl5pdu75i3mp" path="res://scene_switcher.tscn" id="1_rifhj"]
 [ext_resource type="Script" path="res://components/managers/inventory_manager.gd" id="2_pqi57"]
+[ext_resource type="Script" path="res://components/managers/time_manager.gd" id="3_372ny"]
 [ext_resource type="PackedScene" uid="uid://bxrcfuylfubts" path="res://components/inventory/core/inventory_container.tscn" id="3_bsu4f"]
 [ext_resource type="Script" path="res://ui/scale_control.gd" id="3_hjfki"]
 [ext_resource type="Script" path="res://scenes/settingsButton.gd" id="4_0tdh4"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://orrk5jk7tb7" path="res://components/inventory/inventory_ui/quick_inventory_player.tscn" id="6_5vlix"]
 [ext_resource type="PackedScene" uid="uid://ukw6pom5at6" path="res://components/inventory/core/hotbar.tscn" id="7_raxsw"]
 [ext_resource type="PackedScene" uid="uid://bn3fyevp02niv" path="res://ui/pause_menu.tscn" id="7_vcl2h"]
+[ext_resource type="PackedScene" uid="uid://cum8022bgyyrt" path="res://ui/clock.tscn" id="10_r4vmh"]
 
 [node name="master" type="Node"]
 
@@ -24,6 +26,13 @@ script = ExtResource("2_pqi57")
 item_hand_path = NodePath("../../ui/ui_container/item_in_hand")
 item_info_path = NodePath("../../ui/ui_container/item_info")
 split_stack_path = NodePath("../../ui/ui_container/split_stack")
+
+[node name="time_manager" type="Node2D" parent="managers"]
+script = ExtResource("3_372ny")
+clock_path = NodePath("../../ui/ui_container/windows/clock")
+sky_modulator_path = NodePath("sky_modulator")
+
+[node name="sky_modulator" type="CanvasModulate" parent="managers/time_manager"]
 
 [node name="ui" type="CanvasLayer" parent="."]
 
@@ -111,11 +120,24 @@ scale = Vector2(0.85, 0.85)
 pivot_offset = Vector2(92, 0)
 hotbarSize = 7
 
+[node name="clock" parent="ui/ui_container/windows" instance=ExtResource("10_r4vmh")]
+layout_mode = 1
+anchor_left = 0.944
+anchor_top = 0.046
+anchor_right = 0.944
+anchor_bottom = 0.046
+offset_left = -63.488
+offset_top = 6.192
+offset_right = 16.512
+offset_bottom = 46.192
+
 [node name="buttons" type="Control" parent="ui/ui_container"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1097.0
+offset_top = 3.0
+offset_right = 1144.0
+offset_bottom = 27.0
 mouse_filter = 2
 
 [node name="settingsButton" type="Button" parent="ui/ui_container/buttons"]
@@ -151,4 +173,5 @@ grow_horizontal = 1
 grow_vertical = 1
 mouse_filter = 1
 
+[connection signal="phase_change" from="managers/time_manager" to="managers/time_manager" method="_on_phase_change"]
 [connection signal="pressed" from="ui/ui_container/buttons/settingsButton" to="ui/ui_container/buttons/settingsButton" method="_on_pressed"]
