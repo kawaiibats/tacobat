@@ -15,6 +15,7 @@ var debug = false
 
 
 
+
 func _ready():
 	for s in hotbarSize:
 		var slot = hotbar_slot_res.instantiate()

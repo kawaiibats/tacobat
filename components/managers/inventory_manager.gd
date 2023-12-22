@@ -48,23 +48,72 @@ func _on_item_picked_up( item, sender, quantity ):
 	
 	
 	
+	
+	### ~~ If item already exists in an inventory, and the quantity is less than its stack size, and the item quantity is less than the remainder, it will be added
+	### ~~ this will cancel placing the item in an empty slot unless there is some less over
+	
 	for i in player_inventories:
+		for s in i.slots:
+			if s.item and (s.item.id == item.id):
+				print("found a match!")
+				
+				# can fit neatly into stack 
+				if s.item.quantity + quantity <= s.item.stack_size:
+					print("fits clean")
+					
+					sender.item_picked()
+					
+					s.item.quantity = s.item.quantity + quantity
+					s.item._ready() # fix to display item quantity
+				
+					return
+					
+				# can fit partially into a stack
+				
+				
+				
+				
+				
+				
+				
+				# only stacks found are full
+				
+				## ~ nothing needed
+					
+			
+	
+	
+	
+	
+	
+	### ~~ If item doesn't exist in inventory, find an empty slot from top of player inventories as usual
+	
+	var iter = 0
+	for i in player_inventories:
+		iter = iter + 1
 		
 		print("displaying inventory: ", i)
 		
 		item.quantity = quantity
 		
+		
 		item = i.add_item( item )  #add item validation and item overflow zone later
 		
 		if not item:
-			print("not item")
+			print("item can go in ", i)
 			
 			sender.item_picked() #tell object its been picked up
 			return # accept item
 			
 		if item:
+			print("item can't go in ", i)
 			
-			print("item")
+		if item and iter == len(player_inventories):
+			
+			print("Out of inventory space! Stashing item..")
+		
+		
+		
 		
 		
 		

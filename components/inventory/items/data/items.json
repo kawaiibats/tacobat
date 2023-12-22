@@ -14,7 +14,7 @@
 	"wheat": {
 		"name" : "Stalk of Wheat",
 		"type" : 0,
-		"stack_size" : 64,
+		"stack_size" : 16,
 
 		"rarity" : 1,
 		"family" : "Grain",
