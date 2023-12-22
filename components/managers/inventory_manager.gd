@@ -228,6 +228,8 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 		if slot.item and !item_in_hand:
 			if !Input.is_action_just_pressed("shiftAlt") and Input.is_action_just_pressed("altInteract") and slot.item.quantity > 1:
 				print("auto half pickup")
+				
+				# ensure right click isn't processed again by below code
 				r_click_handled = true
 				
 				var auto_half = ceil(slot.item.quantity / 2)
@@ -348,10 +350,8 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 			set_hand_position( event.global_position )
 			
 			
-		# Ensure right click isnt processed twice after auto magic split, reset
-		elif(r_click_handled):
-			r_click_handled = false
-			return
+		# reset to allow more right clicks
+		r_click_handled = false
 
 
 
