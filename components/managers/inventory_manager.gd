@@ -50,13 +50,21 @@ func _on_item_picked_up( item, sender, quantity ):
 	
 	for i in player_inventories:
 		
+		print("displaying inventory: ", i)
+		
 		item.quantity = quantity
 		
 		item = i.add_item( item )  #add item validation and item overflow zone later
 		
 		if not item:
+			print("not item")
+			
 			sender.item_picked() #tell object its been picked up
 			return # accept item
+			
+		if item:
+			
+			print("item")
 		
 		
 		
@@ -67,10 +75,10 @@ func _on_item_picked_up( item, sender, quantity ):
 		# It it can't find that, puts it in the "stash" zone
 		
 
-		return
+
 
 func _on_player_inventory_ready ( inv ):
-	player_inventories = inv
+	player_inventories.append(inv)
 
 
 

@@ -44,7 +44,10 @@ func _ready():
 	setSize()
 	
 	var inventories = [ inventory, pockets ] #, hotbar, backpack, etc
-	SignalManager.emit_signal( "player_inventory_ready", inventories ) 
+	for inv in inventories:
+		SignalManager.emit_signal( "player_inventory_ready", inv ) 
+		
+
 
 
 func _physics_process(_delta):

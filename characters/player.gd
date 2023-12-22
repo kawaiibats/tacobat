@@ -23,6 +23,10 @@ extends CharacterBody2D
 
 
 
+var debug = false
+
+
+
 func _ready():
 	update_animation_parameters(starting_direction)
 	update_interactions()
@@ -85,7 +89,7 @@ func _input(event):
 
 # controls mouse out of item drop area
 func _on_item_drop_area_mouse_exited():
-	print ("DETECT mouse exit")
+	if debug: print ("DETECT mouse exit")
 	
 	canDropItems = false
 

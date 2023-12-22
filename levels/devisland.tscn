@@ -1338,8 +1338,8 @@ starting_items = ["brown_mush", "red_mush", "apple", "speed_trinket"]
 [node name="RandomChest4" parent="." instance=ExtResource("11_u610i")]
 position = Vector2(201, -26)
 script = ExtResource("13_x1nbe")
-num_of_items = 10
-size = 14
+num_of_items = 100
+size = 21
 inventory_name = "Random Loot Chest"
 starting_items = ["red_mush", "brown_mush", "apple", "wheat"]
 
