@@ -263,6 +263,7 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 		
 		if Input.is_action_just_pressed("primaryClick"):
 			
+			r_click_handled = false
 			var had_empty_hand = item_in_hand != null
 			
 			
@@ -301,7 +302,7 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 		# NEW ---- PICK UP ITEMS, PUT DOWN PARTIAL ITEMS WITH RIGHT CLICK ////
 		
 		# right click input on slots only activates under precise logic 
-		if (item_in_hand) and (!r_click_handled): if (Input.is_action_just_pressed("altInteract")) and ((item_in_hand.quantity >= 1)):
+		if (!r_click_handled): if (Input.is_action_just_pressed("altInteract")) and ((item_in_hand) and (item_in_hand.quantity >= 1)):
 
 			var had_empty_hand = item_in_hand != null
 
@@ -351,6 +352,8 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 		elif(r_click_handled):
 			r_click_handled = false
 			return
+
+
 
 
 
