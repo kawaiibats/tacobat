@@ -1,5 +1,8 @@
 class_name Inventory_Slot extends TextureRect
 
+signal item_changed()
+
+
 @export var container_path: NodePath
 
 @onready var container = get_node( container_path ) 
@@ -45,44 +48,80 @@ func try_put_item( new_item : Item ) -> bool:
 
 	
 func put_item( new_item : Item) -> Item:
+	print("activate put_item")
 	
-	if debug: print("activate put_item")
 	
+	# Activates when trying to place an item down in the slot
 	if new_item:
+		print( "putting item down")
 		
-		if item:
-			
-			if item.id == new_item.id and item.quantity < item.stack_size:
-				
-				print( "item qty: ", item.quantity)
-				print( "new item qty: ", new_item.quantity)
-				
-				var remainder = item.add_item_quantity( new_item.quantity )
-				
-				print( "remainder: ", remainder )
-					
-				if remainder < 1:
-					return null
-				elif remainder >= 1: ## 
-					new_item.quantity = remainder ## fix
-					
-			else: 
-				var temp_item = item
-				container.remove_child( item )
-				set_item( new_item )
-				new_item = temp_item
-				
-			return new_item
-			
-		else:
-			set_item( new_item )
-			return null
-				
+		return has_new_item( new_item )
+
+
+	# Activates when picking up item already in slot with an empty hand
 	elif item:
+		print( "picking item up" )
+		
 		new_item = item
 		set_item( null )
 	
+	# return an item or null
+	emit_signal( "item_changed" )
 	return new_item
+
+
+
+func has_new_item( new_item ):
+	# if there is already an item in the slot
+	if item:
+		return has_both_item( new_item )
+	
+	# simply place the item in the empty slot
+	else:
+		set_item( new_item )
+		emit_signal( "item_changed" )
+		return null
+
+
+func has_both_item( new_item ):
+	print("Slot already has item, hand already has item")
+	
+	# Check if the item in hand and the one in the slot can be stacked
+	if can_stack( new_item ):
+		print("They can be stacked together")
+		
+		var remainder = item.add_item_quantity( new_item.quantity )
+		new_item.quantity = remainder
+		
+		print("THE REMAINDER IS: ", remainder)
+		print("the new item quantity is: ", new_item.quantity)
+	
+	# Swap the item in hand with the one in the slot
+	else:
+		print("They cannot be stacked -- swapping items")
+		
+		var temp_item = item
+		remove_item_child()
+		set_item( new_item )
+		new_item = temp_item
+		
+	
+	print("returning: ", new_item)
+	
+	return new_item if new_item.quantity > 0 else null
+
+
+func can_stack( new_item ) -> bool:
+	return item.id == new_item.id and item.quantity < item.stack_size
+	
+
+func remove_item_child():
+	container.remove_child( item )
+	
+
+func remove_item():
+	put_item( null )
+
 
 func item_picked():
 	container.queue_free()

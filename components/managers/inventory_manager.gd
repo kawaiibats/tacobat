@@ -17,6 +17,12 @@ var item_offset = Vector2(-8, -8)
 
 var had_full_hand = true
 
+var r_click_handled = false
+
+
+var debug = false
+
+
 func _ready():
 	SignalManager.item_picked.connect(self._on_item_picked_up)
 	SignalManager.inventory_ready.connect(self._on_inventory_ready)
@@ -162,7 +168,7 @@ func _input( event ):
 		
 			#item_in_hand.visible = true
 		
-			print("^^^^ setting item in hand pos to input")
+			if debug: print("^^^^ setting item in hand pos to input")
 		
 			#print("Item in hand pos:", item_in_hand.position)
 			#print("Event pos:", event.position)
@@ -177,7 +183,7 @@ func _input( event ):
 	
 	if ((event is InputEventMouseMotion) or (event is InputEventMouseButton)) and item_in_hand:
 		
-		print("^^^^ setting item in hand pos to input")
+		if debug: print("^^^^ setting item in hand pos to input")
 		
 		#print("Item in hand pos:", item_in_hand.position)
 		#print("Event pos:", event.position)
@@ -219,25 +225,32 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 	
 		# PICK UP HALF OF A STACK (SPLIT) AUTOMAGICALLY
 	
-		if slot.item:
-			if !Input.is_action_just_pressed("shiftAlt") and Input.is_action_just_pressed("altInteract") and slot.item.quantity > 1 and item_in_hand == null:
+		if slot.item and !item_in_hand:
+			if !Input.is_action_just_pressed("shiftAlt") and Input.is_action_just_pressed("altInteract") and slot.item.quantity > 1:
 				print("auto half pickup")
+				r_click_handled = true
 				
 				var auto_half = ceil(slot.item.quantity / 2)
 		
 				split_stack.emit_signal( "stack_splitted", slot , auto_half )
 				
 				#slot.item.set_quantity(auto_half)
+				
+
 		
 	
 		# OPEN UP THE ADVANCED SPLIT STACK MENU
 		
 		if Input.is_action_just_pressed("altInteract"):
+			
+			
 			if Input.is_action_just_pressed("shiftAlt") and slot.item.quantity > 2 and item_in_hand == null:
 				print("open advanced split menu")
+				r_click_handled = true
 				split_stack.display( slot )
 			elif Input.is_action_just_pressed("shiftAlt") and slot.item.quantity == 2 and item_in_hand == null:
 				print("advanced split menu switches -> to auto half pickup")
+				r_click_handled = true
 				split_stack.emit_signal( "stack_splitted", slot , ceil(slot.item.quantity / 2) )
 			elif Input.is_action_just_pressed("shiftAlt") and slot.item.quantity == null and item_in_hand == null:
 				print("no quantity")
@@ -261,13 +274,16 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 					return
 			
 				item_in_hand.z_index = 0 # fix for item in hand display on cursor
+				
 				item_in_hand_node.remove_child( item_in_hand )
 				
-			if item_in_hand: item_in_hand.visible = false # # 
+			if item_in_hand: item_in_hand.visible = false ## Potentially fix phantom item display?
 				
 			print ("before:", item_in_hand)
 			item_in_hand = await slot.put_item( item_in_hand )
 			print ("after:", item_in_hand)
+			if (item_in_hand): item_in_hand._ready() ##  fixes display of new item after putting down partial stack
+			if item_in_hand: item_in_hand.visible = true ## 
 			
 			if item_in_hand:
 				if had_empty_hand:
@@ -285,10 +301,9 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 		# NEW ---- PICK UP ITEMS, PUT DOWN PARTIAL ITEMS WITH RIGHT CLICK ////
 		
 		# right click input on slots only activates under precise logic 
-		if (item_in_hand): if (Input.is_action_just_pressed("altInteract")) and ((slot.item == null) and (item_in_hand.quantity >= 1)):
+		if (item_in_hand) and (!r_click_handled): if (Input.is_action_just_pressed("altInteract")) and ((item_in_hand.quantity >= 1)):
 
 			var had_empty_hand = item_in_hand != null
-
 
 			print(slot, "right clicked on!")
 			if item_in_hand:
@@ -330,6 +345,12 @@ func _on_gui_input_slot( event : InputEvent, slot : Inventory_Slot ):
 				item_in_hand_node.add_child( item_in_hand )
 
 			set_hand_position( event.global_position )
+			
+			
+		# Ensure right click isnt processed twice after auto magic split, reset
+		elif(r_click_handled):
+			r_click_handled = false
+			return
 
 
 
