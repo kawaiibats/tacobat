@@ -41,9 +41,12 @@ func handle_level_changed(destination_name: String, destID: int):
 			next_level = load("res://levels/" + destination_name + ".tscn").instantiate()
 		else:
 			print("level was previously visited, loading the save")
-			next_level = load("res://saves/" + destination_name + ".tscn").instantiate() 	
+			next_level = load("res://saves/" + destination_name + ".tscn").instantiate()
 			
 		next_level.visible = false
+		
+		#set level manager current level
+		LevelManager.current_level = destination_name
 		
 		# this generates some errors but it cannot be deferred
 		add_child(next_level)

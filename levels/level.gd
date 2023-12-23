@@ -14,7 +14,7 @@ var saveFile : String = "res://saves/" + level_name + ".tscn"
 
 
 
-var debug = false
+var debug = true
 
 
 
@@ -85,52 +85,77 @@ func place_foragy(foragyPool, zonePool):
 	var zed = Vector2(0,0)
 	selectedForagyInstance.position = zed
 	
+	
 
-# GENESIS - plays when a level is visited for the very first time.
-func genesis():
-	print (level_name, " Genesis Activating..")
+
+func getForagys():
+	if (debug): print("Available forage pool:", $ForagePool.get_children())
+	return $ForagePool.get_children()
 	
-	# Spawn 1-8 foragable entities within roughly 30-60 possible locations 
-	
-	# gets the level's foragables from the pool node
-	var foragePool = $ForagePool.get_children()
-	if (debug): print("Available forage pool:", foragePool)
-	
-	# gets the empty entity spawn zones that can be picked to spawn on
+
+func getForagySpawns():
 	var entitySpawnZonePool = []
-
+	
 	for _i in self.get_children():
 		if _i.is_in_group("EntitySpawn") and _i.get_child_count() == 2:
 			entitySpawnZonePool.append(_i)
-			
-	if (debug): print ("Available entity spawn pool:", entitySpawnZonePool)
+		
+		if (debug): print ("Available entity spawn pool:", entitySpawnZonePool)
+		
+	return entitySpawnZonePool
 	
 	
-	# roll 1-8 (but with special odds) to determine how many foragys will spawn
+func getForagyNum(type):
 	
+
 	var numSpawnsRoll = randi_range(1,100)
-	var spawnForageNum = 0
+	var spawnForageNum
 	
-	if numSpawnsRoll >= 1 and numSpawnsRoll <= 10:
-		spawnForageNum = 1
-	elif numSpawnsRoll >= 11 and numSpawnsRoll <= 30:
-		spawnForageNum = 2
-	elif numSpawnsRoll >= 31 and numSpawnsRoll <= 60:
-		spawnForageNum = 3
-	elif numSpawnsRoll >= 61 and numSpawnsRoll <= 70:
-		spawnForageNum = 4
-	elif numSpawnsRoll >= 71 and numSpawnsRoll <= 80:
-		spawnForageNum = 5
-	elif numSpawnsRoll >= 81 and numSpawnsRoll <= 90:
-		spawnForageNum = 6
-	elif numSpawnsRoll >= 90 and numSpawnsRoll <= 99:
-		spawnForageNum = 7
-	else:
-		spawnForageNum = 8
 	
+	if type == "genesis":
+		
+		if numSpawnsRoll >= 1 and numSpawnsRoll <= 10:
+			spawnForageNum = 1
+		elif numSpawnsRoll >= 11 and numSpawnsRoll <= 30:
+			spawnForageNum = 2
+		elif numSpawnsRoll >= 31 and numSpawnsRoll <= 60:
+			spawnForageNum = 3
+		elif numSpawnsRoll >= 61 and numSpawnsRoll <= 70:
+			spawnForageNum = 4
+		elif numSpawnsRoll >= 71 and numSpawnsRoll <= 80:
+			spawnForageNum = 5
+		elif numSpawnsRoll >= 81 and numSpawnsRoll <= 90:
+			spawnForageNum = 6
+		elif numSpawnsRoll >= 90 and numSpawnsRoll <= 99:
+			spawnForageNum = 7
+		else:
+			spawnForageNum = 8
+			
+	elif type == "timemarch":
+		
+		if numSpawnsRoll >= 1 and numSpawnsRoll <= 50:
+			spawnForageNum = 1
+		elif numSpawnsRoll >= 51 and numSpawnsRoll <= 80:
+			spawnForageNum = 2
+		elif numSpawnsRoll >= 81 and numSpawnsRoll <= 95:
+			spawnForageNum = 3
+		elif numSpawnsRoll >= 96:
+			spawnForageNum = 4
+			
 	if (debug): print("Spawning ", spawnForageNum, " foragys!")
 	
-	for i in range(spawnForageNum):
+	return spawnForageNum
+
+
+func spawnForagy(num):
+	
+	# gets the level's foragables from the pool node
+	var forages = getForagys()
+	# gets the empty entity spawn zones that can be picked to spawn on
+	var spawns = getForagySpawns()
+	
+	
+	for i in range(num):
 		
 		# roll a d100 to determine rarity
 		
@@ -147,7 +172,7 @@ func genesis():
 			
 				var commonPool = []
 			
-				for foragy in foragePool:
+				for foragy in forages:
 					if foragy.getRarity() == 1:
 						for j in foragy.getStones():
 							if (debug): print("appending ", foragy, " to common pool")
@@ -157,7 +182,7 @@ func genesis():
 					if (debug): print("There are no commons! Nothing will spawn.")
 					rolling = false
 				else:
-					place_foragy(commonPool, entitySpawnZonePool)
+					place_foragy(commonPool, spawns)
 
 					rolling = false
 			
@@ -166,7 +191,7 @@ func genesis():
 			
 				var uncommonPool = []
 			
-				for foragy in foragePool:
+				for foragy in forages:
 					if foragy.getRarity() == 2:
 						for j in foragy.getStones():
 							if (debug): print("appending ", foragy, " to uncommon pool")
@@ -176,7 +201,7 @@ func genesis():
 					if (debug): print("There are no uncommons! Switching over to common.")
 					rarityRoll = 1
 				else:
-					place_foragy(uncommonPool, entitySpawnZonePool)
+					place_foragy(uncommonPool, spawns)
 					
 					rolling = false
 			
@@ -185,7 +210,7 @@ func genesis():
 				
 				var rarePool = []
 			
-				for foragy in foragePool:
+				for foragy in forages:
 					if foragy.getRarity() == 3:
 						for j in foragy.getStones():
 							if (debug): print("appending ", foragy, " to rare pool")
@@ -195,7 +220,7 @@ func genesis():
 					if (debug): print("There are no rares! Switching over to uncommon.")
 					rarityRoll = 66
 				else:
-					place_foragy(rarePool, entitySpawnZonePool)
+					place_foragy(rarePool, spawns)
 					
 					rolling = false
 		
@@ -204,7 +229,7 @@ func genesis():
 
 				var exceptPool = []
 			
-				for foragy in foragePool:
+				for foragy in forages:
 					if foragy.getRarity() == 4:
 						for j in foragy.getStones():
 							if (debug): print("appending ", foragy, " to except pool")
@@ -214,7 +239,7 @@ func genesis():
 					if (debug): print("There are no excepts! Switching over to rare.")
 					rarityRoll = 86
 				else:
-					place_foragy(exceptPool, entitySpawnZonePool)
+					place_foragy(exceptPool, spawns)
 					
 					rolling = false
 			
@@ -223,7 +248,7 @@ func genesis():
 	
 				var exoticPool = []
 			
-				for foragy in foragePool:
+				for foragy in forages:
 					for j in foragy.getStones():
 						if foragy.getRarity() == 5:
 							if (debug): print("appending ", foragy, " to exotic pool")
@@ -233,16 +258,30 @@ func genesis():
 					if (debug): print("There are no exotics! Switching over to exceptional.")
 					rarityRoll = 96
 				else:
-					place_foragy(exoticPool, entitySpawnZonePool)
+					place_foragy(exoticPool, spawns)
 					
 					rolling = false
+					
+					
+					
+					
 
+# GENESIS - plays when a level is visited for the very first time.
+func genesis():
+	print (level_name, " Genesis Activating..")
+	
+	# roll 1-8 (but with special odds) to determine how many foragys will spawn
+	var spawnForageNum = getForagyNum("genesis")
+	
+	# Spawn 1-8 foragable entities within roughly 30-60 possible locations 
+	spawnForagy(spawnForageNum)
 
-
+	# roll 1-4 (but with special odds) to determine how many destructibles will spawn
+	# var spawnObjNum = 
 
 	# Spawn 1-4 destructible objects (like bushes, trees)
-	
 	# ~ 
+
 
 
 
@@ -253,16 +292,24 @@ func genesis():
 func timemarch():
 	
 	if level_name in LevelManager.visited_levels:
-		
 		print(level_name, " is time-marching. ")
 		
-	else:
+		# roll 1-4 (but with special odds) to determine how many foragys will spawn
+		var spawnForageNum = getForagyNum("timemarch")
+	
+		# Spawn 1-8 foragable entities within roughly 30-60 possible locations 
+		spawnForagy(spawnForageNum)
 		
+	else:
 		print(level_name, " has not been visited and cannot time-march.")
 	
 	
 	
-	pass
+	
+	
+	
+	
+
 
 
 

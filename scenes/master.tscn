@@ -17,7 +17,7 @@
 
 [node name="game" type="Node2D" parent="."]
 
-[node name="SceneSwitcher" parent="game" instance=ExtResource("1_rifhj")]
+[node name="SceneSwitcher" parent="game" groups=["SceneSwitcher"] instance=ExtResource("1_rifhj")]
 
 [node name="managers" type="Node2D" parent="."]
 

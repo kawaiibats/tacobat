@@ -15,7 +15,7 @@ class_name Clock extends Scale_Control
 func set_time(time: float, day: int, hour: int, minute: int) -> void:
 	lbl_time.text = "Time: " + str(snapped(time, 0.0001))
 	
-	lbl_day.text = "Day: " + str(day + 1)
+	lbl_day.text = "Day: " + str(day)
 	
 	lbl_hour.text = "Hour: " + str(_amfm_hour(hour))
 	
